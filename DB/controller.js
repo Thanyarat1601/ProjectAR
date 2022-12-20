@@ -98,7 +98,7 @@ var fd = new FormData();
   
       }; 
     
-    $scope.sendData = function(){              //สร้างฟังก์ชันเพื่อส่งค่าไปใช้ในฟอร์ม   //http ทำการสั่งงาน then ตอบสนองการทำงาน
+    $scope.senddata = function(){              //สร้างฟังก์ชันเพื่อส่งค่าไปใช้ในฟอร์ม   //http ทำการสั่งงาน then ตอบสนองการทำงาน
       let newdata = new FormData();//2 
       let fileTag = document.getElementById("imageinput"); //3 
 
@@ -118,7 +118,7 @@ var fd = new FormData();
         else if (A.data == '1064'){$scope.show = "เพิ่มข้อมูลล้มเหลว";}
         else {$scope.show ="กรุณาติดต่อผู้ดูแลระบบ";}
        
-        const myModal = new bootstrap.Modal('#exampleModal', {
+        const myModal = new bootstrap.Modal('#exampleModal2', {
           keyboard: false
         });
         myModal.show(); 

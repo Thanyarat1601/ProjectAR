@@ -52,10 +52,10 @@
                             </div>
                           </div>
                           <button type="button" class="btn btn-sm  btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal4"
-                          ng-click= "tree.id          =x.ID;
-                                    tree.th     =x.thainame;
-                                    tree.eng     =x.engname;
-                                    tree.pro   =x.properties;
+                          ng-click= "tree.ID          =x.ID;
+                                    tree.thainame     =x.thainame;
+                                    tree.engname     =x.engname;
+                                    tree.properties   =x.properties;
                                     tree.picture      =x.picture"
                            >Edit</button>
 
@@ -66,62 +66,71 @@
               </div>  
           </div>  
   
-  <!-- Modal -->
+  <!-- insert -->
   
-  <link rel="stylesheet" href="indexDB.css" />
-  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
       <div class="modal-content">
-        <div class="modal-body">
-          <div class="column" id="main">
-
-            <h1>เพิ่มข้อมูลพรรณไม้</h1>
-            <form  class="form-group" ng-submit="sendData()">
-              <div class="form-group">
-                <label for="inputid" class="form-label">รหัสพรรณไม้</label>
-                <input type="text" ng-model = "tree.id" class="form-control" id="inputid">
-              </div>
-              <div class="form-group" >
-                <label for="inputthainame" class="form-label">ชื่อพรรณไม้</label>
-                <input type="text" ng-model = "tree.th" class="form-control" id="inputthainame">
-              </div>
-              <div class="form-group">
-                <label for="inputengname" class="form-label">ชื่อวิทยาศาสตร์</label>
-                <input type="text" ng-model = "tree.eng" class="form-control" id="inputengname">
-              </div>
-              <div class="form-group">
-                <label for="exampleFormControlTextarea1" >สรรพคุณ</label>
-                <textarea type="text" ng-model = "tree.pro" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-              </div>
-              <div class="form-group">
-                <label for="inputpicture" class="form-label">รูปภาพ </label>
-                <input id="imageinput" type="file" accept="image/*" multiple="multiple" ng-model="tree.picture" class="form-control" id="inputpicture">
-                <div id="previewarea" class="row"></div>
-              </div>
-              <button type="submit" class="btn btn-primary"  ng-click="select();" >ลงทะเบียน</button>
-            </form>
-          </div>
-          <div>
-            <?xml version="1.0" encoding="UTF-8"?>
-            <svg width="67px" height="578px" viewBox="0 0 67 578" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                 Generator: Sketch 53.2 (72643) - https://sketchapp.com 
-                <title>Path</title>
-                <desc>Created with Sketch.</desc>
-                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-                    <path d="M11.3847656,-5.68434189e-14 C-7.44726562,36.7213542 5.14322917,126.757812 49.15625,270.109375 C70.9827986,341.199016 54.8877465,443.829224 0.87109375,578 L67,578 L67,-5.68434189e-14 L11.3847656,-5.68434189e-14 Z" id="Path" fill="#F9BC35"></path>
-                </g>
-            </svg>
-          </div>
-          <div class="column" id="secondary">
-            <div class="sec-content">
-              <h2>YO!</h2>
-              
-            </div>
-          </div> 
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูลพรรณไม้</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
+        <div class="modal-body">
+          <form class="row g-3" ng-submit ="senddata()">
+            <div class="col-md-6">
+              <label for="inputID4" class="form-label">รหัสพรรณไม้</label>
+              <input type="text" ng-model="tree.ID" class="form-control" id="inputID4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputName4" class="form-label">ชื่อภาษาไทย</label>
+              <input type="text" ng-model="tree.thainame" class="form-control" id="inputName4">
+            </div>
+            <div class="col-md-6">
+              <label for="inputLastnane" class="form-label">ชื่อวิทยาศาสตร์</label>
+              <input type="text" ng-model="tree.engname" class="form-control" id="inputLastname">
+            </div>
+            <div class="col-md-6">
+              <label for="inputLastnane" class="form-label">สรรพคุณ</label>
+              <input type="text" ng-model="tree.properties" class="form-control" id="inputLastname">
+            </div>
+            <div class="col-md-6">
+              <label for="inputMajor2" class="form-label">Picture</label>
+              <input id="imageinput" type="file" accept="image/*" multiple="multiple" ng-model="tree.picture" class="form-control" id="inputMajor2">
+              <div id="previewarea" class="row"></div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary" data-bs-toggle="modal" ng-click = "select();">Sign in</button>
+            </div>
+          </form>
       </div>
     </div>
   </div>
+</div>
+
+<!--show message-->
+<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel"> </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="text-center">
+        </div>
+        {{show}}
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" >Close</button>
+        <button type="button" class="btn btn-primary"data-bs-dismiss="modal" ng-click="select();">Save changes</button>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--update-->
           <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
@@ -135,19 +144,19 @@
                   <form class="row g-1" ng-submit="Update()">
                     <div class="col-auto">
                     <label for="inputRoom ID" class="form-label">รหัสพรรณไม้</label>
-                    <input type="text" ng-model = "tree.id" class="form-control" id="inputRoom ID">
+                    <input type="text" ng-model = "tree.ID" class="form-control" id="inputRoom ID">
                    </div>  
                     <div class="col-auto">
                       <label for="inputType_id" class="form-label">ชื่อพรรณไม้</label>
-                      <input type="text" ng-model = "tree.th" class="form-control" id="inputType_id">
+                      <input type="text" ng-model = "tree.thainame" class="form-control" id="inputType_id">
                     </div>
                     <div class="col-auto">
                       <label for="inputrental" class="form-label">ชื่อวิทยาศาสตร์</label>
-                      <input type="text" ng-model= "tree.eng" class="form-control" id="inputrental" >
+                      <input type="text" ng-model= "tree.engname" class="form-control" id="inputrental" >
                     </div>
                     <div class="col-auto">
                       <label for="inputpicture" class="form-label">สรรพคุณ</label>
-                      <input type="text" ng-model = "tree.pro" class="form-control" id="inputpicture">
+                      <input type="text" ng-model = "tree.properties" class="form-control" id="inputpicture">
                     </div>
                     <div class="col-auto">
                       <label for="inputpicture" class="form-label">รูปภาพ</label>
@@ -163,36 +172,7 @@
                 </div>
               </div>
             </div>
-          </div>
-        
-
-
-         
-          <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel"> </h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                  <div class="text-center">
-                  </div>
-                  {{show}}
-                </div>
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" >Close</button>
-                  <button type="button" class="btn btn-primary"data-bs-dismiss="modal" ng-click="select();">Save changes</button>
-                  
-                </div>
-              </div>
-            </div>
-          </div>
-
-      
-  
-  
-      
+          </div>  
       
 </body>
 <!-- JavaScript Bundle with Popper -->

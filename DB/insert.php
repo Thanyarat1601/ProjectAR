@@ -15,10 +15,10 @@ $x=$_POST['data'];
 $d=json_decode($x);
 
   $sql = "INSERT INTO `tree`(`ID`, `thainame`, `engname`, `properties`, `picture`)
-  VALUES ('{$d->id}',
-        '{$d->th}',
-        '{$d->eng}',
-        '{$d->pro}',
+  VALUES ('{$d->ID}',
+        '{$d->thainame}',
+        '{$d->engname}',
+        '{$d->properties}',
         '{$newname}');";
 
 
