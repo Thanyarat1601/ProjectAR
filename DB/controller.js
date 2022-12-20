@@ -67,7 +67,7 @@ var fd = new FormData();
         for(var i=0; i<fileTag.files.length; i++){ //4 
             newdata.append(i, fileTag.files[i]); 
         };
-        newdata.append('data', JSON.stringify($scope.plants)); //5 
+        newdata.append('data', JSON.stringify($scope.tree)); //5 
           $http({ method : 'post' ,
               url : 'edit.php',
               data : newdata ,
@@ -105,7 +105,7 @@ var fd = new FormData();
       for(var i=0; i<fileTag.files.length; i++){ //4 
           newdata.append(i, fileTag.files[i]); 
       }; 
-      newdata.append('data', JSON.stringify($scope.plants)); //5
+      newdata.append('data', JSON.stringify($scope.tree)); //5
 
         $http({method : 'post' ,
             url : 'insert.php',
