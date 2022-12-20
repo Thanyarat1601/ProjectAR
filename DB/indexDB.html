@@ -52,10 +52,10 @@
                             </div>
                           </div>
                           <button type="button" class="btn btn-sm  btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal4"
-                          ng-click= "tree.ID          =x.ID;
-                                    tree.thainame     =x.thainame;
-                                    tree.engname      =x.engname;
-                                    tree.properties   =x.properties;
+                          ng-click= "tree.id          =x.ID;
+                                    tree.th     =x.thainame;
+                                    tree.eng     =x.engname;
+                                    tree.pro   =x.properties;
                                     tree.picture      =x.picture"
                            >Edit</button>
 
@@ -79,19 +79,19 @@
             <form  class="form-group" ng-submit="sendData()">
               <div class="form-group">
                 <label for="inputid" class="form-label">รหัสพรรณไม้</label>
-                <input type="text" ng-model = "tree.ID" class="form-control" id="inputid">
+                <input type="text" ng-model = "tree.id" class="form-control" id="inputid">
               </div>
               <div class="form-group" >
                 <label for="inputthainame" class="form-label">ชื่อพรรณไม้</label>
-                <input type="text" ng-model = "tree.thainame" class="form-control" id="inputthainame">
+                <input type="text" ng-model = "tree.th" class="form-control" id="inputthainame">
               </div>
               <div class="form-group">
                 <label for="inputengname" class="form-label">ชื่อวิทยาศาสตร์</label>
-                <input type="text" ng-model = "tree.engname" clagitss="form-control" id="inputengname">
+                <input type="text" ng-model = "tree.eng" class="form-control" id="inputengname">
               </div>
               <div class="form-group">
                 <label for="exampleFormControlTextarea1" >สรรพคุณ</label>
-                <textarea type="text" ng-model = "tree.properties" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea type="text" ng-model = "tree.pro" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
               </div>
               <div class="form-group">
                 <label for="inputpicture" class="form-label">รูปภาพ </label>
@@ -135,19 +135,19 @@
                   <form class="row g-1" ng-submit="Update()">
                     <div class="col-auto">
                     <label for="inputRoom ID" class="form-label">รหัสพรรณไม้</label>
-                    <input type="text" ng-model = "tree.ID" class="form-control" id="inputRoom ID">
+                    <input type="text" ng-model = "tree.id" class="form-control" id="inputRoom ID">
                    </div>  
                     <div class="col-auto">
                       <label for="inputType_id" class="form-label">ชื่อพรรณไม้</label>
-                      <input type="text" ng-model = "tree.thainame" class="form-control" id="inputType_id">
+                      <input type="text" ng-model = "tree.th" class="form-control" id="inputType_id">
                     </div>
                     <div class="col-auto">
                       <label for="inputrental" class="form-label">ชื่อวิทยาศาสตร์</label>
-                      <input type="text" ng-model= "tree.engname" class="form-control" id="inputrental" >
+                      <input type="text" ng-model= "tree.eng" class="form-control" id="inputrental" >
                     </div>
                     <div class="col-auto">
                       <label for="inputpicture" class="form-label">สรรพคุณ</label>
-                      <input type="text" ng-model = "tree.properties" class="form-control" id="inputpicture">
+                      <input type="text" ng-model = "tree.pro" class="form-control" id="inputpicture">
                     </div>
                     <div class="col-auto">
                       <label for="inputpicture" class="form-label">รูปภาพ</label>

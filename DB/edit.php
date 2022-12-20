@@ -11,7 +11,7 @@ try{
 /*$x = file_get_contents("php://input");*/
 $x = $_POST['data'];
 $d = json_decode($x);
-  $sql = "SELECT * FROM `tree` WHERE `ID`= {$d->ID} ";
+  $sql = "SELECT * FROM `tree` WHERE `ID`= {$d->id} ";
   $result = $conn->query($sql);
   $์NDK = "" ;
     while($r = $result->fetch_assoc()) {
@@ -28,11 +28,11 @@ $d = json_decode($x);
       }
            
     $sql = "UPDATE `tree` SET 
-      `thainame`='{$d->thainame}',
-      `endgame`='{$d->engname}',
-      `properties`='{$d->properties}',
+      `thainame`='{$d->th}',
+      `endgame`='{$d->eng}',
+      `properties`='{$d->pro}',
       `picture`='{$newname}'
-      WHERE `ID`= {$d->ID} ";
+      WHERE `ID`= {$d->id} ";
     
     if ($conn->query($sql)== TRUE) {
         echo "up";
