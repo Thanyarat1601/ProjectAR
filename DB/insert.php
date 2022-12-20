@@ -20,12 +20,8 @@ try{
 $x=$_POST['data'];
 $d=json_decode($x);
 
-  $sql = " INSERT INTO `plants` (`ID`, `thainame`, `endgame`, `properties`, `picture`)
-  VALUES ('{$d->ID}',
-         '{$d->thainame}',
-         '{$d->endgame}',
-        '{$d->properties}',
-        '{$newname}');";
+  $sql = " INSERT INTO `tree`(`ID`, `thainame`, `engname`, `properties`, `picture`)
+  VALUES ('{$d->ID}','{$d->thainame}','{$d->engname}','{$d->properties}','{$newname}');";
 
 
  

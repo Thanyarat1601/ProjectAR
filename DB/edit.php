@@ -11,7 +11,7 @@ try{
 /*$x = file_get_contents("php://input");*/
 $x = $_POST['data'];
 $d = json_decode($x);
-  $sql = "SELECT * FROM `plants` WHERE `ID`= {$d->ID} ";
+  $sql = "SELECT * FROM `tree` WHERE `ID`= {$d->ID} ";
   $result = $conn->query($sql);
   $์NDK = "" ;
     while($r = $result->fetch_assoc()) {
@@ -27,9 +27,9 @@ $d = json_decode($x);
             echo 'ไม่มีไฟล์ภาพ';  
       }
            
-    $sql = "UPDATE `plants` SET 
+    $sql = "UPDATE `tree` SET 
       `thainame`='{$d->thainame}',
-      `endgame`='{$d->endgame}',
+      `endgame`='{$d->engname}',
       `properties`='{$d->properties}',
       `picture`='{$newname}'
       WHERE `ID`= {$d->ID} ";

@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "Plants";
+$dbname = "tree";
 
 
 
@@ -13,8 +13,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 
 }
-$x = file_get_contents("php://input");
-$d = json_decode($x);
+
 
 
  

@@ -34,7 +34,7 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
               img.onload = () => URL.revokeObjectURL(img.src);  //6 
         }; 
     }; 
- $scope.plants = {} ;
+ $scope.tree = {} ;
  $scope.show = {};
 var fd = new FormData();
 
@@ -51,7 +51,7 @@ var fd = new FormData();
                data : {search:tem},
           
     }).then( function  myError(response){
-               $scope.plants = response.data;
+               $scope.tree = response.data;
             },  
 
             function myError(response){
@@ -118,10 +118,10 @@ var fd = new FormData();
         else if (A.data == '1064'){$scope.show = "เพิ่มข้อมูลล้มเหลว";}
         else {$scope.show ="กรุณาติดต่อผู้ดูแลระบบ";}
        
-        /*const myModal = new bootstrap.Modal('#exampleModal', {
+        const myModal = new bootstrap.Modal('#exampleModal', {
           keyboard: false
         });
-        myModal.show(); */
+        myModal.show(); 
   },  
 
   function(B){
