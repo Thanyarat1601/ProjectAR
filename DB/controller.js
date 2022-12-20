@@ -159,7 +159,6 @@ var fd = new FormData();
         ); 
    }
     };
-
 }]);           
             
 
