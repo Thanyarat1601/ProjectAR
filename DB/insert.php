@@ -2,13 +2,7 @@
 
 include "database_connection.php";
 
-try{
-  $conn = new mysqli($servername, $username, $password, $dbname);
-  
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
-  
+
   if(!empty($_FILES))  {
     $newname =  $_FILES['0']['name'];
   
@@ -20,8 +14,12 @@ try{
 $x=$_POST['data'];
 $d=json_decode($x);
 
-  $sql = " INSERT INTO `tree`(`ID`, `thainame`, `engname`, `properties`, `picture`)
-  VALUES ('{$d->ID}','{$d->thainame}','{$d->engname}','{$d->properties}','{$newname}');";
+  $sql = "INSERT INTO `tree`(`ID`, `thainame`, `engname`, `properties`, `picture`)
+  VALUES ('{$d->ID}',
+        '{$d->thainame}',
+        '{$d->engname}',
+        '{$d->properties}',
+        '{$newname}');";
 
 
  

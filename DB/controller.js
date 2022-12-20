@@ -34,7 +34,7 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
               img.onload = () => URL.revokeObjectURL(img.src);  //6 
         }; 
     }; 
- $scope.tree = {} ;
+ $scope.tree = {};
  $scope.show = {};
 var fd = new FormData();
 
