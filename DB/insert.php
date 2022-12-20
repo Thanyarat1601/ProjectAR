@@ -22,7 +22,7 @@ $d=json_decode($x);
         '{$newname}');";
 
 
- 
+ try{
  //  echo "start";
  if ($conn->query($sql)== TRUE) {
   echo "111";
@@ -31,8 +31,7 @@ $d=json_decode($x);
 }
 
 $conn->close(); 
-}
-catch ( mysqli_sql_exception $e){
+}catch ( mysqli_sql_exception $e){
   echo $e->getCode();
 }
 
