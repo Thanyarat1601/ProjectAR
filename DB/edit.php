@@ -7,7 +7,7 @@ try{
 /*$x = file_get_contents("php://input");*/
 $x = $_POST['data'];
 $d = json_decode($x);
-  $sql = "SELECT * FROM `tree` WHERE `ID`= '{$d->ID}' ";
+  $sql = "SELECT * FROM `tree` WHERE `ID` = '{$d->ID}' ";
   $result = $conn->query($sql);
   $NDK = "" ;
     while($r = $result->fetch_assoc()) {
@@ -27,13 +27,8 @@ $d = json_decode($x);
       `thainame`  ='{$d->thainame}',
       `endgame`   ='{$d->engname}',
       `properties`='{$d->properties}',
-<<<<<<< HEAD
       `picture`='{$newname}'
       WHERE `ID`= '{$d->ID}' ";
-=======
-      `picture`   ='{$newname}'
-      WHERE `ID`  = '{$d->ID}' ";
->>>>>>> 755f1b2110eeec1b200a61672b76f4c360831573
     
     if ($conn->query($sql)== TRUE) {
         echo "up";
