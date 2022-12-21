@@ -1,5 +1,4 @@
 <?php  
-
 include "database_connection.php";
 
 
@@ -22,7 +21,7 @@ $d=json_decode($x);
         '{$newname}');";
 
 
- try{
+try{
  //  echo "start";
  if ($conn->query($sql)== TRUE) {
   echo "111";

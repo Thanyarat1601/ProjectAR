@@ -50,7 +50,7 @@ var fd = new FormData();
                url : 'select.php',
                data : {search:tem},
           
-    }).then( function  myError(response){
+    }).then( function  mySuccess(response){
                $scope.tree = response.data;
             },  
 
