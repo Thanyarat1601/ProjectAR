@@ -107,15 +107,15 @@ var fd = new FormData();
       }; 
       newdata.append('data', JSON.stringify($scope.tree)); //5
 
-        $http({method : 'post' ,
-            url : 'insert.php',
-            data : newdata ,
+        $http({method : "post" ,
+            url : "insert.php",
+            data : newdata,
             transformRequest: angular.identity, //6 
             headers: { "Content-Type": undefined }, //6 
             })
         .then  ( function(A){
-        if (A.data == '111'){$scope.show = "เพิ่มข้อมูลเสร็จสิ้น";}
-        else if (A.data == '1064'){$scope.show = "เพิ่มข้อมูลล้มเหลว";}
+        if (A.data == 'PP'){$scope.show = "เพิ่มข้อมูลเสร็จสิ้น";}
+        else if (A.data == 'LOL'){$scope.show = "เพิ่มข้อมูลล้มเหลว";}
         else {$scope.show ="กรุณาติดต่อผู้ดูแลระบบ";}
        
         const myModal = new bootstrap.Modal('#exampleModal2', {

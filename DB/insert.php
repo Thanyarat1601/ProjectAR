@@ -24,9 +24,9 @@ $d=json_decode($x);
 try{
  //  echo "start";
  if ($conn->query($sql)== TRUE) {
-  echo "111";
+  echo "PP";
 } else {
-  echo "1064";
+  echo "LOL";
 }
 
 $conn->close(); 
