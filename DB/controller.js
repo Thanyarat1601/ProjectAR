@@ -69,7 +69,7 @@ var fd = new FormData();
         };
         newdata.append('data', JSON.stringify($scope.tree)); //5 
           $http({ method : 'post' ,
-              url : 'edit.php',
+              url : "edit.php",
               data : newdata ,
               transformRequest: angular.identity, //6 
               headers: { "Content-Type": undefined }, //6 

@@ -2,11 +2,7 @@
 Include "database_connection.php";
 
 try{
-  $conn = new mysqli($servername, $username, $password, $dbname);
   
-  if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-  }
 
 /*$x = file_get_contents("php://input");*/
 $x = $_POST['data'];
@@ -28,11 +24,16 @@ $d = json_decode($x);
       }
            
     $sql = "UPDATE `tree` SET 
-      `thainame`='{$d->thainame}',
-      `endgame`='{$d->engname}',
+      `thainame`  ='{$d->thainame}',
+      `endgame`   ='{$d->engname}',
       `properties`='{$d->properties}',
+<<<<<<< HEAD
       `picture`='{$newname}'
       WHERE `ID`= '{$d->ID}' ";
+=======
+      `picture`   ='{$newname}'
+      WHERE `ID`  = '{$d->ID}' ";
+>>>>>>> 755f1b2110eeec1b200a61672b76f4c360831573
     
     if ($conn->query($sql)== TRUE) {
         echo "up";
