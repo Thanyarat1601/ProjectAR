@@ -24,7 +24,7 @@
           <div class="card mb-4 box-shadow" style="width: 35rem; margin-right: 50px;"  ng-repeat = "x in tree">   
                     <div class="card-body">
                       <h5 class="card-title">ข้อมูลพรรณไม้</h5>
-                      <p scope="col"><img ng-src  = "{{x.picture}}" width="200px" height="200px"></p>
+                      <p scope="col"><img ng-src  = "{{x.picture}}" width="400px" height="300px"></p>
                       <p scope="col">รหัสพรรณไม้    : {{x.ID}}</p>
                       <p scope="col">ชื่อพรรณไม้     : {{x.thainame}}</p>
                       <p scope="col">ชื่อวิทยาศาสตร์  : {{x.engname}}</p>
@@ -46,6 +46,7 @@
                                   </div>
                                   {{show}}
                                 </div>
+                                
                                 <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" >Close</button>
                                   <button type="button" class="btn btn-primary"data-bs-dismiss="modal" ng-click="select();">Save changes</button>
@@ -123,7 +124,6 @@
         {{show}}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" >Close</button>
         <button type="button" class="btn btn-primary"data-bs-dismiss="modal" ng-click="select();">Save changes</button>
         
       </div>
