@@ -21,7 +21,7 @@
          <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
             เพิ่มข้อมูล </button>
           <div class="row">
-          <div class="card mb-4 box-shadow" style="width: 35rem; margin-right: 50px;"  ng-repeat = "x in tree">   
+          <div class="card mb-4 box-shadow" style="width: 35rem; margin-right: 50px;"  ng-repeat = "x in rtree">   
                     <div class="card-body">
                       <h5 class="card-title">ข้อมูลพรรณไม้</h5>
                       <p scope="col"><img ng-src  = "{{x.picture}}" width="400px" height="295px"></p>
@@ -55,11 +55,11 @@
                             </div>
                           </div>
                           <button type="button" class="btn btn-sm  btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal4"
-                          ng-click= "tree.ID          =x.ID;
-                                    tree.thainame     =x.thainame;
-                                    tree.engname     =x.engname;
-                                    tree.properties   =x.properties;
-                                    tree.picture      =x.picture"
+                          ng-click= "rtree.ID          =x.ID;
+                                    rtree.thainame     =x.thainame;
+                                    rtree.engname     =x.engname;
+                                    rtree.properties   =x.properties;
+                                    rtree.picture      =x.picture"
                            >Edit</button>
 
                         </div>
@@ -146,23 +146,23 @@
                   <form class="row g-1" ng-submit="Update()">
                     <div class="col-auto">
                     <label for="inputRoom ID" class="form-label">รหัสพรรณไม้</label>
-                    <input type="text" ng-model = "tree.ID" class="form-control" id="inputRoom ID">
+                    <input type="text" ng-model = "rtree.ID" class="form-control" id="inputRoom ID">
                    </div>  
                     <div class="col-auto">
                       <label for="inputType_id" class="form-label">ชื่อพรรณไม้</label>
-                      <input type="text" ng-model = "tree.thainame" class="form-control" id="inputType_id">
+                      <input type="text" ng-model = "rtree.thainame" class="form-control" id="inputType_id">
                     </div>
                     <div class="col-auto">
                       <label for="inputrental" class="form-label">ชื่อวิทยาศาสตร์</label>
-                      <input type="text" ng-model= "tree.engname" class="form-control" id="inputrental" >
+                      <input type="text" ng-model= "rtree.engname" class="form-control" id="inputrental" >
                     </div>
                     <div class="col-auto">
                       <label for="inputpicture" class="form-label">สรรพคุณ</label>
-                      <input type="text" ng-model = "tree.properties" class="form-control" id="inputpicture">
+                      <input type="text" ng-model = "rtree.properties" class="form-control" id="inputpicture">
                     </div>
                     <div class="col-auto">
                       <label for="inputpicture" class="form-label">รูปภาพ</label>
-                      <input id="imageinput2" type="file" accept="image/*" multiple="multiple" ng-model="tree.picture" class="form-control" id="inputMajor2">
+                      <input id="imageinput2" type="file" accept="image/*" multiple="multiple" ng-model="rtree.picture" class="form-control" id="inputMajor2">
                       <div id="previewarea" class="row"></div>
                      <label></label>
                    

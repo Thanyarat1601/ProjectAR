@@ -34,7 +34,7 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
               img.onload = () => URL.revokeObjectURL(img.src);  //6 
         }; 
     }; 
- $scope.tree = {};
+ $scope.rtree = {};
  $scope.show = {};
 var fd = new FormData();
 
@@ -51,7 +51,7 @@ var fd = new FormData();
                data : {search:tem},
           
     }).then( function  mySuccess(response){
-               $scope.tree = response.data;
+               $scope.rtree = response.data;
             },  
 
             function myError(response){
@@ -67,8 +67,8 @@ var fd = new FormData();
         for(var i=0; i<fileTag.files.length; i++){ //4 
             newdata.append(i, fileTag.files[i]); 
         };
-        newdata.append('data', JSON.stringify($scope.tree)); //5 
-          $http({ method : 'post' ,
+        newdata.append('data', JSON.stringify($scope.rtree)); //5 
+          $http({ method : "post" ,
               url : "edit.php",
               data : newdata ,
               transformRequest: angular.identity, //6 
