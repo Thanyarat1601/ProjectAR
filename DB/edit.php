@@ -29,7 +29,7 @@ $d = json_decode($x);
            
     $sql = "UPDATE `tree` SET 
       `thainame`='{$d->thainame}',
-      `endgame`='{$d->engname}',
+      `engname`='{$d->engname}',
       `properties`='{$d->properties}',
       `picture`='{$newname}'
       WHERE `ID`= '{$d->ID}' ";
