@@ -11,7 +11,7 @@ try{
 /*$x = file_get_contents("php://input");*/
 $x = $_POST['data'];
 $d = json_decode($x);
-  $sql = "SELECT * FROM `tree` WHERE `ID` = '{$d->ID}' ";
+  $sql = "SELECT * FROM `tree` WHERE `ID` = {$d->ID} ";
   $result = $conn->query($sql);
   $NDK = "" ;
     while($r = $result->fetch_assoc()) {
@@ -32,7 +32,7 @@ $d = json_decode($x);
       `engname`='{$d->engname}',
       `properties`='{$d->properties}',
       `picture`='{$newname}'
-      WHERE `ID`= '{$d->ID}' ";
+      WHERE `ID`= {$d->ID} ";
     
     if ($conn->query($sql)== TRUE) {
         echo "up";
@@ -48,5 +48,5 @@ $d = json_decode($x);
     }catch ( mysqli_sql_exception $e){
         echo $e->getCode();
       }
- 
+
   ?>
