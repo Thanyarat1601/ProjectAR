@@ -11,14 +11,11 @@ try{
 /*$x = file_get_contents("php://input");*/
 $x = $_POST['data'];
 $d = json_decode($x);
-  $sql = "SELECT * FROM `tree` WHERE `ID` = {$d->ID} ";
-  $result = $conn->query($sql);
+//เอารูปเก่าออก
+//เอาข้อมูลรูปใหม่ใส่
   $NDK = "" ;
-    while($r = $result->fetch_assoc()) {
-     $NDK = $r['picture'];
-    }
 
-    if (unlink($NDK)){  //ลำดับวิธีการอัปเดตข้อมูล/เปลี่ยนรูปภาพ
+    if (unlink($NDK)){  //ลำดับวิธีการอัปเดตข้อมูล/เปลี่ยนรูปภาพ 
       if(!empty($_FILES)) {
         $newname =  $_FILES['0']['name'];
       
@@ -26,6 +23,7 @@ $d = json_decode($x);
       }else{  
             echo 'ไม่มีไฟล์ภาพ';  
       }
+      
            
     $sql = "UPDATE `tree` SET 
       `thainame`='{$d->thainame}',
@@ -33,20 +31,20 @@ $d = json_decode($x);
       `properties`='{$d->properties}',
       `picture`='{$newname}'
       WHERE `ID`= {$d->ID} ";
-    
+    echo $sql;
     if ($conn->query($sql)== TRUE) {
-        echo "up";
+        echo "up"; echo $sql;
     } else {
-        echo "down";
+        echo "down"; echo $sql;
       }
       
       $conn->close(); 
     
     }else{
-      echo ("error");
+      echo "error"; echo $sql;
       }
     }catch ( mysqli_sql_exception $e){
-        echo $e->getCode();
+        echo $e->getCode(); echo $sql;
       }
 
   ?>

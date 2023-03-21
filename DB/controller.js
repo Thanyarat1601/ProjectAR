@@ -35,6 +35,7 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
         }; 
     }; 
  $scope.rtree = {};
+ $scope.rtree1 = {};
  $scope.show = {};
 var fd = new FormData();
 
@@ -61,16 +62,16 @@ var fd = new FormData();
         }; 
         
         $scope.Update = function(){              //สร้างฟังก์ชันเพื่อส่งค่าไปใช้ในฟอร์ม   //http ทำการสั่งงาน then ตอบสนองการทำงาน
-          let newdata = new FormData();//2 
+          let newdata1 = new FormData();//2 
           let fileTag = document.getElementById("imageinput2"); //3 
   
         for(var i=0; i<fileTag.files.length; i++){ //4 
-            newdata.append(i, fileTag.files[i]); 
+            newdata1.append(i, fileTag.files[i]); 
         };
-        newdata.append('data', JSON.stringify($scope.rtree)); //5 
+        newdata1.append('data', JSON.stringify($scope.rtree1)); //5 
           $http({ method : "post" ,
               url : "edit.php",
-              data : newdata ,
+              data : newdata1 ,
               transformRequest: angular.identity, //6 
               headers: { "Content-Type": undefined }, //6 
               
