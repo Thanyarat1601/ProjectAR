@@ -3,7 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
 :root {
-    --primary: #094b65;
+    --primary: #303f9f;
 }
 
 * {
@@ -15,7 +15,7 @@
 
 body {
     overflow-x: hidden;
-    background: #fff;
+    background: #b3e5fc;
     min-height: 100vh;
 }
 
@@ -54,6 +54,7 @@ body {
     padding: 6px 15px;
     color: var(--primary);
     border-radius: 20px;
+    font-size: 1.2em;
 }
 
 #header ul li a:hover,
@@ -95,7 +96,7 @@ section img {
 section #text {
     position: absolute;
     color: var(--primary);
-    font-size: 8vw;
+    font-size: 6vw;
     text-align: center;
     line-height: .50em;
     font-family: 'TH Niramit AS', cursive;
