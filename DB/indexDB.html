@@ -13,12 +13,14 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" integrity="sha512-yFjZbTYRCJodnuyGlsKamNE/LlEaEAxSUDe5+u61mV8zzqJVFOH7TnULE2/PP/l5vKWpUNnF4VGVkXh3MjgLsg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <link rel="stylesheet" href="indexDB.css" >
-   
-    <body class="text-center d-block">      
-      <input placeholder="Search"  type="search" class="input" ng-model="search">   
-         <button class=  "btn btn-primary" ng-click ="select();">ค้นหา</button> 
+    <body class="p-3 m-0 border-0 bd-example">
+      <div class="text-center d-block">
+      <input placeholder="Search"  type="search" class="input" ng-model="search">
+      <div class="text-center d-block">
+         <button class=  "btn btn-primary " ng-click ="select();">ค้นหา</button> 
          <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
             เพิ่มข้อมูล </button>
+          </div>
           <div class="row">
           <div class="card mb-4 box-shadow" style="width: 35rem; margin-right: 50px;"  ng-repeat = "x in rtree">   
                     <div class="card-body">
@@ -66,7 +68,8 @@
                       </div>
               </div>  
               </div>  
-          </div>  
+          </div> 
+        
   
   <!-- insert -->
   
