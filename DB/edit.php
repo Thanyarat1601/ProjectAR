@@ -12,7 +12,7 @@ try{
 $x = $_POST['data'];
 $d = json_decode($x);
 
-$sql = "SELECT * FROM `room` WHERE `ID`= {$d->ID} ";
+$sql = "SELECT * FROM `tree` WHERE `ID`= {$d->ID} ";
   $result = $conn->query($sql);
   $NDK = "" ;
     while($r = $result->fetch_assoc()) {
