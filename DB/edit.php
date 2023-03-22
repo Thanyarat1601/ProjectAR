@@ -11,9 +11,17 @@ try{
 /*$x = file_get_contents("php://input");*/
 $x = $_POST['data'];
 $d = json_decode($x);
+
+$sql = "SELECT * FROM `room` WHERE `ID`= {$d->ID} ";
+  $result = $conn->query($sql);
+  $NDK = "" ;
+    while($r = $result->fetch_assoc()) {
+     $NDK = $r['picture'];
+    }
 //เอารูปเก่าออก
 //เอาข้อมูลรูปใหม่ใส่
-  $NDK = "" ;
+  
+
 
     if (unlink($NDK)){  //ลำดับวิธีการอัปเดตข้อมูล/เปลี่ยนรูปภาพ 
       if(!empty($_FILES)) {
