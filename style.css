@@ -29,7 +29,7 @@
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: 'TH Niramit AS', sans-serif;
 }
 
 .stop-scrolling {
@@ -95,7 +95,7 @@ header .container {
 
 .logo h3 {
   color: var(--darkTwo);
-  font-size: 1.55rem;
+  font-size: 3rem;
   line-height: 1.2;
   font-weight: 700;
 }
@@ -193,7 +193,7 @@ header .container {
 }
 
 .big-title {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: var(--darkOne);
   text-transform: capitalize;
   line-height: 1.4;
@@ -201,7 +201,7 @@ header .container {
 
 .text {
   color: var(--lightOne);
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   margin: 1.9rem 0 2.5rem;
   max-width: 600px;
   line-height: 2.3;
@@ -226,7 +226,7 @@ header .container {
   height: 39px;
   width: 39px;
   border-radius: 50%;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   transition: 0.3s;
 }
 
@@ -351,7 +351,7 @@ header .container {
   }
 
   .big-title {
-    font-size: 1.1rem;
+    font-size: 1.2rem;
   }
 
   .text {
@@ -365,7 +365,7 @@ header .container {
   }
 
   .logo h3 {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
   }
 
   .shape {
@@ -380,7 +380,7 @@ header .container {
   }
 
   .big-title {
-    font-size: 0.9rem;
+    font-size: 1.2rem;
   }
 
   .text {
@@ -388,6 +388,6 @@ header .container {
   }
 
   .showcase-area .btn {
-    font-size: 0.8rem;
+    font-size: 1.2rem;
   }
 }
