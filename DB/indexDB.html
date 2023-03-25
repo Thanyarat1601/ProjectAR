@@ -154,26 +154,30 @@
                   <div class="text-center">
                   </div>
                   <form class="row g-1" ng-submit="Update()">
-                    <div class="col-auto">
+                    <div class="col-md-6">
                     <label for="inputRoom ID" class="form-label">รหัสพรรณไม้</label>
                     <input type="text" ng-model = "rtree1.ID" class="form-control" id="inputRoom ID">
                    </div>  
-                    <div class="col-auto">
+                    <div class="col-md-6">
                       <label for="inputType_id" class="form-label">ชื่อพรรณไม้</label>
                       <input type="text" ng-model = "rtree1.thainame" class="form-control" id="inputType_id">
                     </div>
-                    <div class="col-auto">
+                    <div class="col-md-6">
                       <label for="inputrental" class="form-label">ชื่อวิทยาศาสตร์</label>
                       <input type="text" ng-model= "rtree1.engname" class="form-control" id="inputrental" >
                     </div>
-                    <div class="col-auto">
+                    <div class="col-md-6">
                       <label for="exampleFormControlTextarea1" class="form-label">สรรพคุณ</label>
                       <textarea  class="form-control" ng-model = "rtree1.properties"  id="exampleFormControlTextarea1" rows="3" ng-keyup="formatTextarea()" ></textarea> 
                     </div>            
-                    <div class="col-auto">
+                    <div class="col-md-6">
                       <label for="inputpicture" class="form-label">รูปภาพ</label>
                       <input id="imageinput2" type="file" accept="image/*" multiple="multiple" ng-model="rtree1.picture" class="form-control" id="inputMajor2">
-                      <div id="previewarea" class="row"></div>
+                      <div id="previewarea" class="row">
+                        <div class="col-md-4" ng-repeat="picture in rtree1.picture">
+                          <img ng-src="{{picture}}" alt="Preview" class="img-thumbnail">
+                        </div>
+                      </div>
                      <label></label>
                    
                     </div>
