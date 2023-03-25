@@ -27,8 +27,9 @@
             เพิ่มข้อมูล </button>
           </div>
           </div>
-          <div class="row">
-          <div class="card mb-4 box-shadow" style="width: 35rem; margin-right: 50px;"  ng-repeat = "x in rtree">   
+          <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col">
+          <div class="card h-100" style="width: 35rem; margin-right: 50px;"  ng-repeat = "x in rtree">   
                     <div class="card-body">
                       <h5 class="card-title">ข้อมูลพรรณไม้</h5>
                       <p scope="col"><img ng-src  = "{{x.picture}}" width="400px" height="295px"></p>
@@ -70,7 +71,7 @@
                            >Edit</button>
 
                         </div>
-                       
+                      </div>
                       </div>
               </div>  
               </div>  
