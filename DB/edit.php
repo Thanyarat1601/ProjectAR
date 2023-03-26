@@ -2,16 +2,29 @@
 include "database_connection.php";
 
 try {
+    // Check if POST data exists
+    if (!isset($_POST['data'])) {
+        throw new Exception('Missing POST data');
+    }
+
     $conn = new mysqli($servername, $username, $password, $dbname);
 
     if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    // Sanitize user input
-    $thainame = mysqli_real_escape_string($conn, $d->thainame);
-    $engname = mysqli_real_escape_string($conn, $d->engname);
-    $properties = mysqli_real_escape_string($conn, $d->properties);
+    $x = $_POST['data'];
+    $d = json_decode($x);
+
+    // Check if JSON data is valid
+    if ($d === null) {
+        throw new Exception('Invalid JSON data');
+    }
+
+    // Check if required fields exist
+    if (!isset($d->thainame) || !isset($d->engname) || !isset($d->properties) || !isset($d->ID)) {
+        throw new Exception('Missing required fields');
+    }
 
     $sql = "SELECT * FROM `tree` WHERE `ID` = {$d->ID} ";
     $result = $conn->query($sql);
@@ -34,36 +47,26 @@ try {
             echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             exit;
         }
-
-        // Check if the file was uploaded successfully
-        if (!is_uploaded_file($_FILES['0']['tmp_name'])) {
-            echo "Sorry, there was an error uploading your file.";
-            exit;
-        }
-
         if (!empty($NDK) && file_exists($NDK)) {
             unlink($NDK);
         }
-
         // Move the new file to the server
         $newname = $target_file;
         if (!move_uploaded_file($_FILES['0']['tmp_name'], $target_file)) {
-            echo "Sorry, there was an error uploading your file.";
-            exit;
+            throw new Exception('Failed to move uploaded file');
         }
-
         $sql = "UPDATE `tree` SET 
-            `thainame` = '{$thainame}',
-            `engname` = '{$engname}',
-            `properties` = '{$properties}',
+            `thainame` = '{$d->thainame}',
+            `engname` = '{$d->engname}',
+            `properties` = '{$d->properties}',
             `picture` = '{$newname}'
             WHERE `ID` = {$d->ID} ";
     } else {
         // No new file uploaded, only update the text fields
         $sql = "UPDATE `tree` SET 
-            `thainame` = '{$thainame}',
-            `engname` = '{$engname}',
-            `properties` = '{$properties}'
+            `thainame` = '{$d->thainame}',
+            `engname` = '{$d->engname}',
+            `properties` = '{$d->properties}'
             WHERE `ID` = {$d->ID} ";
     }
 
@@ -74,9 +77,9 @@ try {
     }
 
     $conn->close();
-} catch (mysqli_sql_exception $e) {
-   
-
+} catch (Exception $e) {
+    echo "Error: " . $e->getMessage();
+}
 
 
 ?>
