@@ -15,16 +15,23 @@ try {
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $NDK = $row['picture'];
-    } else {
-        $NDK = "";
-    }
+      $row = $result->fetch_assoc();
+      $NDK = $row['picture'];
+  } else {
+      $NDK = "";
+  }
 
-    // Check if there is a new file uploaded
-    if (isset($_FILES['0']) && $_FILES['0']['error'] == UPLOAD_ERR_OK) {
-        $newname = $_FILES['0']['name'];
-        // Remove the old file
+  // Check if there is a new file uploaded
+  if (isset($_FILES['0']) && $_FILES['0']['error'] == UPLOAD_ERR_OK) {
+      $target_dir = "uploads/";
+      $target_file = $target_dir . basename($_FILES["0"]["name"]);
+      $imageFileType = strtolower(pathinfo($target_file,PATHINFO_EXTENSION));
+      
+      // Allow only image files
+      if($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" && $imageFileType != "gif" ) {
+          echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
+          exit;
+      }
         if (!empty($NDK) && file_exists($NDK)) {
             unlink($NDK);
         }
