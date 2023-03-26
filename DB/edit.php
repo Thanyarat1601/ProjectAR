@@ -76,7 +76,7 @@ try {
     $conn->close();
 } catch (mysqli_sql_exception $e) {
    
-
+}
 
 
 ?>
