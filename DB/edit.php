@@ -13,17 +13,21 @@ try {
 
     $sql = "SELECT * FROM `tree` WHERE `ID` = {$d->ID} ";
     $result = $conn->query($sql);
-    $NDK = "";
 
-    while ($r = $result->fetch_assoc()) {
-        $NDK = $r['picture'];
+    if ($result->num_rows > 0) {
+        $row = $result->fetch_assoc();
+        $NDK = $row['picture'];
+    } else {
+        $NDK = "";
     }
 
     // Check if there is a new file uploaded
     if (isset($_FILES['0']) && $_FILES['0']['error'] == UPLOAD_ERR_OK) {
         $newname = $_FILES['0']['name'];
         // Remove the old file
-        unlink($NDK);
+        if ($NDK != "") {
+            unlink($NDK);
+        }
         // Move the new file to the server
         move_uploaded_file($_FILES['0']['tmp_name'], $newname);
         $sql = "UPDATE `tree` SET 
