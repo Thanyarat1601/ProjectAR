@@ -25,7 +25,7 @@ try {
     if (isset($_FILES['0']) && $_FILES['0']['error'] == UPLOAD_ERR_OK) {
         $newname = $_FILES['0']['name'];
         // Remove the old file
-        if ($NDK != "") {
+        if (!empty($NDK) && file_exists($NDK)) {
             unlink($NDK);
         }
         // Move the new file to the server
