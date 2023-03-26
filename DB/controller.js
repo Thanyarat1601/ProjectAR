@@ -37,9 +37,7 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
  $scope.rtree = {};
  $scope.rtree1 = {};
  $scope.show = {};
- $scope.formatTextarea = function() {
- $scope.frntree.properties = $scope.frntree.properties.replace(/\n/g, "<br/>");
-  };
+ 
 var fd = new FormData();
 
         $scope.select = function(){  

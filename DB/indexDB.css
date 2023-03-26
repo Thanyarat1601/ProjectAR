@@ -13,8 +13,11 @@
         height: 100%;
 		box-sizing: border-box;
 		display: block;
-		/* background-color: #0e4166;
-    background-image: linear-gradient(to bottom, rgba(14, 65, 102, 0.86), #0e4166); */
+		 background-color: #b3e5fc;
+    background-image: linear-gradient(to bottom, rgba(174, 214, 243, 0.86), #b3e5fc); 
+    position: fixed;
+    bottom: 0;
+
 	}
 
 
