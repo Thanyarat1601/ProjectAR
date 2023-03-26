@@ -35,16 +35,7 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
         }; 
     }; 
 
-    function formatWithDashes(input) {
-      // Get the input value without dashes
-      const inputValue = input.value.replace(/-/g, '');
-      // Format the input value with dashes
-      const formattedValue = inputValue.replace(/(\d{1})(\d{5})(\d{3})(\d{3})/, '$1-$2-$3-$4');
-      // Set the input value with dashes
-      input.value = formattedValue;
-    }
-    
-    
+  
  $scope.rtree = {};
  $scope.rtree1 = {};
  $scope.show = {};
