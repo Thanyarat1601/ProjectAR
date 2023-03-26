@@ -34,11 +34,11 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
               img.onload = () => URL.revokeObjectURL(img.src);  //6 
         }; 
     }; 
-
-  
+ 
  $scope.rtree = {};
  $scope.rtree1 = {};
- $scope.show = {};
+ $scope.show = {}; 
+ 
  
  var fd = new FormData();
 

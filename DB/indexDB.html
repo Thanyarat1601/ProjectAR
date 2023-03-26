@@ -82,7 +82,7 @@
                     <div class="card-body">
                       <h5 class="card-title">ข้อมูลพรรณไม้</h5>
                       <p scope="col"><img ng-src  = "{{x.picture}}" width="330px" height="260px"></p>
-                      <p scope="col" >รหัสพรรณไม้: {{x.ID}}</p>
+                      <p scope="col">รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}</p>
                       <p scope="col">ชื่อพรรณไม้     : {{x.thainame}}</p>
                       <p scope="col">ชื่อวิทยาศาสตร์  : {{x.engname}}</p>
                       <p scope="col"style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}} </p>
@@ -119,7 +119,7 @@
                            >Edit</button>
 
                         </div>
-                       
+                        <br><br>
                       </div>
               </div>  
               </div>  
@@ -152,7 +152,7 @@
             </div>
             <div class="mb-3">
               <label for="exampleFormControlTextarea1" class="form-label">สรรพคุณ</label>
-              <textarea  class="form-control" ng-model="frntree.properties"  id="exampleFormControlTextarea1" rows="3" ng-keyup="formatTextarea()"></textarea>
+              <textarea  class="form-control" ng-model="frntree.properties"  id="exampleFormControlTextarea1" rows="3" ></textarea>
             </div>
             <div class="col-md-6">
               <label for="inputMajor2" class="form-label">Picture</label>
@@ -222,8 +222,8 @@
                       <label for="inputpicture" class="form-label">รูปภาพ</label>
                       <input id="imageinput2" type="file" accept="image/*" multiple="multiple" ng-model="rtree1.picture" class="form-control" id="inputMajor2">
                       <div id="previewarea" class="row">
-                        <div class="col-md-4" ng-repeat = "x in rtree">
-                          <img ng-src= "{{x.picture}}" alt="Preview" class="img-thumbnail">
+                        <div class="col-md-4" ng-repeat="x in rtree" ng-if="x.ID == rtree1.ID">
+                          <img ng-src="{{x.picture}}" alt="Preview" class="img-thumbnail">
                         </div>
                       </div>
                     </div>
