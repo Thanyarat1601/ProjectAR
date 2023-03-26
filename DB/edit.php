@@ -38,20 +38,18 @@ try {
         // Move the new file to the server
         $newname = $target_file;
         move_uploaded_file($_FILES['0']['tmp_name'], $target_file);
-        $sql = "UPDATE `tree` SET 
-            `thainame` = '{$d->thainame}',
-            `engname` = '{$d->engname}',
-            `properties` = '{$d->properties}',
-            `picture` = '{$newname}'
-            WHERE `ID` = {$d->ID} ";
     } else {
-        // No new file uploaded, only update the text fields
-        $sql = "UPDATE `tree` SET 
-            `thainame` = '{$d->thainame}',
-            `engname` = '{$d->engname}',
-            `properties` = '{$d->properties}'
-            WHERE `ID` = {$d->ID} ";
+        // No new file uploaded, use the existing image
+        $newname = $NDK;
     }
+
+    // Update the database with the new or existing image
+    $sql = "UPDATE `tree` SET 
+        `thainame` = '{$d->thainame}',
+        `engname` = '{$d->engname}',
+        `properties` = '{$d->properties}',
+        `picture` = '{$newname}'
+        WHERE `ID` = {$d->ID} ";
 
     if ($conn->query($sql) == TRUE) {
         echo "up";
@@ -63,5 +61,6 @@ try {
 } catch (mysqli_sql_exception $e) {
     echo $e->getCode();
 }
+
 
 ?>
