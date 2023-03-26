@@ -8,8 +8,10 @@ try {
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $x = $_POST['data'];
-    $d = json_decode($x);
+    // Sanitize user input
+    $thainame = mysqli_real_escape_string($conn, $d->thainame);
+    $engname = mysqli_real_escape_string($conn, $d->engname);
+    $properties = mysqli_real_escape_string($conn, $d->properties);
 
     $sql = "SELECT * FROM `tree` WHERE `ID` = {$d->ID} ";
     $result = $conn->query($sql);
@@ -32,24 +34,38 @@ try {
             echo "Sorry, only JPG, JPEG, PNG & GIF files are allowed.";
             exit;
         }
+
+        // Check if the file was uploaded successfully
+        if (!is_uploaded_file($_FILES['0']['tmp_name'])) {
+            echo "Sorry, there was an error uploading your file.";
+            exit;
+        }
+
         if (!empty($NDK) && file_exists($NDK)) {
             unlink($NDK);
         }
+
         // Move the new file to the server
         $newname = $target_file;
-        move_uploaded_file($_FILES['0']['tmp_name'], $target_file);
-    } else {
-        // No new file uploaded, use the existing image
-        $newname = $NDK;
-    }
+        if (!move_uploaded_file($_FILES['0']['tmp_name'], $target_file)) {
+            echo "Sorry, there was an error uploading your file.";
+            exit;
+        }
 
-    // Update the database with the new or existing image
-    $sql = "UPDATE `tree` SET 
-        `thainame` = '{$d->thainame}',
-        `engname` = '{$d->engname}',
-        `properties` = '{$d->properties}',
-        `picture` = '{$newname}'
-        WHERE `ID` = {$d->ID} ";
+        $sql = "UPDATE `tree` SET 
+            `thainame` = '{$thainame}',
+            `engname` = '{$engname}',
+            `properties` = '{$properties}',
+            `picture` = '{$newname}'
+            WHERE `ID` = {$d->ID} ";
+    } else {
+        // No new file uploaded, only update the text fields
+        $sql = "UPDATE `tree` SET 
+            `thainame` = '{$thainame}',
+            `engname` = '{$engname}',
+            `properties` = '{$properties}'
+            WHERE `ID` = {$d->ID} ";
+    }
 
     if ($conn->query($sql) == TRUE) {
         echo "up";
@@ -59,8 +75,8 @@ try {
 
     $conn->close();
 } catch (mysqli_sql_exception $e) {
-    echo $e->getCode();
-}
+   
+
 
 
 ?>
