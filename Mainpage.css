@@ -18,7 +18,17 @@ body {
     background: #b3e5fc;
     min-height: 100vh;
 }
+    /* .filter-section .search-input {
+        display: inline-block;
+    }
 
+    .search-input-wrapper .search-input {
+        width: 100%;
+        padding: 10px 36px 10px 45px;
+        background: url(./public/img/search-icon.svg) no-repeat left 15px center;
+        border-bottom: 1px solid #EBEBF2;
+        transition: border 0.3s ease-in-out;
+    } */
 
 #header {
     position: absolute;
