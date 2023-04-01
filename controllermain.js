@@ -50,19 +50,19 @@ app.directive('fileModel', ['$parse', function ($parse) {
         // }       
         // }]);
 
-// app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
+app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
   
-//         while (area.hasChildNodes()) { //3 
-//               area.removeChild(area.firstChild); 
-//         }; 
-//         for (var i = 0; i < e.target.files.length; i++) { //4 
-//               let img = new Image(); //4 
-//               img.width = 100;       //4 
-//               img.src = URL.createObjectURL(e.target.files[i]);  //4 
-//               area.appendChild(img);  //5 
-//               img.onload = () => URL.revokeObjectURL(img.src);  //6 
-//         }; 
-//     }];
+        while (area.hasChildNodes()) { //3 
+              area.removeChild(area.firstChild); 
+        }; 
+        for (var i = 0; i < e.target.files.length; i++) { //4 
+              let img = new Image(); //4 
+              img.width = 100;       //4 
+              img.src = URL.createObjectURL(e.target.files[i]);  //4 
+              area.appendChild(img);  //5 
+              img.onload = () => URL.revokeObjectURL(img.src);  //6 
+        }; 
+    }]);
  
 document.addEventListener('ViewWebController',['$scope','$http', function($scope,$http,) {
     const input = document.getElementById('imageinput'); //1 
