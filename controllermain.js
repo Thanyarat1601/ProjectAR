@@ -34,7 +34,7 @@ app.controller('ViewWebController', ['$scope', '$http', function($scope, $http) 
             img.onload = () => URL.revokeObjectURL(img.src);
         };
     };
-
+    
     window.addEventListener('scroll', function() {
         let value = window.scrollY;
 
