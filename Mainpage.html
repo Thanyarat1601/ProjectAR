@@ -47,20 +47,21 @@
                 <img ng-src  = "{{x.picture}}" height="420" width="327">
             </div>
             <div class="product-info">
+                <!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
             <div class="product-text" >
                 <h1>{{x.thainame}}</h1>
                 <h2>{{x.engname}}</h2>
-                <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}</p>
-                <p>ชื่อวิทยาศาสตร์  : {{x.engname}}</p>
-                <p>สรรพคุณ : {{x.properties}}</p> 
+                <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}<br>
+                ชื่อวิทยาศาสตร์  : {{x.engname}}<br>
+                สรรพคุณ : {{x.properties}}</p> 
             </div>
-            <div class="product-price-btn">
-                <button type="button">Close</button>
+            <!-- <div class="product-price-btn">
+                <button type="button">Close</button> -->
             </div>
             </div>
         </div>
     </div>
-    <div class="card mb-4 box-shadow" style="width: 25rem; margin-right: 35px;"  ng-repeat = "x in rtree">   
+    <!-- <div class="card mb-4 box-shadow" style="width: 25rem; margin-right: 35px;"  ng-repeat = "x in rtree">   
         <div class="card-body">
           <h5 class="card-title">ข้อมูลพรรณไม้</h5>
           <p scope="col"><img ng-src  = "{{x.picture}}" width="330px" height="260px"></p>
@@ -69,7 +70,7 @@
           <p scope="col">ชื่อวิทยาศาสตร์  : {{x.engname}}</p>
           <p scope="col"style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}} </p>
 
-          </div>
+          </div> -->
     <script>
         let text = document.getElementById('text');
         let bird1 = document.getElementById('bird1');
@@ -88,6 +89,7 @@
             bird2.style.left = value * 2 + 'px';
             bird1.style.top = value * -1.5 + 'px';
             bird1.style.left = value * -5 + 'px';
+            // btn.style.marginTop = value * 1.5 + 'px';
             rocks.style.top = value * -.12 + 'px';
             forest.style.top = value * .40 + 'px';
             header.style.top = value * .5 + 'px';
