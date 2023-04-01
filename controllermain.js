@@ -1,29 +1,5 @@
-var app = angular.module('ViewWeb', []);
-
-app.directive('fileModel', ['$parse', function ($parse) { 
-  return { 
-     restrict: 'A', 
-     link: function(scope, element, attrs) { 
-        var model = $parse(attrs.fileModel); 
-        var modelSetter = model.assign; 
-
-        element.bind('change', function() { 
-           scope.$apply(function() { 
-              modelSetter(scope, element[0].files);
-              scope.$apply(); 
-           }); 
-
-        }); 
-
-     } 
-
-  }; 
-
-}]); 
-
 app.controller('ViewWebController', ['$scope', '$http', function($scope, $http) {
     $scope.rtree = {};
-    var area = document.getElementById('previewarea');
 
     $scope.select = function() {
         var tem = null;
@@ -44,18 +20,19 @@ app.controller('ViewWebController', ['$scope', '$http', function($scope, $http) 
         });
     };
 
-    while (area.hasChildNodes()) { //3 
-        area.removeChild(area.firstChild); 
-    }; 
-    const input = document.getElementById('imageinput'); //1 
-    input.onchange = (e) => { //3
-        for (var i = 0; i < e.target.files.length; i++) { //4 
-            let img = new Image(); //4 
-            img.width = 100;       //4 
-            img.src = URL.createObjectURL(e.target.files[i]);  //4 
-            area.appendChild(img);  //5 
-            img.onload = () => URL.revokeObjectURL(img.src);  //6 
-        }; 
+    const input = document.getElementById('imageinput');
+    input.onchange = (e) => {
+        var area = document.getElementById('previewarea');
+        while (area.hasChildNodes()) {
+            area.removeChild(area.firstChild);
+        };
+        for (var i = 0; i < e.target.files.length; i++) {
+            let img = new Image();
+            img.width = 100;
+            img.src = URL.createObjectURL(e.target.files[i]);
+            area.appendChild(img);
+            img.onload = () => URL.revokeObjectURL(img.src);
+        };
     };
 
     window.addEventListener('scroll', function() {
