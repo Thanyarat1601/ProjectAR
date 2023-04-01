@@ -44,7 +44,7 @@
 
         <div class="wrapper" id="container">
             <div class="product-img" ng-repeat="x in rtree">
-                <img ng-src="{{x.picture}}" height="420" width="327">
+                <img ng-src="{{x.picture}}" height="150" width="200">
             
                 <div class="product-info" >
                     <div class="product-text">
@@ -57,6 +57,34 @@
             </div>
         </div>
     </div>
+    <script>
+        // สร้าง XMLHttpRequest object สำหรับใช้งาน AJAX
+        var xhttp = new XMLHttpRequest();
+      
+        // กำหนด function สำหรับรับข้อมูลจากฝั่งเซิร์ฟเวอร์
+        xhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            // แปลงข้อมูล JSON ให้กลายเป็น JavaScript object
+            var data = JSON.parse(this.responseText);
+      
+            // สร้าง HTML จากข้อมูล
+            var container = document.getElementById("container");
+      
+            data.forEach(function(item) {
+              var box = document.createElement("div");
+              box.classList.add("wrapper");
+              box.textContent = item;
+              container.appendChild(box);
+            });
+          }
+        };
+      
+        // ส่ง request ไปยังไฟล์ PHP เพื่อขอข้อมูล
+        xhttp.open("GET", "selectmain.php", true);
+        xhttp.send();
+    </script>
+
+});
     <!-- <div class="card mb-4 box-shadow" style="width: 25rem; margin-right: 35px;"  ng-repeat = "x in rtree">   
         <div class="card-body">
           <h5 class="card-title">ข้อมูลพรรณไม้</h5>
