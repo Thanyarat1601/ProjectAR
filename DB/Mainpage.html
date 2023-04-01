@@ -45,17 +45,18 @@
         <div class="wrapper">
             <div class="product-img" ng-repeat="x in rtree">
                 <img ng-src="{{x.picture}}" height="420" width="327">
-            </div>
-            <div class="product-info" ng-repeat="x in rtree">
-                <div class="product-text">
-                    <h1>{{x.thainame}}</h1>
-                    <h2>{{x.engname}}</h2>
-                    <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}<br>
-                    ชื่อวิทยาศาสตร์  : {{x.engname}}<br>
-                    สรรพคุณ : {{x.properties}}</p> 
-                </div>
+            
+                <div class="product-info" >
+                    <div class="product-text">
+                        <h1>{{x.thainame}}</h1>
+                        <h2>{{x.engname}}</h2>
+                        <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}<br>
+                        ชื่อวิทยาศาสตร์  : {{x.engname}}<br>
+                        สรรพคุณ : {{x.properties}}</p> 
+                    </div>
             </div>
         </div>
+    </div>
     <!-- <div class="card mb-4 box-shadow" style="width: 25rem; margin-right: 35px;"  ng-repeat = "x in rtree">   
         <div class="card-body">
           <h5 class="card-title">ข้อมูลพรรณไม้</h5>
