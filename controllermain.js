@@ -1,4 +1,5 @@
-app.controller('ViewWebController', ['$scope', '$http', function($scope, $http) {
+angular.module('myApp', [])
+.controller('ViewWebController', ['$scope', '$http', function($scope, $http) {
     $scope.rtree = {};
 
     $scope.select = function() {
@@ -11,7 +12,7 @@ app.controller('ViewWebController', ['$scope', '$http', function($scope, $http) 
 
         $http({
             method: 'post',
-            url: './DB/select.php',
+            url: 'selectmain.php',
             data: {search: tem},
         }).then(function mySuccess(response) {
             $scope.rtree = response.data;
@@ -20,20 +21,15 @@ app.controller('ViewWebController', ['$scope', '$http', function($scope, $http) 
         });
     };
 
-    const input = document.getElementById('imageinput');
-    input.onchange = (e) => {
-        var area = document.getElementById('previewarea');
-        while (area.hasChildNodes()) {
-            area.removeChild(area.firstChild);
-        };
-        for (var i = 0; i < e.target.files.length; i++) {
-            let img = new Image();
-            img.width = 100;
-            img.src = URL.createObjectURL(e.target.files[i]);
-            area.appendChild(img);
-            img.onload = () => URL.revokeObjectURL(img.src);
-        };
-    };
+    fetch('http://localhost/ProjectAR/DB/api/get_image_url.php')
+  .then(response => response.json())
+  .then(data => {
+    var area = document.getElementById('previewarea');
+    var img = new Image();
+    img.width = 100;
+    img.src = data.url; // ใช้ URL ของภาพจาก API endpoint ที่ส่งกลับมา
+    area.appendChild(img);
+  });
 
     window.addEventListener('scroll', function() {
         let value = window.scrollY;
