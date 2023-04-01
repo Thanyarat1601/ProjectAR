@@ -41,7 +41,16 @@ angular.module('myApp', [])
             //     area.appendChild(img);
             //     img.onload = () => URL.revokeObjectURL(img.src);
             // };
+            var data = <?php echo json_encode($x);  ?>; // สมมติว่านี่คือฐานข้อมูลของคุณ
+            var container = document.getElementById("container");
+          
+            data.forEach(function(item) {
+              var box = document.createElement("div");
+              box.classList.add("wrapper");
+              box.textContent = item;
+              container.appendChild(wrapper);
 
+            });
 
     window.addEventListener('scroll', function() {
         let value = window.scrollY;
