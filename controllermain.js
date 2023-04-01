@@ -34,7 +34,7 @@ $scope.select = function() {
 
     $http({
         method: 'post',
-        url: './DB/select.php',
+        url: 'selectmain.php',
         data: {search: tem},
     }).then(function mySuccess(response) {
         $scope.rtree = response.data;
