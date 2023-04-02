@@ -147,7 +147,7 @@ body {
   
   .wrapper {
     height: 420px;
-    width: 750px;
+    width: 740px;
     margin: 0 auto;
     border-radius: 7px 7px 7px 7px;
     /* VIA CSS MATIC https://goo.gl/cIbnS */
@@ -164,14 +164,18 @@ body {
   
   .product-img img {
     float: left;
+    object-fit: cover;
+    height: 420px;
+    width: 327px;
     border-radius: 7px 0 0 7px;
-    /* margin-right: 20px; */
+    box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
   }
+
   
   .product-info {
     float: left;
     height: 420px;
-    width: 423px;
+    width: 413px;
     border-radius: 0 7px 10px 7px;
     background-color: #ffffff;
     margin-bottom: 20px;
@@ -179,7 +183,7 @@ body {
   
   .product-text {
     height: 300px;
-    width: 423px;
+    width: 413px;
   }
   
   .product-text h1 {
@@ -189,8 +193,7 @@ body {
     color: #474747;
   }
   
-  .product-text h1,
-  .product-price-btn p {
+  .product-text h1 {
     font-family: 'TH Niramit AS', serif;
   }
   
@@ -205,55 +208,12 @@ body {
   }
   
   .product-text p {
-    height: 200px;
+    height: 210px;
     margin: 0 0 0 38px;
     font-family: 'TH Niramit AS', serif;
     color: #828181;
     line-height: 1.7em;
     font-size: 20px;
     font-weight: lighter;
-    overflow: hidden;
-  }
-  
-  .product-price-btn {
-    height: 103px;
-    width: 327px;
-    margin-top: 17px;
-    position: relative;
-  }
-  
-  .product-price-btn p {
-    display: inline-block;
-    position: absolute;
-    top: -13px;
-    height: 50px;
-    font-family: 'TH Niramit AS', serif;
-    margin: 0 0 0 38px;
-    font-size: 28px;
-    font-weight: lighter;
-    color: #474747;
-  }
-  
-  .product-price-btn button {
-    float: right;
-    display: inline-block;
-    height: 30px;
-    width: 120px;
-    margin: 0 40px 0 16px;
-    box-sizing: border-box;
-    border: transparent;
-    border-radius: 60px;
-    font-family: 'TH Niramit AS', sans-serif;
-    font-size: 18px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    color: #ffffff;
-    background-color: #303f9f;
-    cursor: pointer;
-    outline: none;
-  }
-  
-  .product-price-btn button:hover {
-    background-color: #303f9f;
+    overflow: auto;
   }
