@@ -48,3 +48,25 @@ angular.module('myApp', [])
         header.style.top = value * .5 + 'px';
     });
 }]);
+
+document.addEventListener("scroll", function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var contentOffsetTop = document.querySelector("main").offsetTop;
+    var headerHeight = document.querySelector("header").offsetHeight;
+    var contentOffsetBottom = contentOffsetTop + document.querySelector("main").offsetHeight;
+    var windowHeight = window.innerHeight;
+  
+    if (scrollTop < headerHeight) {
+      document.body.classList.add("background-secondary");
+      document.body.classList.remove("background-primary");
+    } else if (scrollTop >= contentOffsetTop && scrollTop < contentOffsetBottom - windowHeight) {
+      document.body.classList.add("background-primary");
+      document.body.classList.remove("background-secondary");
+    } else if (scrollTop >= contentOffsetBottom - windowHeight && scrollTop < contentOffsetBottom) {
+      document.body.classList.add("background-primary");
+      document.body.classList.remove("background-secondary");
+    } else {
+      document.body.classList.remove("background-primary");
+      document.body.classList.add("background-secondary");
+    }
+  });
