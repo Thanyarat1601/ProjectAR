@@ -21,28 +21,9 @@ angular.module('myApp', [])
         });
     };
 
-//     fetch('http://localhost/ProjectAR/DB/api/get_image_url.php')
-//   .then(response => response.json())
-//   .then(data => {
-//     var area = document.getElementById('previewarea');
-//     var img = new Image();
-//     img.width = 100;
-//     img.src = data.url; // ใช้ URL ของภาพจาก API endpoint ที่ส่งกลับมา
-//     area.appendChild(img);
-//   });
-
-
             var area = document.getElementById('previewarea');
 
-            // for (var i = 0; i < e.target.files.length; i++) {
-            //     let img = new Image();
-            //     img.width = 100;
-            //     img.src = URL.createObjectURL(e.target.files[i]);
-            //     area.appendChild(img);
-            //     img.onload = () => URL.revokeObjectURL(img.src);
-            // };
 
-            // var data =  {search: tem};
 
     window.addEventListener('scroll', function() {
         let value = window.scrollY;
@@ -67,3 +48,25 @@ angular.module('myApp', [])
         header.style.top = value * .5 + 'px';
     });
 }]);
+
+document.addEventListener("scroll", function() {
+    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    var contentOffsetTop = document.querySelector("main").offsetTop;
+    var headerHeight = document.querySelector("header").offsetHeight;
+    var contentOffsetBottom = contentOffsetTop + document.querySelector("main").offsetHeight;
+    var windowHeight = window.innerHeight;
+  
+    if (scrollTop < headerHeight) {
+      document.body.classList.add("background-secondary");
+      document.body.classList.remove("background-primary");
+    } else if (scrollTop >= contentOffsetTop && scrollTop < contentOffsetBottom - windowHeight) {
+      document.body.classList.add("background-primary");
+      document.body.classList.remove("background-secondary");
+    } else if (scrollTop >= contentOffsetBottom - windowHeight && scrollTop < contentOffsetBottom) {
+      document.body.classList.add("background-primary");
+      document.body.classList.remove("background-secondary");
+    } else {
+      document.body.classList.remove("background-primary");
+      document.body.classList.add("background-secondary");
+    }
+  });

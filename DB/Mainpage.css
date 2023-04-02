@@ -141,10 +141,7 @@ section #text span {
     color: #fff;
 }
 
-body {
-  background-color: #b3e5fc;
-}
-  
+
   .wrapper {
     height: 420px;
     width: 740px;
@@ -184,6 +181,7 @@ body {
   .product-text {
     height: 300px;
     width: 413px;
+    padding-right: 20px;
   }
   
   .product-text h1 {
@@ -195,6 +193,7 @@ body {
   
   .product-text h1 {
     font-family: 'TH Niramit AS', serif;
+    
   }
   
   .product-text h2 {
@@ -203,17 +202,24 @@ body {
     font-family: 'TH Niramit AS', sans-serif;
     font-weight: 400;
     text-transform: uppercase;
-    color: #9c9c9c;
+    color: #909090;
     letter-spacing: 0.2em;
   }
   
   .product-text p {
     height: 210px;
-    margin: 0 0 0 38px;
+    margin: 0 0 0 30px;
     font-family: 'TH Niramit AS', serif;
-    color: #828181;
+    color: #6b6b6b;
     line-height: 1.7em;
     font-size: 20px;
     font-weight: lighter;
     overflow: auto;
   }
+   .background-primary {
+    background-color: var(--primary);
+    }
+    
+     .background-secondary {
+    background-color: #b3e5fc;
+    } 
