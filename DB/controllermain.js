@@ -49,24 +49,34 @@ angular.module('myApp', [])
     });
 }]);
 
-document.addEventListener("scroll", function() {
+var headerElement = document.querySelector("header");
+
+if (headerElement !== null) {
+  headerElement.style.backgroundColor = "#f00";
+}
+window.addEventListener("scroll", function() {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var contentOffsetTop = document.querySelector("main").offsetTop;
-    var headerHeight = document.querySelector("header").offsetHeight;
-    var contentOffsetBottom = contentOffsetTop + document.querySelector("main").offsetHeight;
-    var windowHeight = window.innerHeight;
+    var contentElement = document.querySelector("main");
+    var headerElement = document.querySelector("header");
   
-    if (scrollTop < headerHeight) {
-      document.body.classList.add("background-secondary");
-      document.body.classList.remove("background-primary");
-    } else if (scrollTop >= contentOffsetTop && scrollTop < contentOffsetBottom - windowHeight) {
-      document.body.classList.add("background-primary");
-      document.body.classList.remove("background-secondary");
-    } else if (scrollTop >= contentOffsetBottom - windowHeight && scrollTop < contentOffsetBottom) {
-      document.body.classList.add("background-primary");
-      document.body.classList.remove("background-secondary");
-    } else {
-      document.body.classList.remove("background-primary");
-      document.body.classList.add("background-secondary");
+    if (contentElement !== null) {
+      var contentOffsetTop = contentElement.offsetTop;
+      var headerHeight = headerElement.offsetHeight;
+      var contentOffsetBottom = contentOffsetTop + contentElement.offsetHeight;
+      var windowHeight = window.innerHeight;
+  
+      if (scrollTop < headerHeight) {
+        document.body.classList.add("background-secondary");
+        document.body.classList.remove("background-primary");
+      } else if (scrollTop >= contentOffsetTop && scrollTop < contentOffsetBottom - windowHeight) {
+        document.body.classList.add("background-primary");
+        document.body.classList.remove("background-secondary");
+      } else if (scrollTop >= contentOffsetBottom - windowHeight && scrollTop < contentOffsetBottom) {
+        document.body.classList.add("background-primary");
+        document.body.classList.remove("background-secondary");
+      } else {
+        document.body.classList.remove("background-primary");
+        document.body.classList.add("background-secondary");
+      }
     }
   });
