@@ -42,18 +42,18 @@ angular.module('myApp', [])
         bird2.style.left = value * 2 + 'px';
         bird1.style.top = value * -1.5 + 'px';
         bird1.style.left = value * -5 + 'px';
-        btn.style.marginTop = value * 1.5 + 'px';
+        if (btn) { // check if btn is not null
+            btn.style.marginTop = value * 1.5 + 'px';
+        }
         rocks.style.top = value * -.12 + 'px';
         forest.style.top = value * .40 + 'px';
-        header.style.top = value * .5 + 'px';
+        if (header) { // check if header is not null
+            header.style.top = value * .5 + 'px';
+        }
     });
 }]);
 
-var headerElement = document.querySelector("header");
 
-if (headerElement !== null) {
-  headerElement.style.backgroundColor = "#f00";
-}
 window.addEventListener("scroll", function() {
     var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
     var contentElement = document.querySelector("main");
