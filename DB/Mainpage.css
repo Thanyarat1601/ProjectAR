@@ -143,6 +143,7 @@ section #text span {
 
 body {
   background-color: #b3e5fc;
+
 }
   
   .wrapper {
@@ -184,6 +185,7 @@ body {
   .product-text {
     height: 300px;
     width: 413px;
+    padding-right: 20px;
   }
   
   .product-text h1 {
@@ -195,6 +197,7 @@ body {
   
   .product-text h1 {
     font-family: 'TH Niramit AS', serif;
+    
   }
   
   .product-text h2 {
@@ -209,7 +212,7 @@ body {
   
   .product-text p {
     height: 210px;
-    margin: 0 0 0 38px;
+    margin: 0 0 0 30px;
     font-family: 'TH Niramit AS', serif;
     color: #828181;
     line-height: 1.7em;
