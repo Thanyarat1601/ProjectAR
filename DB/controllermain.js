@@ -45,7 +45,7 @@ angular.module('myApp', [])
         if (btn) { // check if btn is not null
             btn.style.marginTop = value * 1.5 + 'px';
         }
-        rocks.style.top = value * -.12 + 'px';
+        rocks.style.top = value * -.13 + 'px';
         forest.style.top = value * .40 + 'px';
         if (header) { // check if header is not null
             header.style.top = value * .5 + 'px';
@@ -53,30 +53,3 @@ angular.module('myApp', [])
     });
 }]);
 
-
-window.addEventListener("scroll", function() {
-    var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-    var contentElement = document.querySelector("main");
-    var headerElement = document.querySelector("header");
-  
-    if (contentElement !== null) {
-      var contentOffsetTop = contentElement.offsetTop;
-      var headerHeight = headerElement.offsetHeight;
-      var contentOffsetBottom = contentOffsetTop + contentElement.offsetHeight;
-      var windowHeight = window.innerHeight;
-  
-      if (scrollTop < headerHeight) {
-        document.body.classList.add("background-secondary");
-        document.body.classList.remove("background-primary");
-      } else if (scrollTop >= contentOffsetTop && scrollTop < contentOffsetBottom - windowHeight) {
-        document.body.classList.add("background-primary");
-        document.body.classList.remove("background-secondary");
-      } else if (scrollTop >= contentOffsetBottom - windowHeight && scrollTop < contentOffsetBottom) {
-        document.body.classList.add("background-primary");
-        document.body.classList.remove("background-secondary");
-      } else {
-        document.body.classList.remove("background-primary");
-        document.body.classList.add("background-secondary");
-      }
-    }
-  });

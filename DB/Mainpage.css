@@ -198,7 +198,7 @@ section #text span {
   
   .product-text h2 {
     margin: 0 0 47px 38px;
-    font-size: 18px;
+    font-size: 19px;
     font-family: 'TH Niramit AS', sans-serif;
     font-weight: 400;
     text-transform: uppercase;
@@ -216,10 +216,3 @@ section #text span {
     font-weight: lighter;
     overflow: auto;
   }
-   .background-primary {
-    background-color: var(--primary);
-    }
-    
-     .background-secondary {
-    background-color: #b3e5fc;
-    } 
