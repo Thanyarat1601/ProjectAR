@@ -81,6 +81,7 @@ body {
     font-size: 1.3em;
 }
 
+
 #header ul li a.active {
     background: var(--primary);
     color: rgb(255, 255, 255);
@@ -118,7 +119,7 @@ body {
 }
 
 #header ul li a.search input.search__input:focus + .search__icon {
-  color: var(--primary);
+  color: var(--primary); 
 }
 
 #header ul li a.search .__icon {
