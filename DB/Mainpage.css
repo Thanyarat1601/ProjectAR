@@ -103,9 +103,8 @@ body {
   border-radius: 1rem;
   font-size: 1.35rem;
   padding-left: 3rem;
-  box-shadow:  inset .2rem .2rem .5rem var(--greyLight-2);
+  /* box-shadow:  inset .2rem .2rem .5rem var(--greyLight-2); */
   background: var(--primary);
-  font-family: inherit;
   color: var(--white);
 } /* add this closing curly brace here */
 
@@ -122,15 +121,17 @@ body {
   color: var(--primary); 
 }
 
-#header ul li a.search .__icon {
+/* #header ul li a.search__icon {
   height: 2rem;
   position: absolute;
   font-size: 2rem;
   padding: 0 1rem;
   display: flex;
-  color: var(--greyDark);
+  color: var(--primary-dark);
+  
   transition: .3s ease;
-}
+}  */
+
    section {
     position: relative;
     width: 100%;
