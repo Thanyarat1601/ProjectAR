@@ -3,8 +3,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
 :root {
-    --primary: #303f9f;
-
+  --primary: #303f9f;
   --primary-light: #8abdff;
   --primary-dark: #5b0eeb;
   
@@ -13,7 +12,18 @@
   --greyLight-2: #c8d0e7;
   --greyLight-3: #bec8e4;
   --greyDark: #9baacf;
+
+  --shadow: .3rem .3rem .6rem var(--greyLight-2), -.2rem -.2rem .5rem var(--white);
+  --inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), inset -.2rem -.2rem .5rem var(--white);
 }
+
+/* Use variables where needed */
+div {
+  box-shadow: var(--shadow);
+  box-shadow: var(--inner-shadow);
+}
+
+
 
 
 *, *::before, *::after {
@@ -97,13 +107,19 @@ body {
   background: none;
   font-family: inherit;
   color: var(--greyDark);
+} /* add this closing curly brace here */
 
-  &::placeholder { color: var(--greyLight-3); }
-  &:focus {
-    outline: none;
-    box-shadow:   .3rem .3rem .6rem var(--greyLight-2), 
-    -.2rem -.2rem .5rem var(--white);
-  }
+#header ul li a.search input.search__input::placeholder {
+  color: var(--greyLight-3);
+}
+
+#header ul li a.search input.search__input:focus { 
+  outline: none; 
+  box-shadow: var(--shadow); 
+}
+
+#header ul li a.search input.search__input:focus + .search__icon {
+  color: var(--primary);
 }
 
 #header ul li a.search .search__icon {
@@ -116,9 +132,8 @@ body {
   transition: .3s ease;
 }
 
-#header ul li a.search input.search__input:focus + .search__icon {
-  color: var(--primary);
-}
+
+
 
     
 
