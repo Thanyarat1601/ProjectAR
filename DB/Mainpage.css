@@ -4,23 +4,24 @@
 
 :root {
     --primary: #303f9f;
-
-  --primary-light: #8abdff;
-  --primary-dark: #5b0eeb;
+    --primary-light: #8abdff;
+    --primary-dark: #5b0eeb;
+    
+    --white: #FFFFFF;
+    --greyLight-1: #E4EBF5;
+    --greyLight-2: #c8d0e7;
+    --greyLight-3: #bec8e4;
+    --greyDark: #9baacf;
   
-  --white: #FFFFFF;
-  --greyLight-1: #E4EBF5;
-  --greyLight-2: #c8d0e7;
-  --greyLight-3: #bec8e4;
-  --greyDark: #9baacf;
-}
-
-
-*, *::before, *::after {
-  margin: 0;
-  padding: 0;
-  box-sizing: inherit;
-}
+    --shadow: .3rem .3rem .6rem var(--greyLight-2), -.2rem -.2rem .5rem var(--white);
+    --inner-shadow: inset .2rem .2rem .5rem var(--greyLight-2), inset -.2rem -.2rem .5rem var(--white);
+  }
+  
+  /* Use variables where needed */
+  div {
+    box-shadow: var(--shadow);
+    box-shadow: var(--inner-shadow);
+  }
 * {
     margin: 0;
     padding: 0;
@@ -79,46 +80,48 @@ body {
 
 
 #header ul li a.search {
-  grid-column: 3 / 4;
-  grid-row: 2 / 3;
-  position: relative;
-  display: flex;
-  align-items: center;
-}
-
-#header ul li a.search input.search__input {
-  width: 16rem;
-  height: 2.3rem;
-  border: none;
-  border-radius: 1rem;
-  font-size: 1.5rem;
-  padding-left: 3rem;
-  box-shadow:  inset .2rem .2rem .5rem var(--greyLight-2);
-  background: none;
-  font-family: inherit;
-  color: var(--greyDark);
-
-  &::placeholder { color: var(--greyLight-3); }
-  &:focus {
-    outline: none;
-    box-shadow:   .3rem .3rem .6rem var(--greyLight-2), 
-    -.2rem -.2rem .5rem var(--white);
+    grid-column: 3 / 4;
+    grid-row: 2 / 3;
+    position: relative;
+    display: flex;
+    align-items: center;
   }
-}
-
-#header ul li a.search .search__icon {
-  height: 2rem;
-  position: absolute;
-  font-size: 2rem;
-  padding: 0 1rem;
-  display: flex;
-  color: var(--greyDark);
-  transition: .3s ease;
-}
-
-#header ul li a.search input.search__input:focus + .search__icon {
-  color: var(--primary);
-}
+  
+  #header ul li a.search input.search__input {
+    width: 16rem;
+    height: 2.3rem;
+    border: none;
+    border-radius: 1rem;
+    font-size: 1.4rem;
+    padding-left: 3.8rem;
+    box-shadow:  inset .2rem .2rem .5rem var(--greyLight-2);
+    background: none;
+    font-family: inherit;
+    color: var(--greyDark);
+  } /* add this closing curly brace here */
+  
+  #header ul li a.search input.search__input::placeholder {
+    color: var(--greyLight-3);
+  }
+  
+  #header ul li a.search input.search__input:focus { 
+    outline: none; 
+    box-shadow: var(--shadow); 
+  }
+  
+  #header ul li a.search input.search__input:focus + .search__icon {
+    color: var(--primary);
+  }
+  
+  #header ul li a.search .search__icon {
+    height: 2rem;
+    position: absolute;
+    font-size: 2rem;
+    padding: 0 1rem;
+    display: flex;
+    color: var(--greyDark);
+    transition: .3s ease;
+  }
 
     
 
