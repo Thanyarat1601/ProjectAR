@@ -42,7 +42,9 @@ body {
     overflow-x: hidden;
     background: #b3e5fc;
     min-height: 100vh;
+    
 }
+
 #header {
     position: absolute;
     top: 0;
@@ -94,7 +96,20 @@ body {
   position: relative;
   display: flex;
   align-items: center;
+  background: none;
 }
+
+#header ul li a.search .search__icon { /* เพิ่มเติมคลาส search__icon */
+  background: none;
+  box-shadow: none;
+  }
+  
+#header ul li a.search .search__icon svg { /* เพิ่มเติมคลาส search__icon /
+    fill: var(--primary); / เปลี่ยนเป็นสีเดียวกับปุ่ม search */
+    width: 24px;
+    height: 24px;
+    }
+  
 
 #header ul li a.search input.search__input {
   width: 16rem;
@@ -132,6 +147,16 @@ body {
   transition: .3s ease;
 }  */
 
+header .search__icon {
+  background: none;
+  box-shadow: none;
+  }
+  
+  header .search__icon svg {
+  fill: currentColor;
+  width: 24px;
+  height: 24px;
+  }
    section {
     position: relative;
     width: 100%;
