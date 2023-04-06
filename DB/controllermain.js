@@ -1,6 +1,8 @@
 angular.module('myApp', [])
 .controller('ViewWebController', ['$scope', '$http', function($scope, $http) {
     $scope.rtree = {};
+    $scope.rtree1 = {};
+    $scope.show = {}; 
 
     $scope.select = function() {
         var tem = null;
