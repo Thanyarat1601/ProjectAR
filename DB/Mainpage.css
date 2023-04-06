@@ -101,12 +101,12 @@ body {
   height: 2.3rem;
   border: none;
   border-radius: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.35rem;
   padding-left: 3rem;
   box-shadow:  inset .2rem .2rem .5rem var(--greyLight-2);
-  background: none;
+  background: var(--primary);
   font-family: inherit;
-  color: var(--greyDark);
+  color: var(--white);
 } /* add this closing curly brace here */
 
 #header ul li a.search input.search__input::placeholder {
