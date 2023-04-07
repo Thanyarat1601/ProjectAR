@@ -53,7 +53,7 @@ angular.module('myApp', [])
         let rocks = document.getElementById('rocks');
         let forest = document.getElementById('forest');
         let water = document.getElementById('water');
-        let header = document.getElementById('header');
+        let header = document.getElementById('header'); 
 
         text.style.top = 50 + value * -.1 + '%';
         bird2.style.top = value * -1.5 + 'px';
