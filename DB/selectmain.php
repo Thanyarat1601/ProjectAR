@@ -19,7 +19,7 @@ $search = isset($_GET['search']) ? $_GET['search'] : '';
 if ($search == '') {
   $sql = "SELECT * FROM `tree`";
 } else {
-  $sql = "SELECT * FROM `tree` WHERE `ID` LIKE '{$search}'";
+  $sql = "SELECT * FROM tree WHERE ID LIKE '%{$search}%' OR thainame LIKE '%{$search}%' OR engname LIKE '%{$search}%' OR properties LIKE '%{$search}%'";
 }
 
 // Execute SQL query
