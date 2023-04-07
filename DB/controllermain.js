@@ -2,41 +2,25 @@ angular.module('myApp', [])
 .controller('ViewWebController', ['$scope', '$http', function($scope, $http) {
     $scope.rtree = {};
 
-    // $scope.select = function() {
-    //     var tem = null;
-    //     if (angular.isUndefined($scope.search)) {
-    //         tem = 1;
-    //     } else {
-    //         tem = $scope.search;
-    //     }
-
-    //     $http({
-    //         method: 'post',
-    //         url: 'selectmain.php',
-    //         data: {search: tem},
-    //     }).then(function mySuccess(response) {
-    //         $scope.rtree = response.data;
-    //     }, function myError(response) {
-    //         // Handle error response
-    //     });
-    // };
-
     $scope.select = function() {
-        if (angular.isUndefined($scope.search) || $scope.search === '') {
-            $scope.rtree = [];
-            return;
+        var tem = null;
+        if (angular.isUndefined($scope.search)) {
+            tem = 1;
+        } else {
+            tem = $scope.search;
         }
-    
+
         $http({
             method: 'post',
             url: 'selectmain.php',
-            data: {search: $scope.search},
+            data: {search: tem},
         }).then(function mySuccess(response) {
-            $scope.rtree = response.data.slice(0, 1); // ให้แสดงผลเพียงแค่รายการแรกที่ตรงกับข้อมูลที่ใส่เข้ามา
+            $scope.rtree = response.data;
         }, function myError(response) {
             // Handle error response
         });
     };
+
     
 
             var area = document.getElementById('previewarea');
