@@ -211,6 +211,7 @@ section #text span {
 .sec {
     position: relative;
     padding: 100px;
+    min-height: 100px;
     background: var(--primary);
     box-shadow: none;
 }
@@ -222,10 +223,10 @@ section #text span {
     margin-bottom: 10px;
 }
 
-.sec p {
+/* .sec p {
     font-size: 1.5em;
     color: #fff;
-}
+} */
 
 
   .wrapper {
@@ -237,6 +238,7 @@ section #text span {
     -webkit-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     -moz-box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
     box-shadow: 0px 14px 32px 0px rgba(0, 0, 0, 0.15);
+    background: var(--primary);
   }
   
   .product-img {
