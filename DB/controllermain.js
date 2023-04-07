@@ -21,7 +21,35 @@ angular.module('myApp', [])
         });
     };
 
-    
+    const searchInput = document.getElementById("search-input");
+      const searchButton = document.getElementById("search-button");
+      const resultsContainer = document.getElementById("results-container");
+
+      searchButton.addEventListener("click", () => {
+        const searchTerm = searchInput.value.trim();
+        const xhr = new XMLHttpRequest();
+        xhr.onreadystatechange = function() {
+          if (this.readyState === 4 && this.status === 200) {
+            const results = JSON.parse(this.responseText);
+            showResults(results);
+          }
+        };
+        xhr.open("GET", `search.php?search=${searchTerm}`);
+        xhr.send();
+      });
+
+      function showResults(results) {
+        resultsContainer.innerHTML = "";
+        if (results.length === 0) {
+          resultsContainer.innerHTML = "No results found.";
+        } else {
+          results.forEach((result) => {
+            const resultDiv = document.createElement("div");
+            resultDiv.textContent = `${result.name} (${result.species})`;
+            resultsContainer.appendChild(resultDiv);
+          });
+        }
+      }
 
             var area = document.getElementById('previewarea');
 
