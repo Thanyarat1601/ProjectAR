@@ -9,11 +9,6 @@ $dbname = "plants";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
-if ($result->num_rows > 0) {
-  $_SESSION['logged_in'] = true;
-  header('Location: indexDB.html');
-  exit;
-}
 // Check connection
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
@@ -38,10 +33,12 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $error_message = 'Incorrect username or password';
   }
 
-  // Close the statement and database connection
+  // Close the statement
   $stmt->close();
-  $conn->close();
 }
+
+// Close the database connection
+$conn->close();
 ?>
 
 
@@ -61,4 +58,4 @@ if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] !== true) {
   <h1>Welcome to the Admin Dashboard!</h1>
   <!-- Admin Dashboard content here -->
 </body>
-</html> 
+</html>
