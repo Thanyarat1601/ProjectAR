@@ -39,10 +39,9 @@
 }
 
 body {
-    overflow-x: hidden;
-    background: #b3e5fc;
-    min-height: 100vh;
-    
+  overflow-x: hidden;
+  background: linear-gradient(to top , var(--primary), #2980b9, #6dd5fa,#b3e5fc);
+  min-height: 100vh;
 }
 
 #header {
@@ -211,7 +210,7 @@ section #text span {
 .sec {
     position: relative;
     padding: 100px;
-    background: var(--primary);
+    background: linear-gradient(to top , #a9e1fb, #6dd5fa , #2980b9,var(--primary));
     box-shadow: none;
 }
 
