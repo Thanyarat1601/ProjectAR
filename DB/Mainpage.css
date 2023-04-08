@@ -18,10 +18,10 @@
 }
 
 /* Use variables where needed */
-div {
+/* div {
   box-shadow: var(--shadow);
   box-shadow: var(--inner-shadow);
-}
+} */
 
 
 
@@ -105,8 +105,8 @@ body {
   
 #header ul li a.search .search__icon svg { /* เพิ่มเติมคลาส search__icon /
     fill: var(--primary); / เปลี่ยนเป็นสีเดียวกับปุ่ม search */
-    width: 24px;
-    height: 24px;
+    width: 55px;
+    height: 49px;
     }
   
 
@@ -208,7 +208,7 @@ section #text span {
 .sec {
     position: relative;
     padding: 100px;
-    background: var(--primary);
+    background: linear-gradient(to top , #a9e1fb, #6dd5fa , #2980b9,var(--primary));
     box-shadow: none;
 }
 

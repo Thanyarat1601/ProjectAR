@@ -27,7 +27,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
   $result = $stmt->get_result();
   if ($result->num_rows > 0) {
     $_SESSION['logged_in'] = true;
-    header('Location: indexDB.html');
+    header('Location: ./DB/indexDB.html');
     exit;
   } else {
     $error_message = 'Incorrect username or password';
