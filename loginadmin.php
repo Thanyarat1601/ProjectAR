@@ -7,9 +7,9 @@
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<style>
-		.error {
+		.invalid .input,
+		.invalid input[type="submit"] {
 			border-color: red;
-			color: red;
 		}
 	</style>
 </head>
@@ -23,74 +23,36 @@
 			<form action="login.php" method="POST">
 				<img src="img/avatar.svg">
 				<h2 class="title">Welcome</h2>
-<<<<<<< HEAD:login.html
-				<div class="input-div one <?php if (isset($_SESSION['error_message'])) echo 'error'; ?>">
-=======
-				<div class="input-div one >">
->>>>>>> 4ab6608ad38130db8f7fdad92743ea406cdb112d:loginadmin.php
+				<div class="input-div one <?php echo isset($_SESSION['error_message']) ? 'invalid' : ''; ?>">
 					<div class="i">
-						<i class="fas fa-user"></i>
+					  <i class="fas fa-user"></i>
 					</div>
 					<div class="div">
-<<<<<<< HEAD:login.html
-						<h5>Username</h5>
-						<input type="text" class="input <?php if (isset($_SESSION['error_message'])) echo 'error'; ?>" name="username" required>
-						<?php if (isset($_SESSION['error_message'])): ?>
-							<p class="error"><?php echo $_SESSION['error_message']; ?></p>
-						<?php endif; ?>
-					</div>
-				</div>
-				<div class="input-div pass <?php if (isset($_SESSION['error_message'])) echo 'error'; ?>">
-					<div class="i">
-						<i class="fas fa-lock"></i>
-					</div>
-					<div class="div">
-						<h5>Password</h5>
-						<input type="password" class="input <?php if (isset($_SESSION['error_message'])) echo 'error'; ?>" name="password" required>
-					</div>
-				</div>
-
-				<a href="#">Forgot Password?</a>
-				<input type="submit" class="btn" value="Login">
-			</form>
-		</div>
-	</div>
-	<script type="text/javascript" src="main.js"></script>
-	<script>
-		// Check if there is an error message
-		<?php if (isset($_SESSION['error_message'])): ?>
-			alert('<?php echo $_SESSION['error_message']; ?>');
-			<?php unset($_SESSION['error_message']); ?> //
-	</script>
-</body>
-</html>
-=======
 					  <h5>Username</h5>
-					  <input type="text" class="input <?php if (isset($_SESSION['error_class'])) echo $_SESSION['error_class']; ?>" name="username" required>
+					  <input type="text" class="input <?php echo isset($_SESSION['error_message']) ? 'invalid' : ''; ?>" name="username" required>
 					</div>
 				  </div>
-				  <div class="input-div pass ">
+				  <div class="input-div pass <?php echo isset($_SESSION['error_message']) ? 'invalid' : ''; ?>">
 					<div class="i"> 
 					  <i class="fas fa-lock"></i>
 					</div>
 					<div class="div">
 					  <h5>Password</h5>
-					  <input type="password" class="input <?php if (isset($_SESSION['error_class'])) echo $_SESSION['error_class']; ?>" name="password" required>
+					  <input type="password" class="input <?php echo isset($_SESSION['error_message']) ? 'invalid' : ''; ?>" name="password" required>
 					</div>
 				  </div>
-				  
 						  
-						<a href="#">Forgot Password?</a>
-						<input type="submit" class="btn" value="Login">
-					</form>
-				</div>
-			</div>
-		 <script type="text/javascript" src="main.js"></script> 
-		 <script>
-			// Check if there is an error message
-			
-		  </script>
-		  
-		</body>
-		</html>
->>>>>>> 4ab6608ad38130db8f7fdad92743ea406cdb112d:loginadmin.php
+				<a href="#">Forgot Password?</a>
+				<input type="submit" class="btn" value="Login">
+			</form>
+			<?php
+				if (isset($_SESSION['error_message'])) {
+					echo '<div class="error-message">' . $_SESSION['error_message'] . '</div>';
+					unset($_SESSION['error_message']);
+				}
+			?>
+		</div>
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+</body>
+</html>
