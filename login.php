@@ -24,7 +24,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
   if (empty($username) || empty($password)) {
     $_SESSION['error_message'] = "Please enter your username and password.";
     $_SESSION['error_class'] = "invalid";
-    header('Location: login.html');
+    header('Location: loginadmin.php');
     exit;
   } else {
     // Prepare and execute the query
@@ -41,7 +41,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     } else {
       $_SESSION['error_message'] = "Incorrect username or password. Please try again.";
       $_SESSION['error_class'] = "invalid";
-      header('Location: login.html');
+      header('Location: loginadmin.php');
       exit;
     }
     

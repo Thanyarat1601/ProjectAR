@@ -17,22 +17,22 @@
 			<form action="login.php" method="POST">
 				<img src="img/avatar.svg">
 				<h2 class="title">Welcome</h2>
-				<div class="input-div one <?php if (isset($_SESSION['error_message'])) echo 'invalid'; ?>">
+				<div class="input-div one >">
 					<div class="i">
 					  <i class="fas fa-user"></i>
 					</div>
 					<div class="div">
 					  <h5>Username</h5>
-					  <input type="text" class="input" name="username" required>
+					  <input type="text" class="input <?php if (isset($_SESSION['error_class'])) echo $_SESSION['error_class']; ?>" name="username" required>
 					</div>
 				  </div>
-				  <div class="input-div pass <?php if (isset($_SESSION['error_message'])) echo 'invalid'; ?>">
+				  <div class="input-div pass ">
 					<div class="i"> 
 					  <i class="fas fa-lock"></i>
 					</div>
 					<div class="div">
 					  <h5>Password</h5>
-					  <input type="password" class="input" name="password" required>
+					  <input type="password" class="input <?php if (isset($_SESSION['error_class'])) echo $_SESSION['error_class']; ?>" name="password" required>
 					</div>
 				  </div>
 				  
@@ -45,10 +45,7 @@
 		 <script type="text/javascript" src="main.js"></script> 
 		 <script>
 			// Check if there is an error message
-			if ('<?php echo isset($_SESSION['error_message']); ?>') {
-			  alert('<?php echo $_SESSION['error_message']; ?>');
-			  <?php unset($_SESSION['error_message']); ?> // เพื่อล้างข้อความผิดพลาดหลังจากแสดง pop-up alert
-			}
+			
 		  </script>
 		  
 		</body>
