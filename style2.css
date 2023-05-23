@@ -147,6 +147,13 @@ form{
 	margin-bottom: 4px;
 }
 
+.input-div.invalid input {
+	border-color: #e74c3c !important;
+  }
+  
+  .input-div.invalid .i {
+	color: #e74c3c;
+  }
 a{
 	display: block;
 	text-align: right;

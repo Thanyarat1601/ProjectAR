@@ -42,7 +42,10 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
       header('Location: login.html');
       exit;
     }
-
+    if (isset($_SESSION['error_message'])) {
+      echo '<script>alert("' . $_SESSION['error_message'] . '");</script>';
+      unset($_SESSION['error_message']);
+    }
     // Close the statement
     $stmt->close();
   }
