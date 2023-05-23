@@ -15,9 +15,11 @@
 		</div>
 		<div class="login-content">
 			<?php if (isset($_SESSION['error_message'])): ?>
-      <p class="error"><?php echo $_SESSION['error_message']; ?></p>
-      <?php unset($_SESSION['error_message']); ?>
-    <?php endif; ?>
+      <div class="error-message-box">
+        <span class="error-message"><?php echo $_SESSION['error_message']; ?></span>
+      </div>
+      	<?php unset($_SESSION['error_message']); ?>
+    	<?php endif; ?>
 			<form action="login.php" method="POST">
 				<img src="img/avatar.svg">
 				<h2 class="title">Welcome</h2>
@@ -46,5 +48,6 @@
 				</div>
 			</div>
 		 <script type="text/javascript" src="main.js"></script> 
+		 
 		</body>
 		</html>

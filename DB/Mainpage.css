@@ -2,6 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
+
 :root {
   --primary: #303f9f;
   --primary-light: #8abdff;
@@ -299,45 +300,34 @@ section #text span {
     font-weight: lighter;
     overflow: auto;
   }
-  .frame {
-    width: 90%;
-    margin: 40px auto;
-    text-align: center;
-  }
-  button {
-    margin: 20px;
-  }
-  .custom-btn {
-    width: 130px;
-    height: 40px;
-    color: #fff;
-    border-radius: 5px;
-    padding: 10px 25px;
-    font-family: 'Lato', sans-serif;
-    font-weight: 500;
-    background: transparent;
-    cursor: pointer;
-    transition: all 0.3s ease;
+
+  .product-price-btn {
+    height: 103px;
+    width: 327px;
+    margin-top: 17px;
     position: relative;
+  }
+
+  .product-price-btn button {
+    float: right;
     display: inline-block;
-     box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
-     7px 7px 20px 0px rgba(0,0,0,.1),
-     4px 4px 5px 0px rgba(0,0,0,.1);
+    height: 50px;
+    width: 176px;
+    margin: 0 40px 0 16px;
+    box-sizing: border-box;
+    border: transparent;
+    border-radius: 60px;
+    font-family: 'Raleway', sans-serif;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    color: #ffffff;
+    background-color: #9925ea;
+    cursor: pointer;
     outline: none;
   }
-  .btn-2 {
-    background: rgb(96,9,240);
-    background: linear-gradient(0deg, rgba(96,9,240,1) 0%, rgba(129,5,240,1) 100%);
-    border: none;
-    
+  
+  .product-price-btn button:hover {
+    background-color: #338aff;
   }
-  .btn-2:before {
-    height: 0%;
-    width: 2px;
-  }
-  .btn-2:hover {
-    box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
-                -4px -4px 6px 0 rgba(116, 125, 136, .5), 
-      inset -4px -4px 6px 0 rgba(255,255,255,.2),
-      inset 4px 4px 6px 0 rgba(0, 0, 0, .4);
-  }  

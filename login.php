@@ -22,7 +22,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
 
   // Check if username or password is empty
   if (empty($username) || empty($password)) {
-    header('Location: login.html?error_message=Please enter your username and password');
+    echo '<script>alert("Please enter your username and password.");</script>';
+    echo '<script>window.location.href = "login.html";</script>';
     exit;
   } else {
     // Prepare and execute the query
@@ -37,7 +38,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
       header('Location: ./DB/indexDB.html');
       exit;
     } else {
-      header('Location: login.html?error_message=Incorrect username or password');
+      echo '<script>alert("Incorrect username or password. Please try again.");</script>';
+      echo '<script>window.location.href = "login.html";</script>';
       exit;
     }
 
