@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin</title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
+	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.error {
+			border-color: red;
+			color: red;
+		}
+	</style>
+</head>
+<body>
+	<img class="wave" src="img/wave.png">
+	<div class="container">
+		<div class="img">
+			<img src="img/bg.svg">
+		</div>
+		<div class="login-content">
+			<form action="login.php" method="POST">
+				<img src="img/avatar.svg">
+				<h2 class="title">Welcome</h2>
+<<<<<<< HEAD:login.html
+				<div class="input-div one <?php if (isset($_SESSION['error_message'])) echo 'error'; ?>">
+=======
+				<div class="input-div one >">
+>>>>>>> 4ab6608ad38130db8f7fdad92743ea406cdb112d:loginadmin.php
+					<div class="i">
+						<i class="fas fa-user"></i>
+					</div>
+					<div class="div">
+<<<<<<< HEAD:login.html
+						<h5>Username</h5>
+						<input type="text" class="input <?php if (isset($_SESSION['error_message'])) echo 'error'; ?>" name="username" required>
+						<?php if (isset($_SESSION['error_message'])): ?>
+							<p class="error"><?php echo $_SESSION['error_message']; ?></p>
+						<?php endif; ?>
+					</div>
+				</div>
+				<div class="input-div pass <?php if (isset($_SESSION['error_message'])) echo 'error'; ?>">
+					<div class="i">
+						<i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+						<h5>Password</h5>
+						<input type="password" class="input <?php if (isset($_SESSION['error_message'])) echo 'error'; ?>" name="password" required>
+					</div>
+				</div>
+
+				<a href="#">Forgot Password?</a>
+				<input type="submit" class="btn" value="Login">
+			</form>
+		</div>
+	</div>
+	<script type="text/javascript" src="main.js"></script>
+	<script>
+		// Check if there is an error message
+		<?php if (isset($_SESSION['error_message'])): ?>
+			alert('<?php echo $_SESSION['error_message']; ?>');
+			<?php unset($_SESSION['error_message']); ?> //
+	</script>
+</body>
+</html>
+=======
+					  <h5>Username</h5>
+					  <input type="text" class="input <?php if (isset($_SESSION['error_class'])) echo $_SESSION['error_class']; ?>" name="username" required>
+					</div>
+				  </div>
+				  <div class="input-div pass ">
+					<div class="i"> 
+					  <i class="fas fa-lock"></i>
+					</div>
+					<div class="div">
+					  <h5>Password</h5>
+					  <input type="password" class="input <?php if (isset($_SESSION['error_class'])) echo $_SESSION['error_class']; ?>" name="password" required>
+					</div>
+				  </div>
+				  
+						  
+						<a href="#">Forgot Password?</a>
+						<input type="submit" class="btn" value="Login">
+					</form>
+				</div>
+			</div>
+		 <script type="text/javascript" src="main.js"></script> 
+		 <script>
+			// Check if there is an error message
+			
+		  </script>
+		  
+		</body>
+		</html>
+>>>>>>> 4ab6608ad38130db8f7fdad92743ea406cdb112d:loginadmin.php
