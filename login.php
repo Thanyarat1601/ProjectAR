@@ -23,6 +23,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
   // Check if username or password is empty
   if (empty($username) || empty($password)) {
     $_SESSION['error_message'] = "Please enter your username and password.";
+    $_SESSION['error_class'] = "invalid";
     header('Location: login.html');
     exit;
   } else {
