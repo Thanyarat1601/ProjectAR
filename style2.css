@@ -81,7 +81,9 @@ form{
 .i i{
 	transition: .3s;
 }
-
+.input.invalid {
+	border-color: red;
+  }
 .input-div > div{
     position: relative;
 	height: 45px;
