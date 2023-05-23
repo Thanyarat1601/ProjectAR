@@ -14,12 +14,6 @@
 			<img src="img/bg.svg">
 		</div>
 		<div class="login-content">
-			<?php if (isset($_SESSION['error_message'])): ?>
-      <div class="error-message-box">
-        <span class="error-message"><?php echo $_SESSION['error_message']; ?></span>
-      </div>
-      	<?php unset($_SESSION['error_message']); ?>
-    	<?php endif; ?>
 			<form action="login.php" method="POST">
 				<img src="img/avatar.svg">
 				<h2 class="title">Welcome</h2>
@@ -48,6 +42,12 @@
 				</div>
 			</div>
 		 <script type="text/javascript" src="main.js"></script> 
-		 
+		 <script>
+			// Check if there is an error message
+			if ('<?php echo isset($_SESSION['error_message']); ?>') {
+			  alert('<?php echo $_SESSION['error_message']; ?>');
+			  <?php unset($_SESSION['error_message']); ?> // เพื่อล้างข้อความผิดพลาดหลังจากแสดง pop-up alert
+			}
+		  </script>
 		</body>
 		</html>

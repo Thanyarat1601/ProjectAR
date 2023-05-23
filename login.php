@@ -38,8 +38,8 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
       header('Location: ./DB/indexDB.html');
       exit;
     } else {
-      echo '<script>alert("Incorrect username or password. Please try again.");</script>';
-      echo '<script>window.location.href = "login.html";</script>';
+      $_SESSION['error_message'] = "Incorrect username or password. Please try again.";
+      header('Location: login.html');
       exit;
     }
 
@@ -47,6 +47,7 @@ if (isset($_POST['username']) && isset($_POST['password'])) {
     $stmt->close();
   }
 }
+
 
 // Close the database connection
 $conn->close();

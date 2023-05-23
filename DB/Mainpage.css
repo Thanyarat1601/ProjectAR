@@ -2,7 +2,6 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Rancho&display=swap');
 
-
 :root {
   --primary: #303f9f;
   --primary-light: #8abdff;
@@ -23,8 +22,6 @@
   box-shadow: var(--shadow);
   box-shadow: var(--inner-shadow);
 } */
-
-
 
 
 *, *::before, *::after {
@@ -301,12 +298,12 @@ section #text span {
     overflow: auto;
   }
 
-  .product-price-btn {
-    height: 103px;
+  /* .product-price-btn {
+    height: 75px;
     width: 327px;
     margin-top: 17px;
     position: relative;
-  }
+  } */
 
   .product-price-btn button {
     float: right;
