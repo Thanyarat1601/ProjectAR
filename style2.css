@@ -81,21 +81,20 @@ form{
 .i i{
 	transition: .3s;
 }
+.input-div.invalid .i i,
+.input-div.invalid .div h5,
+.input-div.invalid input {
+  color: red;
+}
+
+.input-div.invalid input {
+  border: 1px solid red;
+}
+
 
 .input-div > div{
     position: relative;
 	height: 45px;
-}
-.invalid .input {
-    border-bottom: 2px solid red;
-}
-
-.invalid .input i {
-    color: red;
-}
-
-.invalid .input h5 {
-    color: red;
 }
 
 
