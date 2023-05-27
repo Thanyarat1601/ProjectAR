@@ -4,7 +4,6 @@
 	<title>Admin</title>
 	<link rel="stylesheet" type="text/css" href="style2.css">
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
@@ -17,26 +16,23 @@
 			<img src="img/Crop_04.svg">
 		</div>
 		<div class="login-content">
-			<form action="login.php" method="POST" >
+			<form action="login.php" method="POST" onsubmit="return validated();">
 				<img src="img/002.svg">
 				<h2 class="title">Welcome</h2>
-				<div class="input-div one ">
+				<div class="input-div one <?php echo !isset($_SESSION['error_class']) && $_SESSION['error_class'] === 'invalid' ? 'invalid' : ''; ?>">
 					<div class="i">
 					  <i class="fas fa-user"></i>
 					</div>
-					<div class="div">
+					<div class="div <?php echo !isset($_SESSION['error_class']) && $_SESSION['error_class'] === 'invalid' ? 'invalid' : ''; ?>">
 					  <h5>Username</h5>
-					  <input type="text" class="form-control is-invalid" name="username"  id="validationServer03" aria-describedby="validationServer03Feedback" required>
-					  <div id="validationServer03Feedback" class="invalid-feedback">
-					  Please provide a valid city.
-    				</div>
+					  <input type="text" class="input" name="username" required>
 					</div>
 				  </div>
-				  <div class="input-div pass">
+				  <div class="input-div pass <?php echo !isset($_SESSION['error_class']) && $_SESSION['error_class'] === 'invalid' ? 'invalid' : ''; ?>">
 					<div class="i"> 
 					  <i class="fas fa-lock"></i>
 					</div>
-					<div class="div">
+					<div class="div <?php echo !isset($_SESSION['error_class']) && $_SESSION['error_class'] === 'invalid' ? 'invalid' : ''; ?>">
 					  <h5>Password</h5>
 					  <input type="password" class="input" name="password" required>
 					</div>
@@ -72,7 +68,7 @@
 			}
 		});
 	}
-	<?php echo !isset($_SESSION['error_class']) && $_SESSION['error_class'] === 'invalid' ? 'invalid' : ''; ?>
+	
 </script>
 
 </body>
