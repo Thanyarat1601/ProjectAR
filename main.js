@@ -7,7 +7,7 @@ inputs.forEach(input => {
 
 // Check if there is an error message
 var errorMessage = "<?php echo isset($_SESSION['error_message']) ? $_SESSION['error_message'] : ''; ?>";
-var errorClass = "<?php echo isset($_SESSION['error_class']) ? $_SESSION['error_class'] : ''; ?>";
+var errorClass = "<?php echo isset($_SESSION['error_message']) ? 'invalid' : ''; ?>";
 
 if (errorMessage !== '') {
     var usernameInput = document.querySelector('input[name="username"]');
@@ -15,6 +15,8 @@ if (errorMessage !== '') {
 
     usernameInput.classList.add(errorClass);
     passwordInput.classList.add(errorClass);
+    usernameInput.parentNode.parentNode.classList.add("error");
+    passwordInput.parentNode.parentNode.classList.add("error");
 }
 
 function addcl() {
