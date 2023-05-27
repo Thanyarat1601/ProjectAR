@@ -6,12 +6,7 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<style>
-		.invalid .input,
-		.invalid input[type="submit"] {
-			border-color: red;
-		}
-	</style>
+	
 </head>
 <body>
 	<img class="wave" src="img/2.png">
@@ -23,22 +18,22 @@
 			<form action="login.php" method="POST">
 				<img src="img/002.svg">
 				<h2 class="title">Welcome</h2>
-				<div class="input-div one <?php echo isset($_SESSION['error_message']) ? 'invalid' : ''; ?>">
+				<div class="input-div one <?php echo !isset($_SESSION['error_message']) ? 'invalid' : ''; ?>">
 					<div class="i">
 					  <i class="fas fa-user"></i>
 					</div>
 					<div class="div">
 					  <h5>Username</h5>
-					  <input type="text" class="input <?php echo isset($_SESSION['error_message']) ? 'invalid' : ''; ?>" name="username" required>
+					  <input type="text" class="input <?php echo !isset($_SESSION['error_message']) ? 'invalid' : ''; ?>" name="username" required>
 					</div>
 				  </div>
-				  <div class="input-div pass <?php echo isset($_SESSION['error_message']) ? 'invalid' : ''; ?>">
+				  <div class="input-div pass <?php echo !isset($_SESSION['error_message']) ? 'invalid' : ''; ?>">
 					<div class="i"> 
 					  <i class="fas fa-lock"></i>
 					</div>
 					<div class="div">
 					  <h5>Password</h5>
-					  <input type="password" class="input <?php echo isset($_SESSION['error_message']) ? 'invalid' : ''; ?>" name="password" required>
+					  <input type="password" class="input <?php echo !isset($_SESSION['error_message']) ? 'invalid' : ''; ?>" name="password" required>
 					</div>
 				  </div>
 						  
