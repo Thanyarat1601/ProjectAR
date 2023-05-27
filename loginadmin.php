@@ -14,14 +14,14 @@
 	</style>
 </head>
 <body>
-	<img class="wave" src="img/wave.png">
+	<img class="wave" src="img/2.png">
 	<div class="container">
 		<div class="img">
-			<img src="img/bg.svg">
+			<img src="img/Crop_04.svg">
 		</div>
 		<div class="login-content">
 			<form action="login.php" method="POST">
-				<img src="img/avatar.svg">
+				<img src="img/002.svg">
 				<h2 class="title">Welcome</h2>
 				<div class="input-div one <?php echo isset($_SESSION['error_message']) ? 'invalid' : ''; ?>">
 					<div class="i">
