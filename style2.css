@@ -92,6 +92,34 @@ form{
 } */
 
 
+
+/* i.error {
+    color: red;
+    font-size: 1rem;
+    display: block;
+    margin-top: 5px;
+}
+
+input.error {
+    border: 1px dashed red;
+    font-weight: 300;
+    color: red;
+	
+}
+
+[type="submit"], [type="reset"], button, html [type="button"] {
+    margin-left: 0;
+    border-radius: 0;
+    background: black;
+    color: white;
+    border: none;
+    font-weight: 300;
+    padding: 10px 0;
+    line-height: 1;
+} */
+
+
+
 .input-div > div{
     position: relative;
 	height: 45px;
@@ -231,4 +259,13 @@ a:hover{
 	.login-content{
 		justify-content: center;
 	}
+}
+.input-div.error .i i,
+.input-div.error .div h5,
+.input-div.error input {
+  color: red;
+}
+
+.input-div.error input {
+  border-bottom: 2px solid red;
 }

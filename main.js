@@ -21,3 +21,23 @@ function remcl() {
         parent.classList.remove("focus");
     }
 }
+$(document).ready(function() {
+    $('form').on('submit', function() {
+      var isValid = true;
+      $('input').each(function() {
+        if ($(this).val() === '') {
+          $(this).addClass('error');
+          isValid = false;
+        } else {
+          $(this).removeClass('error');
+        }
+      });
+      if (!isValid) {
+        $('.input-div').addClass('error');
+      } else {
+        $('.input-div').removeClass('error');
+      }
+      return isValid;
+    });
+  });
+  
