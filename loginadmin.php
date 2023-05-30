@@ -6,8 +6,6 @@
 	<link href="https://fonts.googleapis.com/css?family=Poppins:600&display=swap" rel="stylesheet">
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	
-
 </head>
 <body>
 	<img class="wave" src="img/2.png">
@@ -16,10 +14,10 @@
 			<img src="img/Crop_04.svg">
 		</div>
 		<div class="login-content">
-			<form action="login.php" method="POST">
+			<form action="login.php" method="POST" >
 				<img src="img/002.svg">
 				<h2 class="title">Welcome</h2>
-				<div class="input-div one">
+				<div class="input-div one <?php echo isset($_SESSION['error_class']) ? $_SESSION['error_class'] : ''; ?>">
 					<div class="i">
 					  <i class="fas fa-user"></i>
 					</div>
@@ -28,7 +26,7 @@
 					  <input type="text" class="input" name="username" required>
 					</div>
 				  </div>
-				  <div class="input-div pass">
+				  <div class="input-div pass <?php echo isset($_SESSION['error_class']) ? $_SESSION['error_class'] : ''; ?>">
 					<div class="i"> 
 					  <i class="fas fa-lock"></i>
 					</div>
@@ -44,7 +42,5 @@
 		</div>
 	</div>
 	<script type="text/javascript" src="main.js"></script>
-
 </body>
-
 </html>
