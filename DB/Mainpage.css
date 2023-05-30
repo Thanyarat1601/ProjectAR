@@ -307,9 +307,9 @@ section #text span {
 }
 
 .btn-hover {
-    width: 200px;
+    width: 100px;
     font-size: 25px;
-    font-weight: 800;
+    font-weight: 600;
     color: #fff;
     cursor: pointer;
     margin: 20px;
