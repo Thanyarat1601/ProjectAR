@@ -300,6 +300,6 @@ section #text span {
  
 .product-text svg {
   float: right;
-  margin-top: 10px; /* ปรับระยะห่างด้านบน */
-  margin-right: -10px; /* ปรับระยะห่างด้านขวา */
+  margin-top: 15px; /* ปรับระยะห่างด้านบน */
+  margin-right: -20px; /* ปรับระยะห่างด้านขวา */
 }

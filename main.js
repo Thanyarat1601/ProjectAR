@@ -35,7 +35,7 @@ $(document).ready(function(){
           if (response.trim() === "success") {
             window.location.href = "./DB/indexDB.html";
           } else {
-            $("a[href='#']").text("กรุณากรอก Username และ Password ใหม่อีกรอบ").css("color", "red").css("font-size", "13px");
+            $("a[href='#']").text("กรุณากรอก Username และ Password ใหม่อีกรอบ").css("color", "red").css("font-size", "20px");
             
             // รีเฟรชข้อมูลในฟอร์ม
             $("form")[0].reset();
