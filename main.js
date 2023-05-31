@@ -10,9 +10,7 @@ inputs.forEach(input => {
 function addcl() {
     let parent = this.parentNode.parentNode;
     parent.classList.add("focus");
-    if (parent.classList.contains("error")) {
-        parent.classList.remove("error");
-    }
+    parent.classList.remove("error");
 }
 
 function remcl() {
@@ -21,23 +19,30 @@ function remcl() {
         parent.classList.remove("focus");
     }
 }
-$(document).ready(function() {
-    $('form').on('submit', function() {
-      var isValid = true;
-      $('input').each(function() {
-        if ($(this).val() === '') {
-          $(this).addClass('error');
-          isValid = false;
-        } else {
-          $(this).removeClass('error');
+$(document).ready(function(){
+    $("form").submit(function(event){
+      event.preventDefault(); // ป้องกันการส่งฟอร์ม
+      var username = $("input[name='username']").val();
+      var password = $("input[name='password']").val();
+  
+      // ส่งข้อมูลไปยังไฟล์ PHP ด้วย AJAX
+      $.ajax({
+        type: "POST",
+        url: "./login.php", // ชื่อไฟล์ PHP ที่ตรวจสอบการเข้าสู่ระบบ
+        data: {username: username, password: password},
+        success: function(response){
+          // ตรวจสอบผลลัพธ์จากไฟล์ PHP
+          if (response.trim() === "success") {
+            window.location.href = "./DB/indexDB.html";
+          } else {
+            $("a[href='#']").text("กรุณากรอก Username และ Password ใหม่อีกรอบ").css("color", "red").css("font-size", "13px");
+            
+            // รีเฟรชข้อมูลในฟอร์ม
+            $("form")[0].reset();
+          }
         }
       });
-      if (!isValid) {
-        $('.input-div').addClass('error');
-      } else {
-        $('.input-div').removeClass('error');
-      }
-      return isValid;
     });
-  });
+});
+
   

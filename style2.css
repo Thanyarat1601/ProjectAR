@@ -194,6 +194,7 @@ a{
 	color: #999;
 	font-size: 1.3rem;
 	transition: .3s;
+	font-size: 17px;
 }
 
 a:hover{
@@ -260,12 +261,4 @@ a:hover{
 		justify-content: center;
 	}
 }
-.input-div.error .i i,
-.input-div.error .div h5,
-.input-div.error input {
-  color: red;
-}
 
-.input-div.error input {
-  border-bottom: 2px solid red;
-}

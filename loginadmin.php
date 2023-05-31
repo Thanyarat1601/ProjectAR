@@ -16,10 +16,10 @@
 			<img src="img/Crop_04.svg">
 		</div>
 		<div class="login-content">
-			<form action="login.php" method="POST" id="basic-form">
+			<form action="login.php" method="POST">
 				<img src="img/002.svg">
 				<h2 class="title">Welcome</h2>
-				<div class="input-div one <?php echo !isset($_SESSION['error_class']) && $_SESSION['error_class'] === 'invalid' ? 'error' : ''; ?>">
+				<div class="input-div one ">
 				<div class="i">
 					<i class="fas fa-user"></i>
 				</div>
@@ -28,7 +28,7 @@
 					<input type="text" class="input" name="username" required>
 				</div>
 				</div>
-				<div class="input-div pass <?php echo !isset($_SESSION['error_class']) && $_SESSION['error_class'] === 'invalid' ? 'error' : ''; ?>">
+				<div class="input-div pass ">
 				<div class="i"> 
 					<i class="fas fa-lock"></i>
 				</div>
@@ -39,7 +39,7 @@
 				</div>
 
 				  	  
-				<a href="#">Forgot Password?</a>
+				<a href="#">กรุณากรอกข้อมูลให้ถูกต้อง</a>
 				<input type="submit" class="btn" value="Login">
 			</form>
 		</div>
