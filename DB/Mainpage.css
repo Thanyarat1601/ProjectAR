@@ -297,7 +297,9 @@ section #text span {
     font-weight: lighter;
     overflow: auto;
   }
-
-  .product-text svg {
-    float: right;
-  }
+ 
+.product-text svg {
+  position: absolute;
+  top: 0px; /* ปรับระยะห่างด้านบน */
+  right: 0px; /* ปรับระยะห่างด้านขวา */
+}
