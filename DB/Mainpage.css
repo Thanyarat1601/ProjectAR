@@ -299,7 +299,7 @@ section #text span {
   }
  
 .product-text svg {
-  position: absolute;
-  top: 0px; /* ปรับระยะห่างด้านบน */
-  right: 0px; /* ปรับระยะห่างด้านขวา */
+  float: right;
+  margin-top: 10px; /* ปรับระยะห่างด้านบน */
+  margin-right: -10px; /* ปรับระยะห่างด้านขวา */
 }
