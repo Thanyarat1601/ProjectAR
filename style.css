@@ -30,6 +30,8 @@
 
 body {
   font-family: 'TH Niramit AS', sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 .stop-scrolling {
@@ -59,11 +61,10 @@ a {
 
 .container {
   position: relative;
-  max-width: 81rem;
+  max-width: 80rem;
   width: 100%;
   margin: 0 auto;
-  padding: 0 3rem;
-  z-index: 10;
+  padding: 0;
 }
 
 header {
@@ -85,6 +86,7 @@ header .container {
   display: flex;
   align-items: center;
   cursor: pointer;
+  margin-left: 0; /* เพิ่มบรรทัดนี้เพื่อลบระยะห่างด้านซ้าย */
 }
 
 .logo img {
@@ -98,6 +100,7 @@ header .container {
   font-size: 2.8rem;
   line-height: 1.2;
   font-weight: 700;
+  margin: 0;
 }
 
 .links ul {
