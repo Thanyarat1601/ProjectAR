@@ -447,7 +447,7 @@ header .container {
   justify-content: center;
   text-align: center;
   gap: 10px;
-  background-image: linear-gradient(rgba(209, 238, 253, 0.6), rgba(209, 238, 253, 0.8) 20%, #4fbafc 80%);
+  background: linear-gradient(-45deg, #d1eefd 20%, #4fbafc 80% );
   color: #303f9f;
   padding: 20px;
   line-height: 1.5;
@@ -457,7 +457,6 @@ header .container {
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
   font-size: 21.5px;
 }
-
 
 .card .content .heading {
   font-size: 32px;
