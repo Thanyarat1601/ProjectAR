@@ -112,7 +112,7 @@ header .container {
 
 .links a {
   color: var(--lightOne);
-  margin-left: 4.5rem;
+  margin-left: 1.8rem;
   display: inline-block;
   transition: 0.3s;
 }
@@ -124,7 +124,7 @@ header .container {
 
 .btn {
   display: inline-block;
-  padding: 0.9rem 1.9rem;
+  padding: 0.7rem 1.4rem;
   color: #fff !important;
   background-color: var(--hoverColor);
   border-radius: 40px;
@@ -221,7 +221,7 @@ header .container {
 }
 
 .person {
-  width: 70%;
+  width: 80%;
   transform: translate(15%, 25px);
 }
 
@@ -263,14 +263,14 @@ header .container {
   display: none;
 }
 
-.shape {
+/* .shape {
   position: absolute;
   z-index: 0;
   width: 500px;
   bottom: -170px;
   left: 8px;
   opacity: 0.1;
-}
+} */
 
 .copy {
   position: absolute;
@@ -308,6 +308,7 @@ header .container {
     justify-content: center;
     transform: translateX(100%);
     transition: 0.5s;
+    gap: 3cm;
   }
 
   .links ul {
@@ -377,10 +378,10 @@ header .container {
     font-size: 1.5rem;
   }
 
-  .shape {
+  /* .shape {
     bottom: -180px;
     left: -150px;
-  }
+  } */
 }
 
 @media screen and (max-width: 470px) {
@@ -447,15 +448,15 @@ header .container {
   justify-content: center;
   text-align: center;
   gap: 10px;
-  background: linear-gradient(-45deg, #1ba1f5 0%, #3646b3 100% );
-  color: #e8e8e8;
+  background: linear-gradient(-45deg, #d1eefd 20%, #4fbafc 80% );
+  color: #303f9f;
   padding: 20px;
   line-height: 1.5;
   border-radius: 5px;
   pointer-events: none;
   transform: translateY(96%);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
-  font-size: 21px;
+  font-size: 21.5px;
 }
 
 .card .content .heading {
