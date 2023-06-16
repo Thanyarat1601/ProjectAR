@@ -141,6 +141,17 @@ header .container {
 	color: #fff;
 	transform: translateY(-7px);
 }
+.btn_scan{
+  display: inline-block;
+  padding: 0.7rem 1.4rem;
+  color: #fff !important;
+  background-color: var(--hoverColor);
+  border-radius: 40px;
+  box-shadow: 0px 6px 10px #0088dd;
+  transition: all 0.3s ease 0s;
+  cursor: pointer;
+  outline: none;
+}
 
 /* .hamburger-menu {
   position: relative;
@@ -408,6 +419,7 @@ header .container {
   border-radius: 10px;
   /* box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
   overflow: hidden;
+  transform: translateY(-15%)
 }
 
 .card {
@@ -447,7 +459,14 @@ header .container {
   justify-content: center;
   text-align: center;
   gap: 10px;
-  background: linear-gradient(-45deg, #d1eefd 20%, #4fbafc 80% );
+  background: radial-gradient(
+    circle,
+    /* #4fbafc 20%, */
+    #71c9ff 20%,
+    rgba(133, 214, 255, 0.8) 40%,
+    rgba(155, 222, 255, 0.8) 60%,
+    rgba(209, 238, 253, 0.6) 130%
+  );
   color: #303f9f;
   padding: 20px;
   line-height: 1.5;
@@ -456,6 +475,8 @@ header .container {
   transform: translateY(96%);
   transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
   font-size: 21.5px;
+  border-radius: 20px;
+
 }
 
 .card .content .heading {
