@@ -84,8 +84,6 @@ header .container {
 
 .logo {
   display: flex;
-  align-items: center;
-  cursor: pointer;
   margin-left: 0; /* เพิ่มบรรทัดนี้เพื่อลบระยะห่างด้านซ้าย */
 }
 

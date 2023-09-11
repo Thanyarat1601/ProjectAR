@@ -28,6 +28,8 @@ angular.module('myApp', [])
           console.error(error);
         });
       };
+
+     
       
 
             var area = document.getElementById('previewarea');
