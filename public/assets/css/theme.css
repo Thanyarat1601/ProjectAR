@@ -7865,7 +7865,10 @@ fieldset:disabled .btn {
 }
 
 .w-100 {
-  width: 100% !important;
+  width: 50% !important;
+  height: 50% !important;
+  margin-left: 375px;
+  margin-right: 40px;
 }
 
 .w-auto {
@@ -9074,7 +9077,7 @@ fieldset:disabled .btn {
 
 .py-0 {
   padding-top: 0 !important;
-  padding-bottom: 0 !important;
+  padding-bottom: 5 !important;
 }
 
 .py-1 {
