@@ -99,7 +99,7 @@ h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 {
   margin-top: 0;
   margin-bottom: 0.5rem;
   font-family: "Poppins", "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-  font-weight: 500;
+  font-weight: 400;
   line-height: 1.2;
   color: #112D58;
 }
@@ -3500,22 +3500,22 @@ fieldset:disabled .btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #1F3A63;
-  border-color: #1F3A63;
+  background-color: #001288;
+  border-color: #3646b3;
 }
 
 .btn-primary:hover {
   color: #fff;
-  background-color: #1a3154;
+  background-color: #192e4f;
   border-color: #192e4f;
 }
 
 .btn-check:focus + .btn-primary, .btn-primary:focus {
   color: #fff;
-  background-color: #1a3154;
-  border-color: #192e4f;
-  -webkit-box-shadow: 0 0 0 0 rgba(65, 88, 122, 0.5);
-  box-shadow: 0 0 0 0 rgba(65, 88, 122, 0.5);
+  background-color: #0016a9;
+  border-color: #3646b3;
+  -webkit-box-shadow: 0 0 0 0 #0016a9;
+  box-shadow: 0 0 0 0 #3646b3;
 }
 
 .btn-check:checked + .btn-primary,
@@ -7868,7 +7868,7 @@ fieldset:disabled .btn {
   width: 50% !important;
   height: 50% !important;
   margin-left: 375px;
-  margin-right: 40px;
+  margin-right: 45px;
 }
 
 .w-auto {
@@ -9077,7 +9077,7 @@ fieldset:disabled .btn {
 
 .py-0 {
   padding-top: 0 !important;
-  padding-bottom: 5 !important;
+  padding-bottom: 2rem !important;
 }
 
 .py-1 {
@@ -9149,6 +9149,35 @@ fieldset:disabled .btn {
 
 .pt-3 {
   padding-top: 1rem !important;
+}
+.pt-3.shadow__btn {
+  position: absolute;
+  bottom: 15px;
+  left: 50%;
+  transform: translateX(-910%);
+  padding: 10px 20px;
+  border: none;
+  font-size: 19px;
+  color: #fff;
+  border-radius: 7px;
+  letter-spacing: 1px;
+  font-weight: 700;
+  text-transform: uppercase;
+  transition: 0.5s;
+  transition-property: box-shadow;
+  font-family: 'TH Niramit AS', sans-serif;
+}
+
+.shadow__btn {
+  background: rgb(0,140,255);
+  box-shadow: 0 0 25px rgb(0,140,255);
+}
+
+.shadow__btn:hover {
+  box-shadow: 0 0 5px rgb(0,140,255),
+              0 0 25px rgb(0,140,255),
+              0 0 50px rgb(0,140,255),
+              0 0 100px rgb(0,140,255);
 }
 
 .pt-4 {
