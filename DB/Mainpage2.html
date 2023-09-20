@@ -98,28 +98,33 @@ https://templatemo.com/tm-590-topic-listing
 
                     </div>
                 </div>
-                         <!-- เนื้อหาแท็บที่นี่ -->
+                             <!-- เนื้อหาแท็บที่นี่ -->
                 <div class="container-fluid">
                     <div class="row">
                         <ul class="nav nav-tabs" id="myTab" role="tablist">
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link active" id="design-tab" data-bs-toggle="tab" data-bs-target="#design-tab-pane" type="button" role="tab" aria-controls="design-tab-pane" aria-selected="true">All</button>
+                                <button class="nav-link active" id="All-tab" data-bs-toggle="tab" data-bs-target="#all-tab-pane" type="button" role="tab" aria-controls="all-tab-pane" aria-selected="true">All</button>
                             </li>
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="marketing-tab" data-bs-toggle="tab" data-bs-target="#marketing-tab-pane" type="button" role="tab" aria-controls="marketing-tab-pane" aria-selected="false">Augmented reality</button>
+                                <button class="nav-link" id="augmentedReality-tab" data-bs-toggle="tab" data-bs-target="#augmentedReality-tab-pane" type="button" role="tab" aria-controls="augmentedReality-tab-pane" aria-selected="false">Augmented reality</button>
                             </li>
                         
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="finance-tab" data-bs-toggle="tab" data-bs-target="#finance-tab-pane" type="button" role="tab" aria-controls="finance-tab-pane" aria-selected="false">Perennina Plant</button>
+                                <button class="nav-link" id="perenninaPlant-tab" data-bs-toggle="tab" data-bs-target="#perenninaPlant-tab-pane" type="button" role="tab" aria-controls="perenninaPlant-tab-pane" aria-selected="false">Perennina Plant</button>
                             </li>
 
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="music-tab" data-bs-toggle="tab" data-bs-target="#music-tab-pane" type="button" role="tab" aria-controls="music-tab-pane" aria-selected="false">Shrubbery</button>
+                                <button class="nav-link" id="shrubbery-tab" data-bs-toggle="tab" data-bs-target="#shrubbery-tab-pane" type="button" role="tab" aria-controls="shrubbery-tab-pane" aria-selected="false">Shrubbery</button>
                             </li>
 
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="education-tab" data-bs-toggle="tab" data-bs-target="#education-tab-pane" type="button" role="tab" aria-controls="education-tab-pane" aria-selected="false">Ornamental flowers</button>
+                                <button class="nav-link" id="ornamentalFlowers-tab" data-bs-toggle="tab" data-bs-target="#ornamentalFlowers-tab-pane" type="button" role="tab" aria-controls="ornamentalFlowers-tab-pane" aria-selected="false">Ornamental flowers</button>
                             </li>
+
+                            <li class="nav-item" role="presentation">
+                                <button class="nav-link" id="medicinalPlant-tab" data-bs-toggle="tab" data-bs-target="#medicinalPlant-tab-pane" type="button" role="tab" aria-controls="medicinalPlant-tab-pane" aria-selected="false">Medicinal plant</button>
+                            </li>
+
                         </ul>
                     </div>
                 </div>
@@ -130,57 +135,43 @@ https://templatemo.com/tm-590-topic-listing
                     <div class="row">
                         <div class="col-12">
                             <div class="tab-content" id="myTabContent" >
-                                <div class="tab-pane fade show active" id="design-tab-pane" role="tabpanel" aria-labelledby="design-tab">
-                                    <!-- เนื้อหาแท็บ Design ไว้ที่นี่ -->
+                                
+                                <div class="tab-pane fade show active" id="all-tab-pane" role="tabpanel" aria-labelledby="all-tab">
+                                    <!-- เนื้อหาแท็บ All (ต้นไม้ทั้งหมด) ไว้ที่นี่ -->
                                     <div class="row">
                                         <!-- Start ng-repeat loop to create a box for each item in rtree -->
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree" >
-                                            <div class="custom-block bg-white shadow-lg" >
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
+                                            <div class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">{{x.thainame}}</h5>
                                                         <p class="mb-0">{{x.engname}}</p>
                                                     </div>
-                                                    <!-- <span class="{{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}">14</span> -->
                                                 </div>
                                                 <img ng-src="{{x.picture}}" class="custom-block-image img-fluid">
                                                 <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}</p>
                                                 <span style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}}</span>
-                                                
+                                                 
+                                                <div style="display: inline-block; cursor: pointer;" ng-click="openModal()" class="qrcode">
+                                                    <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="custom-block-image img-fluid" ng-if="x.qrcodeofar" style="width: 50px; height: 50px;">
+                                                  </div>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
-                                <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab">
-                                    <!-- เนื้อหาแท็บ Marketing ไว้ที่นี่ -->
+                                
+                                
+                                <div class="tab-pane fade fade show active" id="augmentedReality-tab-pane" role="tabpanel" aria-labelledby="augmentedReality-tab">
+                                    <!-- เนื้อหาแท็บ Augmented Reality ไว้ที่นี่ -->
                                     <div class="row">
                                         <!-- Start ng-repeat loop to create a box for each item in rtree -->
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
-                                            <div class="custom-block bg-white shadow-lg">
+                                            <!-- ตรวจสอบว่า x.qrcodeofar มีข้อมูลหรือไม่ -->
+                                            <div ng-if="x.qrcodeofar" class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
                                                     <div>
-                                                        <h5 class="mb-2">{{x.thainame}}</h5>
-                                                        <p class="mb-0">{{x.engname}}</p>
-                                                    </div>
-                                                    <!-- <span class="{{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}">14</span> -->
-                                                </div>
-                                                <img ng-src="{{x.picture}}" class="custom-block-image img-fluid">
-                                                <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}</p>
-                                                <span style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}}</span>
-                                            </div>
-                                        </div>
-                                    </div>   
-                                </div>
-                              
-                                <div class="tab-pane fade" id= "finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab">
-                                    <!-- เนื้อหาแท็บ finance ไว้ที่นี่ -->
-                                    <div class="row">
-                                        <!-- Start ng-repeat loop to create a box for each item in rtree -->
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <div class="d-flex">
-                                                    <div>
+                                                        
                                                         <h5 class="mb-2">{{x.thainame}}</h5>
                                                         <p class="mb-0">{{x.engname}}</p>
                                                     </div>
@@ -188,29 +179,45 @@ https://templatemo.com/tm-590-topic-listing
                                                 <img ng-src="{{x.picture}}" class="custom-block-image img-fluid">
                                                 <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}</p>
                                                 <span style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}}</span>
+                                                <div style="display: inline-block; cursor: pointer;" ng-click="openModal()" class="qrcode">
+                                                    <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="custom-block-image img-fluid" style="width: 50px; height: 50px;">
+                                                </div>
                                             </div>
                                         </div>
                                     </div>   
                                 </div>
 
-                                <div class="tab-pane fade" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab">
-                                    <!-- เนื้อหาแท็บ music ไว้ที่นี่ -->
+
+
+
+                                
+  
+                                <div class="tab-pane fade" id="perenninaPlant-tab-pane" role="tabpanel" aria-labelledby="perenninaPlant-tab">
+                                    <!-- เนื้อหาแท็บ Perennina Plant ไว้ที่นี่ -->
                                     <div class="row">
                                         <!-- Start ng-repeat loop to create a box for each item in rtree -->
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
-                                            <div class="custom-block bg-white shadow-lg">
+                                            <!-- ตรวจสอบค่า treetyyy ว่าเป็น 'ไม้ยืนต้น' หรือไม่ -->
+                                            <div ng-if="x.treetyyy === 'ไม้ยืนต้น'" class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">{{x.thainame}}</h5>
                                                         <p class="mb-0">{{x.engname}}</p>
                                                     </div>
+                                                </div>
                                                 <img ng-src="{{x.picture}}" class="custom-block-image img-fluid">
                                                 <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}</p>
                                                 <span style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}}</span>
+                                                 
+                                                <div style="display: inline-block; cursor: pointer;" ng-click="openModal()" class="qrcode">
+                                                    <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="custom-block-image img-fluid" ng-if="x.qrcodeofar" style="width: 50px; height: 50px;">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>   
+                                    </div>
                                 </div>
+
+
 
                                 <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab">
                                     <!-- เนื้อหาแท็บ education ไว้ที่นี่ -->
@@ -236,265 +243,23 @@ https://templatemo.com/tm-590-topic-listing
                     </div>
                 </div>
                 
+
+
+                
+                <div class="modal" ng-show="showFullImage">
+                    <div class="modal-content">
+                      <!-- รูปภาพเต็มหน้าจอ -->
+                      <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="full-image" ng-if="x.qrcodeofar">
+                      <!-- ปุ่มปิด modal -->
+                      <span class="close" ng-click="closeModal()">&times;</span>
+                    </div>
+                  </div>
+                  
+   
                 
           
                
-                                        <!-- <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Graphic</h5>
-
-                                                                <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-design rounded-pill ms-auto">75</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_Redesign_feedback_re_jvm0.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-12">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Logo Design</h5>
-
-                                                                <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-design rounded-pill ms-auto">100</span>
-                                                    </div>
-
-                                                    <img src="images/topics/colleagues-working-cozy-office-medium-shot.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> 
-<!-- 
-                                <div class="tab-pane fade" id="marketing-tab-pane" role="tabpanel" aria-labelledby="marketing-tab" tabindex="0">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
-                                                <div class="custom-block bg-white shadow-lg">
-                                                    <a href="topics-detail.html">
-                                                        <div class="d-flex">
-                                                            <div>
-                                                                <h5 class="mb-2">Advertising</h5>
-
-                                                                <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                            </div>
-
-                                                            <span class="badge bg-advertising rounded-pill ms-auto">30</span>
-                                                        </div>
-
-                                                        <img src="images/topics/undraw_online_ad_re_ol62.png" class="custom-block-image img-fluid" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
-                                                <div class="custom-block bg-white shadow-lg">
-                                                    <a href="topics-detail.html">
-                                                        <div class="d-flex">
-                                                            <div>
-                                                                <h5 class="mb-2">Video Content</h5>
-
-                                                                <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                            </div>
-
-                                                            <span class="badge bg-advertising rounded-pill ms-auto">65</span>
-                                                        </div>
-
-                                                        <img src="images/topics/undraw_Group_video_re_btu7.png" class="custom-block-image img-fluid" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-
-                                            <div class="col-lg-4 col-md-6 col-12">
-                                                <div class="custom-block bg-white shadow-lg">
-                                                    <a href="topics-detail.html">
-                                                        <div class="d-flex">
-                                                            <div>
-                                                                <h5 class="mb-2">Viral Tweet</h5>
-
-                                                                <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                            </div>
-
-                                                            <span class="badge bg-advertising rounded-pill ms-auto">50</span>
-                                                        </div>
-
-                                                        <img src="images/topics/undraw_viral_tweet_gndb.png" class="custom-block-image img-fluid" alt="">
-                                                    </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                  </div>
-
-                                <div class="tab-pane fade" id="finance-tab-pane" role="tabpanel" aria-labelledby="finance-tab" tabindex="0">   <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-0">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Investment</h5>
-
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-finance rounded-pill ms-auto">30</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_Finance_re_gnv2.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="custom-block custom-block-overlay">
-                                                <div class="d-flex flex-column h-100">
-                                                    <img src="images/businesswoman-using-tablet-analysis-graph-company-finance-strategy-statistics-success-concept-planning-future-office-room.jpg" class="custom-block-image img-fluid" alt="">
-
-                                                    <div class="custom-block-overlay-text d-flex">
-                                                        <div>
-                                                            <h5 class="text-white mb-2">Finance</h5>
-
-                                                            <p class="text-white">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sint animi necessitatibus aperiam repudiandae nam omnis</p>
-
-                                                            <a href="topics-detail.html" class="btn custom-btn mt-2 mt-lg-3">Learn More</a>
-                                                        </div>
-
-                                                        <span class="badge bg-finance rounded-pill ms-auto">25</span>
-                                                    </div>
-
-                                                    <div class="social-share d-flex">
-                                                        <p class="text-white me-4">Share:</p>
-
-                                                        <ul class="social-icon">
-                                                            <li class="social-icon-item">
-                                                                <a href="#" class="social-icon-link bi-twitter"></a>
-                                                            </li>
-
-                                                            <li class="social-icon-item">
-                                                                <a href="#" class="social-icon-link bi-facebook"></a>
-                                                            </li>
-
-                                                            <li class="social-icon-item">
-                                                                <a href="#" class="social-icon-link bi-pinterest"></a>
-                                                            </li>
-                                                        </ul>
-
-                                                        <a href="#" class="custom-icon bi-bookmark ms-auto"></a>
-                                                    </div>
-
-                                                    <div class="section-overlay"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="tab-pane fade" id="music-tab-pane" role="tabpanel" aria-labelledby="music-tab" tabindex="0">
-                                    <div class="row">
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Composing Song</h5>
-
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-music rounded-pill ms-auto">45</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_Compose_music_re_wpiw.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-3">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Online Music</h5>
-
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-music rounded-pill ms-auto">45</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_happy_music_g6wc.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-4 col-md-6 col-12">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Podcast</h5>
-
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-music rounded-pill ms-auto">20</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_Podcast_audience_re_4i5q.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
-<!-- 
-                                <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab" tabindex="0">
-                                    <div class="row">
-                                        <div class="col-lg-6 col-md-6 col-12 mb-4 mb-lg-3">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Graduation</h5>
-
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-education rounded-pill ms-auto">80</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_Graduation_re_gthn.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-
-                                        <div class="col-lg-6 col-md-6 col-12">
-                                            <div class="custom-block bg-white shadow-lg">
-                                                <a href="topics-detail.html">
-                                                    <div class="d-flex">
-                                                        <div>
-                                                            <h5 class="mb-2">Educator</h5>
-
-                                                            <p class="mb-0">Lorem Ipsum dolor sit amet consectetur</p>
-                                                        </div>
-
-                                                        <span class="badge bg-education rounded-pill ms-auto">75</span>
-                                                    </div>
-
-                                                    <img src="images/topics/undraw_Educator_re_ju47.png" class="custom-block-image img-fluid" alt="">
-                                                </a>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div> -->
+                                      
                             </div>
 
                     </div>

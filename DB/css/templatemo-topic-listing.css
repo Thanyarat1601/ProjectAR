@@ -538,6 +538,7 @@ strong {
   margin-bottom: -100px;
 }
 
+ 
 
 
 .custom-block {
@@ -563,6 +564,11 @@ strong {
   width: 100%;
 }
 
+.qrcode {
+  width: 50px; 
+  height: 50px;
+}
+
 .custom-block-image {
   display: block;
   width: 100%;
@@ -570,6 +576,11 @@ strong {
   object-fit: cover;
   margin-top: 35px;
 }
+.custom-block-image2 {
+  object-fit: cover;
+
+}
+
 
 .custom-block .rounded-pill {
   border-radius: 5px !important;

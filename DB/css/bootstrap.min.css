@@ -78,6 +78,8 @@
         scroll-behavior:smooth
     }
 }
+          
+
 body{
     margin:0;
     font-family:var(--bs-body-font-family);
@@ -89,6 +91,8 @@ body{
     background-color:var(--bs-body-bg);
     -webkit-text-size-adjust:100%;
     -webkit-tap-highlight-color:transparent
+
+   
 }
 hr{
     margin:1rem 0;
@@ -531,6 +535,48 @@ progress{
     }
 }
 
+
+  /* สไตล์ modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7); /* สีพื้นหลังแบบอ่อนๆ */
+  }
+  
+  /* สไตล์ modal content */
+  .modal-content {
+    position: relative;
+    margin: auto;
+    padding: 20px;
+    width: 80%;
+    max-width: 800px;
+    background-color: #fff;
+    text-align: center; /* กำหนดให้รูปภาพอยู่ตรงกลาง */
+  }
+  
+  /* สไตล์รูปภาพเต็มหน้าจอ */
+  .full-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  /* ปุ่มปิด modal */
+  .close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  
 .row{
     --bs-gutter-x:1.5rem;
     --bs-gutter-y:1.0;

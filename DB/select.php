@@ -8,7 +8,7 @@ if(($d->search==1)){
 }else{
     $a = "ID Like'{$d->search}' ";
 }
-$sql = "SELECT * FROM `tree` WHERE {$a}";
+$sql = "SELECT * FROM `new_table` WHERE {$a}";
 $result = $conn->query($sql);
 
 

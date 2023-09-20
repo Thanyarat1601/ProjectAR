@@ -1,6 +1,17 @@
 angular.module('myApp', [])
 .controller('ViewWebController', ['$scope', '$http', function($scope, $http) {
     $scope.rtree = {};
+ 
+
+
+    $scope.showFullImage = false;
+    $scope.openModal = function() {
+      $scope.showFullImage = true;
+    };
+    $scope.closeModal = function() {
+      $scope.showFullImage = false;
+    };
+    
 
     $scope.select = function() {
         var tem = null;
