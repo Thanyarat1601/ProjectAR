@@ -118,7 +118,7 @@ https://templatemo.com/tm-590-topic-listing
                             </li>
 
                             <li class="nav-item" role="presentation">
-                                <button class="nav-link" id="ornamentalFlowers-tab" data-bs-toggle="tab" data-bs-target="#ornamentalFlowers-tab-pane" type="button" role="tab" aria-controls="ornamentalFlowers-tab-pane" aria-selected="false">Ornamental flowers</button>
+                                <button class="nav-link" id="palm-tab" data-bs-toggle="tab" data-bs-target="#palm-tab-pane" type="button" role="tab" aria-controls="palm-tab-pane" aria-selected="false">Palm</button>
                             </li>
 
                             <li class="nav-item" role="presentation">
@@ -218,63 +218,96 @@ https://templatemo.com/tm-590-topic-listing
                                 </div>
 
 
-
-                                <div class="tab-pane fade" id="education-tab-pane" role="tabpanel" aria-labelledby="education-tab">
-                                    <!-- เนื้อหาแท็บ education ไว้ที่นี่ -->
+                                <div class="tab-pane fade" id="shrubbery-tab-pane" role="tabpanel" aria-labelledby="shrubbery-tab">
+                                    <!-- เนื้อหาแท็บ Shrubbery ไว้ที่นี่ -->
                                     <div class="row">
                                         <!-- Start ng-repeat loop to create a box for each item in rtree -->
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
-                                            <div class="custom-block bg-white shadow-lg">
+                                            <!-- ตรวจสอบค่า treetyyy ว่าเป็น 'ไม้พุ่ม' หรือไม่ -->
+                                            <div ng-if="x.treetyyy === 'ไม้พุ่ม'" class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
                                                     <div>
                                                         <h5 class="mb-2">{{x.thainame}}</h5>
                                                         <p class="mb-0">{{x.engname}}</p>
-                                                    </div> 
+                                                    </div>
                                                 </div>
                                                 <img ng-src="{{x.picture}}" class="custom-block-image img-fluid">
                                                 <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}</p>
                                                 <span style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}}</span>
+                                                 
+                                                <div style="display: inline-block; cursor: pointer;" ng-click="openModal()" class="qrcode">
+                                                    <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="custom-block-image img-fluid" ng-if="x.qrcodeofar" style="width: 50px; height: 50px;">
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>   
+                                    </div>
                                 </div>
+
+                                <div class="tab-pane fade" id="palm-tab-pane" role="tabpanel" aria-labelledby="palm-tab">
+                                    <!-- เนื้อหาแท็บ Palm ไว้ที่นี่ -->
+                                    <div class="row">
+                                        <!-- Start ng-repeat loop to create a box for each item in rtree -->
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
+                                            <!-- ตรวจสอบค่า treetyyy ว่าเป็น 'ปาล์ม' หรือไม่ -->
+                                            <div ng-if="x.treetyyy === 'ปาล์ม'" class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">{{x.thainame}}</h5>
+                                                        <p class="mb-0">{{x.engname}}</p>
+                                                    </div>
+                                                </div>
+                                                <img ng-src="{{x.picture}}" class="custom-block-image img-fluid">
+                                                <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}</p>
+                                                <span style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}}</span>
+                                                 
+                                                <div style="display: inline-block; cursor: pointer;" ng-click="openModal()" class="qrcode">
+                                                    <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="custom-block-image img-fluid" ng-if="x.qrcodeofar" style="width: 50px; height: 50px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="tab-pane fade" id="medicinalPlant-tab-pane" role="tabpanel" aria-labelledby="medicinalPlant-tab">
+                                    <!-- เนื้อหาแท็บ Medicinal Plant ไว้ที่นี่ -->
+                                    <div class="row">
+                                        <!-- Start ng-repeat loop to create a box for each item in rtree -->
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
+                                            <!-- ตรวจสอบค่า treetyyy ว่าเป็น 'ไม้ล้มลุก / สมุนไพร' หรือไม่ -->
+                                            <div ng-if="x.treetyyy === 'ไม้ล้มลุก / สมุนไพร'" class="custom-block bg-white shadow-lg">
+                                                <div class="d-flex">
+                                                    <div>
+                                                        <h5 class="mb-2">{{x.thainame}}</h5>
+                                                        <p class="mb-0">{{x.engname}}</p>
+                                                    </div>
+                                                </div>
+                                                <img ng-src="{{x.picture}}" class="custom-block-image img-fluid">
+                                                <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}</p>
+                                                <span style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}}</span>
+                                                 
+                                                <div style="display: inline-block; cursor: pointer;" ng-click="openModal()" class="qrcode">
+                                                    <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="custom-block-image img-fluid" ng-if="x.qrcodeofar" style="width: 50px; height: 50px;">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+
                             </div>
                         </div>
                     </div>
                 </div>
-                
-
-
-                
-                <div class="modal" ng-show="showFullImage">
-                    <div class="modal-content">
-                      <!-- รูปภาพเต็มหน้าจอ -->
-                      <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="full-image" ng-if="x.qrcodeofar">
-                      <!-- ปุ่มปิด modal -->
-                      <span class="close" ng-click="closeModal()">&times;</span>
-                    </div>
-                  </div>
-                  
-   
-                
-          
-               
-                                      
-                            </div>
-
-                    </div>
-                </div>
-            </section>
-
-
-          
-
-          
-
-
-            
+             </section> 
         </main>
 
+
+
+        
 <footer class="site-footer section-padding">
             <div class="container">
                 <div class="row">
