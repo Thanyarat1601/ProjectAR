@@ -287,7 +287,7 @@ strong {
 }
 
 .sticky-wrapper.is-sticky .navbar {
-  background-color: var(--secondary-color);
+  background-color: rgba(255, 255, 255, 0.9);
 }
 
 .navbar {
