@@ -166,9 +166,9 @@ https://templatemo.com/tm-590-topic-listing
                                     <!-- เนื้อหาแท็บ Augmented Reality ไว้ที่นี่ -->
                                     <div class="row">
                                         <!-- Start ng-repeat loop to create a box for each item in rtree -->
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree | filter: { qrcodeofar: '' }">
                                             <!-- ตรวจสอบว่า x.qrcodeofar มีข้อมูลหรือไม่ -->
-                                            <div ng-if="x.qrcodeofar" class="custom-block bg-white shadow-lg">
+                                            <div  class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
                                                     <div>
                                                         
@@ -196,7 +196,7 @@ https://templatemo.com/tm-590-topic-listing
                                     <!-- เนื้อหาแท็บ Perennina Plant ไว้ที่นี่ -->
                                     <div class="row">
                                         <!-- Start ng-repeat loop to create a box for each item in rtree -->
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree | filter:{ treetyyy: 'ไม้ยืนต้น' }">
                                             <!-- ตรวจสอบค่า treetyyy ว่าเป็น 'ไม้ยืนต้น' หรือไม่ -->
                                             <div ng-if="x.treetyyy === 'ไม้ยืนต้น'" class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
@@ -222,7 +222,7 @@ https://templatemo.com/tm-590-topic-listing
                                     <!-- เนื้อหาแท็บ Shrubbery ไว้ที่นี่ -->
                                     <div class="row">
                                         <!-- Start ng-repeat loop to create a box for each item in rtree -->
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree | filter:{ treetyyy: 'ไม้พุ่ม' }">
                                             <!-- ตรวจสอบค่า treetyyy ว่าเป็น 'ไม้พุ่ม' หรือไม่ -->
                                             <div ng-if="x.treetyyy === 'ไม้พุ่ม'" class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
@@ -247,7 +247,7 @@ https://templatemo.com/tm-590-topic-listing
                                     <!-- เนื้อหาแท็บ Palm ไว้ที่นี่ -->
                                     <div class="row">
                                         <!-- Start ng-repeat loop to create a box for each item in rtree -->
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree | filter:{ treetyyy: 'ปาล์ม' }">
                                             <!-- ตรวจสอบค่า treetyyy ว่าเป็น 'ปาล์ม' หรือไม่ -->
                                             <div ng-if="x.treetyyy === 'ปาล์ม'" class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
@@ -272,7 +272,7 @@ https://templatemo.com/tm-590-topic-listing
                                     <!-- เนื้อหาแท็บ Medicinal Plant ไว้ที่นี่ -->
                                     <div class="row">
                                         <!-- Start ng-repeat loop to create a box for each item in rtree -->
-                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree">
+                                        <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree | filter:{ treetyyy: 'ไม้ล้มลุก / สมุนไพร' }">
                                             <!-- ตรวจสอบค่า treetyyy ว่าเป็น 'ไม้ล้มลุก / สมุนไพร' หรือไม่ -->
                                             <div ng-if="x.treetyyy === 'ไม้ล้มลุก / สมุนไพร'" class="custom-block bg-white shadow-lg">
                                                 <div class="d-flex">
