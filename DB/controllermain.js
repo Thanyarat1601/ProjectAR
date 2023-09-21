@@ -40,7 +40,7 @@ angular.module('myApp', [])
         });
       };
 
-     
+      
       
 
             var area = document.getElementById('previewarea');

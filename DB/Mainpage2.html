@@ -162,13 +162,13 @@ https://templatemo.com/tm-590-topic-listing
 
                                 
                                 
-                                <div class="tab-pane fade fade show active" id="augmentedReality-tab-pane" role="tabpanel" aria-labelledby="augmentedReality-tab">
+                                <div class="tab-pane fade" id="augmentedReality-tab-pane" role="tabpanel" aria-labelledby="augmentedReality-tab">
                                     <!-- เนื้อหาแท็บ Augmented Reality ไว้ที่นี่ -->
                                     <div class="row">
                                         <!-- Start ng-repeat loop to create a box for each item in rtree -->
                                         <div class="col-lg-4 col-md-6 col-12 mb-4 mb-lg-0" ng-repeat="x in rtree | filter: { qrcodeofar: '' }">
                                             <!-- ตรวจสอบว่า x.qrcodeofar มีข้อมูลหรือไม่ -->
-                                            <div  class="custom-block bg-white shadow-lg">
+                                            <div  class="custom-block bg-white shadow-lg" ng-if="x.qrcodeofar">
                                                 <div class="d-flex">
                                                     <div>
                                                         
@@ -180,7 +180,7 @@ https://templatemo.com/tm-590-topic-listing
                                                 <p>รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}</p>
                                                 <span style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}}</span>
                                                 <div style="display: inline-block; cursor: pointer;" ng-click="openModal()" class="qrcode">
-                                                    <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="custom-block-image img-fluid" style="width: 50px; height: 50px;">
+                                                    <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="custom-block-image img-fluid" ng-if="x.qrcodeofar" style="width: 50px; height: 50px;">
                                                 </div>
                                             </div>
                                         </div>
