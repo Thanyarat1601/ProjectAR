@@ -9168,12 +9168,12 @@ fieldset:disabled .btn {
   font-family: 'TH Niramit AS', sans-serif;
 }
 
-.shadow__btn {
+.pt-3.shadow__btn {
   background: rgb(0,140,255);
   box-shadow: 0 0 25px rgb(0,140,255);
 }
 
-.shadow__btn:hover {
+.pt-3.shadow__btn:hover {
   box-shadow: 0 0 5px rgb(0,140,255),
               0 0 25px rgb(0,140,255),
               0 0 50px rgb(0,140,255),
