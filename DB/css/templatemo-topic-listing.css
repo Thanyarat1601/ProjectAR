@@ -21,19 +21,19 @@ https://templatemo.com/tm-590-topic-listing
   --border-color:                 #7fffd4;
   --link-hover-color:             #13547a;
 
-  --body-font-family:             'Open Sans', sans-serif;
-  --title-font-family:            'Montserrat', sans-serif;
+  --body-font-family:             'Angsana New', sans-serif;
+  --title-font-family:            'Angsana New', sans-serif;
 
-  --h1-font-size:                 58px;
-  --h2-font-size:                 46px;
-  --h3-font-size:                 32px;
-  --h4-font-size:                 28px;
-  --h5-font-size:                 24px;
-  --h6-font-size:                 22px;
-  --p-font-size:                  20px;
-  --menu-font-size:               14px;
-  --btn-font-size:                18px;
-  --copyright-font-size:          16px;
+  --h1-font-size:                 90px;
+  --h2-font-size:                 70px;
+  --h3-font-size:                 55px;
+  --h4-font-size:                 35px;
+  --h5-font-size:                 33px;
+  --h6-font-size:                 35px;
+  --p-font-size:                  28px;
+  /* --menu-font-size:               18px; */
+  --btn-font-size:                30px;
+  --copyright-font-size:          24px;
 
   --border-radius-large:          100px;
   --border-radius-medium:         20px;
@@ -41,8 +41,8 @@ https://templatemo.com/tm-590-topic-listing
 
   --font-weight-normal:           400;
   --font-weight-medium:           500;
-  --font-weight-semibold:         600;
-  --font-weight-bold:             700;
+  --font-weight-semibold:         700;
+  --font-weight-bold:             900;
 }
 
 body {
@@ -96,7 +96,7 @@ h5 {
 }
 
 h6 {
-  color: var(--primary-color);
+  color: #2b0487;
   font-size: var(--h6-font-size);
 }
 
@@ -251,7 +251,7 @@ strong {
   SITE HEADER              
 -----------------------------------------*/
 .site-header {
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  background-image: linear-gradient(15deg, #0436ab 0%, #089ae3 100%);
   padding-top: 150px;
   padding-bottom: 80px;
 }
@@ -489,7 +489,7 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
+  background-image: linear-gradient(15deg, #133c7a 0%, #56c9bb 100%);
   position: relative;
   overflow: hidden;
   padding-top: 150px;
@@ -499,7 +499,7 @@ strong {
 .hero-section .input-group {
   background-color: var(--white-color);
   border-radius: var(--border-radius-large);
-  padding: 10px 15px;
+  padding: 5.5px 10.5px;
 }
 
 .hero-section .input-group-text {
@@ -926,7 +926,7 @@ blockquote {
 }
 
 .custom-form button[type="submit"] {
-  background: var(--custom-btn-bg-color);
+  background: #56c9bb;
   border: none;
   border-radius: var(--border-radius-large);
   color: var(--white-color);
