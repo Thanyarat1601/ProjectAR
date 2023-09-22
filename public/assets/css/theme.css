@@ -3500,7 +3500,7 @@ fieldset:disabled .btn {
 
 .btn-primary {
   color: #fff;
-  background-color: #001288;
+  background-color: #011490;
   border-color: #3646b3;
 }
 
@@ -9163,11 +9163,11 @@ fieldset:disabled .btn {
   height: 55px;
   border-radius: 45px;
   border: none;
-  background-color: rgb(151, 95, 255);
+  background-color: rgb(0,90,245);
   color: white;
-  box-shadow: 0px 10px 10px rgb(210, 187, 253) inset,
-  0px 5px 10px rgba(5, 5, 5, 0.212),
-  0px -10px 10px rgb(124, 54, 255) inset;
+  box-shadow: 0px 10px 10px rgb(0,155,235) inset,
+  0px 5px 10px rgb(0,60,220),
+  0px -10px 10px rgb(0,20,200) inset;
   cursor: pointer;
   display: flex;
   align-items: center;
