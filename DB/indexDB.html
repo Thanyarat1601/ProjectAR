@@ -85,10 +85,13 @@
                       <p scope="col">รหัสพรรณไม้: {{x.ID[0]}}-{{x.ID.substring(1,6)}}-{{x.ID.substring(6,9)}}-{{x.ID.substring(9)}}</p>
                       <p scope="col">ชื่อพรรณไม้     : {{x.thainame}}</p>
                       <p scope="col">ชื่อวิทยาศาสตร์  : {{x.engname}}</p>
+                      <p scope="col">ประเภทของพรรณไม้  : {{x.treetyyy}}</p>
                       <p scope="col"style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}} </p>
                       <!-- <p scope="col"><img ng-src  = "{{x.qrcodeofar}}" width="100px" height="60px" ></p> -->
-
+                      <div style="display: inline-block; cursor: pointer;" ng-click="openModal()" class="qrcode">
+                        <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="custom-block-image img-fluid" ng-if="x.qrcodeofar" style="width: 80px; height: 65px;">
                       </div>
+                    </div>
                       <div class="d-flex justify-content-between align-items-center">
                         <div class="btn-group">
                           <button type="button" class="btn btn-danger btn-sm" ng-click="deleteData(x.ID)">Delete</button>
