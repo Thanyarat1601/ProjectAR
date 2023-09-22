@@ -17618,6 +17618,10 @@ label {
   height: 100%;
   width: 100%;
 }
+.bg-student{
+
+}
+
 
 .bg-light-gradient {
   background: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 240, 253, 0)), color-stop(14.32%, rgba(236, 240, 253, 0.53)), color-stop(45.83%, #ECF0FD), color-stop(84.33%, rgba(236, 240, 253, 0.43)), to(rgba(236, 240, 253, 0)));
