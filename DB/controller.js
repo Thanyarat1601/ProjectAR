@@ -35,41 +35,41 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
         }; 
     }; 
  
-    // เมื่อมีการเลือกรูปภาพใหม่
-document.getElementById('imageinput').addEventListener('change', function (event) {
-  var previewArea = document.getElementById('previewarea');
-  previewArea.innerHTML = ''; // ล้างรายการรูปภาพที่แสดงอยู่ก่อนหน้า
+              // เมื่อมีการเลือกรูปภาพใหม่
+          document.getElementById('imageinput').addEventListener('change', function (event) {
+            var previewArea = document.getElementById('previewarea');
+            previewArea.innerHTML = ''; // ล้างรายการรูปภาพที่แสดงอยู่ก่อนหน้า
 
-  // แสดงตัวอย่างรูปภาพ
-  for (var i = 0; i < event.target.files.length; i++) {
-      var image = document.createElement('img');
-      image.src = URL.createObjectURL(event.target.files[i]);
-      image.className = 'preview-image';
-      previewArea.appendChild(image);
-  }
-});
+            // แสดงตัวอย่างรูปภาพ
+            for (var i = 0; i < event.target.files.length; i++) {
+                var image = document.createElement('img');
+                image.src = URL.createObjectURL(event.target.files[i]);
+                image.className = 'preview-image';
+                previewArea.appendChild(image);
+            }
+          });
 
-// เมื่อมีการเลือกไฟล์ QR Code ใหม่
-document.getElementById('qrcodeinput').addEventListener('change', function (event) {
-  var qrcodePreviewArea = document.getElementById('qrcodepreviewarea');
-  qrcodePreviewArea.innerHTML = ''; // ล้างรายการ QR Code ที่แสดงอยู่ก่อนหน้า
+          // เมื่อมีการเลือกไฟล์ QR Code ใหม่
+          document.getElementById('qrcodeinput').addEventListener('change', function (event) {
+            var qrcodePreviewArea = document.getElementById('qrcodepreviewarea');
+            qrcodePreviewArea.innerHTML = ''; // ล้างรายการ QR Code ที่แสดงอยู่ก่อนหน้า
 
-  // แสดงตัวอย่าง QR Code
-  for (var i = 0; i < event.target.files.length; i++) {
-      var qrCodeImage = document.createElement('img');
-      qrCodeImage.src = URL.createObjectURL(event.target.files[i]);
-      qrCodeImage.className = 'preview-image';
-      qrcodePreviewArea.appendChild(qrCodeImage);
-  }
-});
+            // แสดงตัวอย่าง QR Code
+            for (var i = 0; i < event.target.files.length; i++) {
+                var qrCodeImage = document.createElement('img');
+                qrCodeImage.src = URL.createObjectURL(event.target.files[i]);
+                qrCodeImage.className = 'preview-image';
+                qrcodePreviewArea.appendChild(qrCodeImage);
+            }
+          });
 
 
 
- $scope.rtree = {};
- $scope.rtree1 = {};
- $scope.show = {}; 
- // อัปเดตส่วนที่รับค่า ENUM จากฟอร์ม
-$scope.rtree1.treetyyy = $scope.selectedTreetyyy; // สมมติว่าค่า ENUM อยู่ในตัวแปร selectedTreetyyy
+    $scope.rtree = {};
+    $scope.rtree1 = {};
+    $scope.show = {}; 
+    // อัปเดตส่วนที่รับค่า ENUM จากฟอร์ม
+    $scope.rtree1.treetyyy = $scope.selectedTreetyyy; // สมมติว่าค่า ENUM อยู่ในตัวแปร selectedTreetyyy
  
  var fd = new FormData();
 
@@ -184,6 +184,8 @@ $scope.senddata = function() {
           myModal.show();
       });
     };
+
+
         
      $scope.deleteData = function(xxx){
     if(confirm("Are you sure you want to remove it?"))

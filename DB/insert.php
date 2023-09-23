@@ -3,27 +3,20 @@ include "database_connection.php";
 
 if (isset($_FILES['imageinput']) && isset($_FILES['qrcodeinput'])) {
     $newname = $_FILES['imageinput']['name'];
-
-    if (move_uploaded_file($_FILES['imageinput']['tmp_name'], $newname)) {
-        // Upload ไฟล์ภาพเรียบร้อย
-    } else {
-        echo 'ไม่สามารถอัปโหลดไฟล์ภาพได้';
-    }
-    
-    // อัปโหลดไฟล์ QR Code
     $qrcodeNewname = $_FILES['qrcodeinput']['name'];
-    if (move_uploaded_file($_FILES['qrcodeinput']['tmp_name'], $qrcodeNewname)) {
-        // Upload ไฟล์ QR Code เรียบร้อย
-    } else {
-        echo 'ไม่สามารถอัปโหลดไฟล์ QR Code ได้';
-    }
+
+    if (move_uploaded_file($_FILES['imageinput']['tmp_name'], $newname) &&
+    move_uploaded_file($_FILES['qrcodeinput']['tmp_name'], $qrcodeNewname)) {
+    // Upload ไฟล์ภาพและไฟล์ QR Code เรียบร้อย
 } else {
-    echo 'ไม่มีไฟล์ภาพ';
+    echo 'ไม่สามารถอัปโหลดไฟล์ได้';
+}
+} else {
+echo 'ไม่มีไฟล์ภาพ';
 }
 
 $x = $_POST['data'];
 $d = json_decode($x);
-
 // รับค่า ENUM จากตาราง treetyyy
 $treetyyy = $d->treetyyy;
 

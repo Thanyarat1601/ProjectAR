@@ -76,8 +76,9 @@
             เพิ่มข้อมูล </button><br><br>
           </div>
           </div>
-          <div class="row d-flex justify-content-center">
-          
+
+          <!-- หน้าแสดงข้อมูลทั้งหมด -->
+          <div class="row d-flex justify-content-center">         
               <div class="card mb-4 box-shadow" style="width: 25rem; margin-right: 35px;"  ng-repeat = "x in rtree">   
                     <div class="card-body">
                       <h5 class="card-title">ข้อมูลพรรณไม้</h5>
@@ -132,83 +133,83 @@
         
   
   <!-- insert -->
-  
-  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูลพรรณไม้</h5>
+      
+      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">เพิ่มข้อมูลพรรณไม้</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="row g-3" ng-submit="senddata()"  enctype="multipart/form-data">
+                        <div class="col-md-6">
+                            <label for="inputID4" class="form-label">รหัสพรรณไม้</label>
+                            <input type="text" ng-model="frntree.ID" class="form-control" id="inputID4">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputName4" class="form-label">ชื่อภาษาไทย</label>
+                            <input type="text" ng-model="frntree.thainame" class="form-control" id="inputName4">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="inputLastnane" class="form-label">ชื่อวิทยาศาสตร์</label>
+                            <input type="text" ng-model="frntree.engname" class="form-control" id="inputLastname">
+                        </div>
+                        <div class="col-md-6">
+                          <label for="treetyyySelect" class="form-label">ประเภทพรรณไม้</label>
+                          <select class="form-select" ng-model="frntree.treetyyy" id="treetyyySelect">
+                              <option value="ไม้ยืนต้น">ไม้ยืนต้น</option>
+                              <option value="ปาล์ม">ปาล์ม</option>
+                              <option value="ไม้พุ่ม">ไม้พุ่ม</option>
+                              <option value="ไม้ล้มลุก / สมุนไพร">ไม้ล้มลุก / สมุนไพร</option>
+                          </select>
+                         </div>        
+                        <div class="mb-3">
+                            <label for="exampleFormControlTextarea1" class="form-label">สรรพคุณ</label>
+                            <textarea class="form-control" ng-model="frntree.properties" id="exampleFormControlTextarea1"
+                                rows="3"></textarea>
+                        </div>                 
+                        <div class="col-md-6">
+                          <label for="inputMajor2" class="form-label">รูปภาพ</label>
+                          <input id="imageinput" type="file" accept="image/*" multiple="multiple" class="form-control" name="imageinput">
+                          <div id="previewarea" class="row"></div>
+                      </div>
+                        <div class="col-md-6">
+                          <label for="inputQRCode" class="form-label">QR Code รูปภาพ</label>
+                          <input id="qrcodeinput" type="file" accept="image/*" multiple="multiple" name="qrcodeinput" class="form-control">
+                          <div id="qrcodepreviewarea" class="row"></div>
+                      </div>         
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+        <!--show message-->
+        <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel"> </h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                <div class="text-center">
+                </div>
+                {{show}}
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-primary"data-bs-dismiss="modal" ng-click="select();">บันทึกข้อมูล</button>
+                
+              </div>
             </div>
-            <div class="modal-body">
-                <form class="row g-3" ng-submit="senddata()"  enctype="multipart/form-data">
-                    <div class="col-md-6">
-                        <label for="inputID4" class="form-label">รหัสพรรณไม้</label>
-                        <input type="text" ng-model="frntree.ID" class="form-control" id="inputID4">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputName4" class="form-label">ชื่อภาษาไทย</label>
-                        <input type="text" ng-model="frntree.thainame" class="form-control" id="inputName4">
-                    </div>
-                    <div class="col-md-6">
-                        <label for="inputLastnane" class="form-label">ชื่อวิทยาศาสตร์</label>
-                        <input type="text" ng-model="frntree.engname" class="form-control" id="inputLastname">
-                    </div>
-                    <div class="col-md-6">
-                      <label for="treetyyySelect" class="form-label">ENUM ประเภทพรรณไม้</label>
-                      <select class="form-select" ng-model="frntree.treetyyy" id="treetyyySelect">
-                          <option value="ไม้ยืนต้น">ไม้ยืนต้น</option>
-                          <option value="ปาล์ม">ปาล์ม</option>
-                          <option value="ไม้พุ่ม">ไม้พุ่ม</option>
-                          <option value="ไม้ล้มลุก / สมุนไพร">ไม้ล้มลุก / สมุนไพร</option>
-                      </select>
-                  </div>        
-                    <div class="mb-3">
-                        <label for="exampleFormControlTextarea1" class="form-label">สรรพคุณ</label>
-                        <textarea class="form-control" ng-model="frntree.properties" id="exampleFormControlTextarea1"
-                            rows="3"></textarea>
-                    </div>                 
-                    <div class="col-md-6">
-                      <label for="inputMajor2" class="form-label">รูปภาพ</label>
-                      <input id="imageinput" type="file" accept="image/*" multiple="multiple" class="form-control" name="imageinput">
-                      <div id="previewarea" class="row"></div>
-                  </div>
-                    <div class="col-md-6">
-                      <label for="inputQRCode" class="form-label">QR Code รูปภาพ</label>
-                      <input id="qrcodeinput" type="file" accept="image/*" multiple="multiple" name="qrcodeinput" class="form-control">
-                      <div id="qrcodepreviewarea" class="row"></div>
-                  </div>         
-                    <div class="col-12">
-                        <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
-                    </div>
-                </form>
-            </div>
+          </div>
         </div>
-    </div>
-</div>
-
-
-
-<!--show message-->
-<div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel"> </h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-        <div class="text-center">
-        </div>
-        {{show}}
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-primary"data-bs-dismiss="modal" ng-click="select();">บันทึกข้อมูล</button>
-        
-      </div>
-    </div>
-  </div>
-</div>
 
 
 <!--update-->
