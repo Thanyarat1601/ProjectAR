@@ -489,7 +489,7 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-  background-image: linear-gradient(350deg, #003f9d 30%, #3c8ff4 75%);
+  background-image: linear-gradient(340deg, #003f9d 25%, #3c8ff4 75%);
   position: relative;
   overflow: hidden;
   padding-top: 150px;
