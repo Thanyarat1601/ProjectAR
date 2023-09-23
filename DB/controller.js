@@ -210,11 +210,3 @@ $scope.senddata = function() {
     };
     
 }]);           
-            
-
-
-
-
-
-
-
