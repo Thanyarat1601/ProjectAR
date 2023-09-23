@@ -489,7 +489,7 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-  background-image: linear-gradient(15deg, #133c7a 0%, #56c9bb 100%);
+  background-image: linear-gradient(350deg, #003f9d 30%, #3c8ff4 75%);
   position: relative;
   overflow: hidden;
   padding-top: 150px;
@@ -926,7 +926,7 @@ blockquote {
 }
 
 .custom-form button[type="submit"] {
-  background: #56c9bb;
+  background: #008df1;
   border: none;
   border-radius: var(--border-radius-large);
   color: var(--white-color);
@@ -939,7 +939,7 @@ blockquote {
 
 .custom-form button[type="submit"]:hover,
 .custom-form button[type="submit"]:focus {
-  background: var(--custom-btn-bg-hover-color);
+  background: #1950c6;
   border-color: transparent;
 }
 
@@ -1090,10 +1090,6 @@ blockquote {
   .section-padding {
     padding-top: 50px;
     padding-bottom: 50px;
-  }
-  
-  .navbar {
-    background-color: var(--secondary-color);
   }
 
   .navbar-nav .dropdown-menu {
