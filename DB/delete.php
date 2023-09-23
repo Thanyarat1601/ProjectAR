@@ -6,7 +6,7 @@ include "database_connection.php";
 
 $x = file_get_contents("php://input");
 $d = json_decode($x);
-$sql = "DELETE FROM `tree` WHERE ID like '{$d->YYY}'";
+$sql = "DELETE FROM `new_table` WHERE ID like '{$d->YYY}'";
 
 try{
     if ($conn->query($sql) === TRUE) {
