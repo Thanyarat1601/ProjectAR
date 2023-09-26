@@ -22,11 +22,11 @@ try {
     }
 
     // Check if required fields exist
-    if (!isset($d->thainame) || !isset($d->engname) || !isset($d->properties) || !isset($d->ID)) {
+    if (!isset($d->thainame) || !isset($d->engname) || !isset($d->properties) || !isset($d->treetyyy) || !isset($d->ID)) {
         throw new Exception('Missing required fields');
     }
 
-    $sql = "SELECT * FROM tree WHERE ID = {$d->ID} ";
+    $sql = "SELECT * FROM `new_table2` WHERE ID = {$d->ID} ";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
@@ -61,25 +61,27 @@ try {
             throw new Exception('Failed to move uploaded file');
         }
         $newname = $target_dir . basename($_FILES["0"]["name"]);
-        $sql = "UPDATE `tree` SET 
+        $sql = "UPDATE `new_table2` SET 
             `thainame` = '{$d->thainame}',
             `engname` = '{$d->engname}',
             `properties` = '{$d->properties}',
-            `picture` = '{$newname}'
+            `picture` = '{$newname}',
+            `treetyyy` = '{$d->treetyyy}'
             WHERE `ID` = {$d->ID} ";
     } else {
         // No new file uploaded, only update the text fields
-        $sql = "UPDATE `tree` SET 
+        $sql = "UPDATE `new_table2` SET 
             `thainame` = '{$d->thainame}',
             `engname` = '{$d->engname}',
-            `properties` = '{$d->properties}'
+            `properties` = '{$d->properties}',
+            `treetyyy` = '{$d->treetyyy}'
             WHERE `ID` = {$d->ID} ";
     }
 
     if ($conn->query($sql) == TRUE) {
-        echo "up";
+        echo "แก้ไขข้อมูลเสร็จเรียบร้อย";
     } else {
-        echo "down";
+        echo "แก้ไขข้อมูลล้มเหลว";
     }
 
     $conn->close();

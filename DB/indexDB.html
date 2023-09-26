@@ -153,7 +153,8 @@
                         <div class="col-md-6">
                             <label for="inputLastnane" class="form-label">ชื่อวิทยาศาสตร์</label>
                             <input type="text" ng-model="frntree.engname" class="form-control" id="inputLastname">
-                            <div class="col-md-6">
+                        </div>
+                        <div class="col-md-6">
                                 <label for="treetyyySelect" class="form-label">ประเภทพรรณไม้</label>
                                 <select class="form-select" ng-model="frntree.treetyyy" id="treetyyySelect">
                                     <option value="ไม้ยืนต้น">ไม้ยืนต้น</option>
@@ -161,7 +162,7 @@
                                     <option value="ไม้พุ่ม">ไม้พุ่ม</option>
                                     <option value="ไม้ล้มลุก / สมุนไพร">ไม้ล้มลุก / สมุนไพร</option>
                                 </select>
-                            </div>                           
+                        </div>                           
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">สรรพคุณ</label>
                             <textarea class="form-control" ng-model="frntree.properties" id="exampleFormControlTextarea1"
@@ -237,7 +238,16 @@
                     <div class="col-md-6">
                       <label for="exampleFormControlTextarea1" class="form-label">สรรพคุณ</label>
                       <textarea  class="form-control" ng-model = "rtree1.properties"  id="exampleFormControlTextarea1" rows="3" ng-keyup="formatTextarea()" ></textarea> 
-                    </div>            
+                    </div> 
+                    <div class="col-md-6">
+                      <label for="treetyyySelect" class="form-label">ประเภทพรรณไม้</label>
+                      <select class="form-select" ng-model="frntree.treetyyy" id="treetyyySelect">
+                          <option value="ไม้ยืนต้น">ไม้ยืนต้น</option>
+                          <option value="ปาล์ม">ปาล์ม</option>
+                          <option value="ไม้พุ่ม">ไม้พุ่ม</option>
+                          <option value="ไม้ล้มลุก / สมุนไพร">ไม้ล้มลุก / สมุนไพร</option>
+                      </select>
+                   </div>                     
                     <div class="col-12">
                       <label for="inputpicture" class="form-label">รูปภาพ</label>
                       <input id="imageinput2" type="file" accept="image/*" multiple="multiple" ng-model="rtree1.picture" class="form-control" id="inputMajor2">

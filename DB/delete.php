@@ -10,10 +10,10 @@ $sql = "DELETE FROM `new_table2` WHERE ID like '{$d->YYY}'";
 
 try{
     if ($conn->query($sql) === TRUE) {
-      echo  "124";
+      echo  "ลบข้อมูลเสร็จเรียบร้อย";
       //json_encode ("New record created successfully");
     } else {
-      echo  "587";
+      echo  "ลบข้อมูลล้มเหลว";
     }
     
     //  echo"end";
