@@ -49,20 +49,6 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
             }
           });
 
-        //   // เมื่อมีการเลือกไฟล์ QR Code ใหม่
-        //   document.getElementById('qrcodeinput').addEventListener('change', function (event) {
-        //     var qrcodePreviewArea = document.getElementById('qrcodepreviewarea');
-        //     qrcodePreviewArea.innerHTML = ''; // ล้างรายการ QR Code ที่แสดงอยู่ก่อนหน้า
-
-        //     // แสดงตัวอย่าง QR Code
-        //     for (var i = 0; i < event.target.files.length; i++) {
-        //         var qrCodeImage = document.createElement('img');
-        //         qrCodeImage.src = URL.createObjectURL(event.target.files[i]);
-        //         qrCodeImage.className = 'preview-image';
-        //         qrcodePreviewArea.appendChild(qrCodeImage);
-        //     }
-        //   });
-
 
 
     $scope.rtree = {};
@@ -96,50 +82,44 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
         }; 
         
      // อัปเดตส่วนที่ส่งข้อมูล
-$scope.Update = function() {
-  let newdata1 = new FormData();
-  let fileTag = document.getElementById("imageinput2");
-  let qrcodeFileTag = document.getElementById("qrcodeinput");
+     $scope.Update = function(){              //สร้างฟังก์ชันเพื่อส่งค่าไปใช้ในฟอร์ม   //http ทำการสั่งงาน then ตอบสนองการทำงาน
+        let newdata1 = new FormData();//2 
+        let fileTag = document.getElementById("imageinput2"); //3 
 
-  for (var i = 0; i < fileTag.files.length; i++) {
-      newdata1.append(i, fileTag.files[i]);
-  }
+      for(var i=0; i<fileTag.files.length; i++){ //4 
+          newdata1.append(i, fileTag.files[i]); 
+      };
+      newdata1.append('data', JSON.stringify($scope.rtree1)); //5 
+        $http({ method : "post" ,
+            url : "edit.php",
+            data : newdata1 ,
+            transformRequest: angular.identity, //6 
+            headers: { "Content-Type": undefined }, //6 
+            
+        }).then  (function(A){
+        if (A.data == 'แก้ไขข้อมูลเสร็จเรียบร้อย'){$scope.show = "แก้ไขข้อมูลเสร็จสิ้น";}
+        else if (A.data == 'แก้ไขข้อมูลล้มเหลว'){$scope.show = "แก้ไขข้อมูลล้มเหลว";}
+        else {$scope.show ="กรุณาติดต่อผู้ดูแลระบบ";}
+       
+        // const myModal = new bootstrap.Modal('#exampleModal2', {
+        //   keyboard: false
+        // });
+        // myModal.show();
+      },  
 
-  // ส่ง ENUM ไปใน JSON
-  $scope.rtree1.treetyyy = $scope.selectedTreetyyy; // สมมติว่าค่า ENUM อยู่ในตัวแปร selectedTreetyyy
-  newdata1.append('data', JSON.stringify($scope.rtree1));
+      function(B){
 
-   // ฟล์ภาพ QR Code
-   for (var i = 0; i < qrcodeFileTag.files.length; i++) {
-    newdata1.append('qrcode', qrcodeFileTag.files[i]);
-}
-  $http({
-      method: "post",
-      url: "edit.php",
-      data: newdata1,
-      transformRequest: angular.identity,
-      headers: { "Content-Type": undefined },
-  }).then(function (A) {
-      if (A.data == 'up') {
-          $scope.show = "แก้ไขข้อมูลเสร็จสิ้น";
-      } else if (A.data == 'down') {
-          $scope.show = "แก้ไขข้อมูลล้มเหลว";
-      } else {
-          $scope.show = "กรุณาติดต่อผู้ดูแลระบบ";
-      }
-
-      const myModal = new bootstrap.Modal('#exampleModal2', {
+        const myModal = new bootstrap.Modal('#exampleModal2', {
           keyboard: false
-      });
-      myModal.show();
-  }, function (B) {
-      const myModal = new bootstrap.Modal('#exampleModal2', {
-          keyboard: false
-      });
-      myModal.show();
-  });
-};
-    
+        });
+        myModal.show();
+
+
+
+      });  
+
+    }; 
+  
 $scope.senddata = function(){              //สร้างฟังก์ชันเพื่อส่งค่าไปใช้ในฟอร์ม   //http ทำการสั่งงาน then ตอบสนองการทำงาน
     let newdata = new FormData();//2 
     let fileTag = document.getElementById("imageinput"); //3 
@@ -156,8 +136,8 @@ $scope.senddata = function(){              //สร้างฟังก์ช�
           headers: { "Content-Type": undefined }, //6 
           })
       .then  ( function(A){
-      if (A.data == 'PP'){$scope.show = "เพิ่มข้อมูลเสร็จสิ้น";}
-      else if (A.data == 'LOL'){$scope.show = "เพิ่มข้อมูลล้มเหลว";}
+      if (A.data == 'เพิ่มข้อมูลเรียบร้อย'){$scope.show = "เพิ่มข้อมูลเสร็จสิ้น";}
+      else if (A.data == 'เกิดข้อผิดพลาดในการเพิ่มข้อมูล'){$scope.show = "เพิ่มข้อมูลล้มเหลว";}
       else {$scope.show ="กรุณาติดต่อผู้ดูแลระบบ";}
      
       const myModal = new bootstrap.Modal('#exampleModal2', {
