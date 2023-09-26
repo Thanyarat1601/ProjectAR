@@ -19,7 +19,7 @@ $d=json_decode($x);
         '{$d->engname}',
         '{$d->properties}',
         '{$newname}',
-        '{$$d->treetyyy}' );";
+        '{$d->treetyyy}' );";
 
 
 try{
