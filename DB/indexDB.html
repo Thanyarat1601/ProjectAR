@@ -88,7 +88,6 @@
                       <p scope="col">ชื่อวิทยาศาสตร์  : {{x.engname}}</p>
                       <p scope="col">ประเภทของพรรณไม้  : {{x.treetyyy}}</p>
                       <p scope="col"style="white-space: pre-wrap; word-break: break-word;">สรรพคุณ : {{x.properties}} </p>
-                      <!-- <p scope="col"><img ng-src  = "{{x.qrcodeofar}}" width="100px" height="60px" ></p> -->
                       <div style="display: inline-block; cursor: pointer;" ng-click="openModal()" class="qrcode">
                         <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="custom-block-image img-fluid" ng-if="x.qrcodeofar" style="width: 80px; height: 65px;">
                       </div>
@@ -142,7 +141,7 @@
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <form class="row g-3" ng-submit="senddata()"  enctype="multipart/form-data">
+                    <form class="row g-3" ng-submit="senddata()" enctype="multipart/form-data">
                         <div class="col-md-6">
                             <label for="inputID4" class="form-label">รหัสพรรณไม้</label>
                             <input type="text" ng-model="frntree.ID" class="form-control" id="inputID4">
@@ -154,16 +153,15 @@
                         <div class="col-md-6">
                             <label for="inputLastnane" class="form-label">ชื่อวิทยาศาสตร์</label>
                             <input type="text" ng-model="frntree.engname" class="form-control" id="inputLastname">
-                        </div>
-                        <div class="col-md-6">
-                          <label for="treetyyySelect" class="form-label">ประเภทพรรณไม้</label>
-                          <select class="form-select" ng-model="frntree.treetyyy" id="treetyyySelect">
-                              <option value="ไม้ยืนต้น">ไม้ยืนต้น</option>
-                              <option value="ปาล์ม">ปาล์ม</option>
-                              <option value="ไม้พุ่ม">ไม้พุ่ม</option>
-                              <option value="ไม้ล้มลุก / สมุนไพร">ไม้ล้มลุก / สมุนไพร</option>
-                          </select>
-                         </div>        
+                            <div class="col-md-6">
+                                <label for="treetyyySelect" class="form-label">ประเภทพรรณไม้</label>
+                                <select class="form-select" ng-model="frntree.treetyyy" id="treetyyySelect">
+                                    <option value="ไม้ยืนต้น">ไม้ยืนต้น</option>
+                                    <option value="ปาล์ม">ปาล์ม</option>
+                                    <option value="ไม้พุ่ม">ไม้พุ่ม</option>
+                                    <option value="ไม้ล้มลุก / สมุนไพร">ไม้ล้มลุก / สมุนไพร</option>
+                                </select>
+                            </div>                           
                         <div class="mb-3">
                             <label for="exampleFormControlTextarea1" class="form-label">สรรพคุณ</label>
                             <textarea class="form-control" ng-model="frntree.properties" id="exampleFormControlTextarea1"
@@ -174,11 +172,11 @@
                           <input id="imageinput" type="file" accept="image/*" multiple="multiple" class="form-control" name="imageinput">
                           <div id="previewarea" class="row"></div>
                       </div>
-                        <div class="col-md-6">
+                        <!-- <div class="col-md-6">
                           <label for="inputQRCode" class="form-label">QR Code รูปภาพ</label>
                           <input id="qrcodeinput" type="file" accept="image/*" multiple="multiple" name="qrcodeinput" class="form-control">
                           <div id="qrcodepreviewarea" class="row"></div>
-                      </div>         
+                      </div>          -->
                         <div class="col-12">
                             <button type="submit" class="btn btn-primary">บันทึกข้อมูล</button>
                         </div>

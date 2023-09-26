@@ -19,7 +19,7 @@ $search = isset($_GET['search']) ? $_GET['search'] : '';
 if ($search == '') {
   $sql = "SELECT * FROM `new_table`";
 } else {
-  $sql = "SELECT * FROM new_table WHERE ID LIKE '%{$search}%' OR thainame LIKE '%{$search}%' OR engname LIKE '%{$search}%' OR properties LIKE '%{$search}%' OR treetyyy LIKE '%{$search}%'";
+  $sql = "SELECT * FROM `new_table` WHERE ID LIKE '%{$search}%' OR thainame LIKE '%{$search}%' OR engname LIKE '%{$search}%' OR properties LIKE '%{$search}%' OR treetyyy LIKE '%{$search}%'";
 }
 
 // Execute SQL query

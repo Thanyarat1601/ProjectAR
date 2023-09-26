@@ -49,19 +49,19 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
             }
           });
 
-          // เมื่อมีการเลือกไฟล์ QR Code ใหม่
-          document.getElementById('qrcodeinput').addEventListener('change', function (event) {
-            var qrcodePreviewArea = document.getElementById('qrcodepreviewarea');
-            qrcodePreviewArea.innerHTML = ''; // ล้างรายการ QR Code ที่แสดงอยู่ก่อนหน้า
+        //   // เมื่อมีการเลือกไฟล์ QR Code ใหม่
+        //   document.getElementById('qrcodeinput').addEventListener('change', function (event) {
+        //     var qrcodePreviewArea = document.getElementById('qrcodepreviewarea');
+        //     qrcodePreviewArea.innerHTML = ''; // ล้างรายการ QR Code ที่แสดงอยู่ก่อนหน้า
 
-            // แสดงตัวอย่าง QR Code
-            for (var i = 0; i < event.target.files.length; i++) {
-                var qrCodeImage = document.createElement('img');
-                qrCodeImage.src = URL.createObjectURL(event.target.files[i]);
-                qrCodeImage.className = 'preview-image';
-                qrcodePreviewArea.appendChild(qrCodeImage);
-            }
-          });
+        //     // แสดงตัวอย่าง QR Code
+        //     for (var i = 0; i < event.target.files.length; i++) {
+        //         var qrCodeImage = document.createElement('img');
+        //         qrCodeImage.src = URL.createObjectURL(event.target.files[i]);
+        //         qrCodeImage.className = 'preview-image';
+        //         qrcodePreviewArea.appendChild(qrCodeImage);
+        //     }
+        //   });
 
 
 
@@ -140,50 +140,45 @@ $scope.Update = function() {
   });
 };
     
-   // อัปเดตส่วนที่ส่งข้อมูล
-$scope.senddata = function() {
-  let newdata = new FormData();
-  let imageFileTag = document.getElementById("imageinput");
-  let qrcodeFileTag = document.getElementById("qrcodeinput");
+$scope.senddata = function(){              //สร้างฟังก์ชันเพื่อส่งค่าไปใช้ในฟอร์ม   //http ทำการสั่งงาน then ตอบสนองการทำงาน
+    let newdata = new FormData();//2 
+    let fileTag = document.getElementById("imageinput"); //3 
 
-  for (var i = 0; i < imageFileTag.files.length; i++) {
-      newdata.append('image[]', imageFileTag.files[i]);
-  }
+    for(var i=0; i<fileTag.files.length; i++){ //4 
+        newdata.append(i, fileTag.files[i]); 
+    }; 
+    newdata.append('data', JSON.stringify($scope.frntree)); //5
 
-  for (var i = 0; i < qrcodeFileTag.files.length; i++) {
-      newdata.append('qrcode[]', qrcodeFileTag.files[i]);
-  }
-
-      // ส่ง ENUM ไปใน JSON
-      $scope.frntree.treetyyy = $scope.selectedTreetyyy; // สมมติว่าค่า ENUM อยู่ในตัวแปร selectedTreetyyy
-      newdata.append('data', JSON.stringify($scope.frntree));
-
-      $http({
-          method: "post",
-          url: "insert.php",
-          data: newdata,
-          transformRequest: angular.identity,
-          headers: { "Content-Type": undefined },
-      }).then(function (A) {
-          if (A.data == 'PP') {
-              $scope.show = "เพิ่มข้อมูลเสร็จสิ้น";
-          } else if (A.data == 'LOL') {
-              $scope.show = "เพิ่มข้อมูลล้มเหลว";
-          } else {
-              $scope.show = "กรุณาติดต่อผู้ดูแลระบบ";
-          }
-
-          const myModal = new bootstrap.Modal('#exampleModal2', {
-              keyboard: false
-          });
-          myModal.show();
-      }, function (B) {
-          const myModal = new bootstrap.Modal('#exampleModal2', {
-              keyboard: false
-          });
-          myModal.show();
+      $http({method : "post" ,
+          url : "insert.php",
+          data : newdata,
+          transformRequest: angular.identity, //6 
+          headers: { "Content-Type": undefined }, //6 
+          })
+      .then  ( function(A){
+      if (A.data == 'PP'){$scope.show = "เพิ่มข้อมูลเสร็จสิ้น";}
+      else if (A.data == 'LOL'){$scope.show = "เพิ่มข้อมูลล้มเหลว";}
+      else {$scope.show ="กรุณาติดต่อผู้ดูแลระบบ";}
+     
+      const myModal = new bootstrap.Modal('#exampleModal2', {
+        keyboard: false
       });
-    };
+      myModal.show(); 
+},  
+
+function(B){
+
+  const myModal = new bootstrap.Modal('#exampleModal2', {
+      keyboard: false
+    });
+    myModal.show();
+
+
+
+  });  
+
+
+}; 
 
 
         
