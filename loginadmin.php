@@ -7,6 +7,13 @@
 	<script src="https://kit.fontawesome.com/a81368914c.js"></script>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+	<link rel="apple-touch-icon" sizes="180x180" href="public/assets/img/favicons/plant.svg">
+             <link rel="icon" type="image/png" sizes="32x32" href="public/assets/img/favicons/plant.svg">
+             <link rel="icon" type="image/png" sizes="16x16" href="public/assets/img/favicons/plant.svg">
+             <link rel="shortcut icon" type="image/x-icon" href="public/assets/img/favicons/plant.svg">
+             <link rel="manifest" href="public/assets/img/favicons/manifest.json">
+             <meta name="msapplication-TileImage" content="public/assets/img/favicons/mstile-150x150.png">
+             <meta name="theme-color" content="#ffffff">
 
 </head>
 <body>

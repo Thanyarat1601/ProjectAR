@@ -955,7 +955,7 @@ blockquote {
   SITE FOOTER              
 -----------------------------------------*/
 .site-footer {
-  border-bottom: 10px solid var(--secondary-color);
+  border-bottom: 10px solid var(--bs-blue);
   position: relative;
 }
 
@@ -968,7 +968,7 @@ blockquote {
   height: 0;
   border-style: solid;
   border-width: 0 0 200px 200px;
-  border-color: transparent transparent var(--secondary-color) transparent;
+  border-color: transparent transparent var(--bs-blue) transparent;
   pointer-events: none;
 }
 
