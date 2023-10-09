@@ -2497,7 +2497,12 @@ textarea.form-control-lg{
     }
 }
 .btn.btn-outline-secondary {
-   margin-left: 230px !important;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
 }
 .btn:hover{
     color:var(--bs-btn-hover-color);
