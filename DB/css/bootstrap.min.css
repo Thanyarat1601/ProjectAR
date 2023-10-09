@@ -48,7 +48,11 @@
     --bs-font-monospace:SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
     --bs-gradient:linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0));
     --bs-body-font-family:var(--bs-font-sans-serif);
+<<<<<<< Updated upstream
     --bs-body-font-size:1.4rem;
+=======
+    --bs-body-font-size:1rem;
+>>>>>>> Stashed changes
     --bs-body-font-weight:400;
     --bs-body-line-height:1.5;
     --bs-body-color:#212529;
@@ -66,20 +70,32 @@
     --bs-link-color:#0d6efd;
     --bs-link-hover-color:#0a58ca;
     --bs-code-color:#d63384;
+<<<<<<< Updated upstream
     --bs-highlight-bg:#fff3cd;
     --bs-alert-margin-bottom: 20px;
 }
 *,::after,::before{
     box-sizing:border-box;
     
+=======
+    --bs-highlight-bg:#fff3cd
+    var(--bs-alert-margin-bottom) : 20px;
+}
+*,::after,::before{
+    box-sizing:border-box
+ 
+>>>>>>> Stashed changes
 }
 @media (prefers-reduced-motion:no-preference){
     :root{
         scroll-behavior:smooth
     }
 }
+<<<<<<< Updated upstream
           
 
+=======
+>>>>>>> Stashed changes
 body{
     margin:0;
     font-family:var(--bs-body-font-family);
@@ -91,8 +107,11 @@ body{
     background-color:var(--bs-body-bg);
     -webkit-text-size-adjust:100%;
     -webkit-tap-highlight-color:transparent
+<<<<<<< Updated upstream
 
    
+=======
+>>>>>>> Stashed changes
 }
 hr{
     margin:1rem 0;
@@ -534,21 +553,31 @@ progress{
         max-width:1320px
     }
 }
+<<<<<<< Updated upstream
 
 
   
   
+=======
+>>>>>>> Stashed changes
 .row{
     --bs-gutter-x:1.5rem;
     --bs-gutter-y:1.0;
     display:flex;
     flex-wrap:wrap;
+<<<<<<< Updated upstream
     margin-top:calc(-5 * var(--bs-gutter-y));
     margin-right:calc(-.5 * var(--bs-gutter-x));
     margin-bottom:calc(-5 * var(--bs-gutter-y));
     margin-left:calc(-.5 * var(--bs-gutter-x))
 
 
+=======
+    margin-top:calc(-1 * var(--bs-gutter-y));
+    margin-right:calc(-.5 * var(--bs-gutter-x));
+    margin-left:calc(-.5 * var(--bs-gutter-x))
+
+>>>>>>> Stashed changes
 }
 .row>*{
     flex-shrink:0;
@@ -556,9 +585,13 @@ progress{
     max-width:100%;
     padding-right:calc(var(--bs-gutter-x) * .5);
     padding-left:calc(var(--bs-gutter-x) * .5);
+<<<<<<< Updated upstream
    
     margin-top:var(--bs-gutter-y)
  
+=======
+    margin-top:var(--bs-gutter-y)
+>>>>>>> Stashed changes
     
 }
 .col{
@@ -566,8 +599,12 @@ progress{
 }
 .row-cols-auto>*{
     flex:0 0 auto;
+<<<<<<< Updated upstream
     width:auto;
    
+=======
+    width:auto
+>>>>>>> Stashed changes
 }
 .row-cols-1>*{
     flex:0 0 auto;
@@ -643,9 +680,13 @@ progress{
 }
 .col-12{
     flex:0 0 auto;
+<<<<<<< Updated upstream
   
     width:100%
     
+=======
+    width:100%
+>>>>>>> Stashed changes
 }
 .offset-1{
     margin-left:8.33333333%
@@ -2282,7 +2323,11 @@ textarea.form-control-lg{
 }
 .input-group-lg>.btn,.input-group-lg>.form-control,.input-group-lg>.form-select,.input-group-lg>.input-group-text{
     padding:.5rem 1rem;
+<<<<<<< Updated upstream
     font-size:1.5rem;
+=======
+    font-size:1.25rem;
+>>>>>>> Stashed changes
     border-radius:.5rem
 }
 .input-group-sm>.btn,.input-group-sm>.form-control,.input-group-sm>.form-select,.input-group-sm>.input-group-text{
@@ -2496,6 +2541,7 @@ textarea.form-control-lg{
         transition:none
     }
 }
+<<<<<<< Updated upstream
 .btn.btn-outline-secondary {
     display: flex;
     align-items: center;
@@ -2504,6 +2550,8 @@ textarea.form-control-lg{
     bottom: 20px;
     right: 20px;
 }
+=======
+>>>>>>> Stashed changes
 .btn:hover{
     color:var(--bs-btn-hover-color);
     background-color:var(--bs-btn-hover-bg);
@@ -3336,17 +3384,26 @@ textarea.form-control-lg{
 }
 .tab-content>.tab-pane{
     display:none
+<<<<<<< Updated upstream
 
 }
 .tab-content>.active{
     display:block
 
+=======
+}
+.tab-content>.active{
+    display:block
+>>>>>>> Stashed changes
 }
 .navbar{
     --bs-navbar-padding-x:0;
     --bs-navbar-padding-y:0.5rem;
     --bs-navbar-color:rgba(0, 0, 0, 0.55);
+<<<<<<< Updated upstream
     --bs-navbar1-color: rgba (255, 201, 24, 1);
+=======
+>>>>>>> Stashed changes
     --bs-navbar-hover-color:rgba(0, 0, 0, 0.7);
     --bs-navbar-disabled-color:rgba(0, 0, 0, 0.3);
     --bs-navbar-active-color:rgba(0, 0, 0, 0.9);
@@ -6971,8 +7028,13 @@ textarea.form-control-lg{
     padding-bottom:.5rem!important
 }
 .py-3{
+<<<<<<< Updated upstream
     padding-top:1px !important;
     padding-bottom:1px !important
+=======
+    padding-top:1rem!important;
+    padding-bottom:1rem!important
+>>>>>>> Stashed changes
 }
 .py-4{
     padding-top:1.5rem!important;
@@ -7180,7 +7242,11 @@ textarea.form-control-lg{
 }
 .text-info{
     --bs-text-opacity:1;
+<<<<<<< Updated upstream
     color: rgb(0,20,200) !important
+=======
+    color:rgba(var(--bs-info-rgb),var(--bs-text-opacity))!important
+>>>>>>> Stashed changes
 }
 .text-warning{
     --bs-text-opacity:1;
@@ -8655,7 +8721,11 @@ textarea.form-control-lg{
         margin-right:auto!important
     }
     .mb-lg-0{
+<<<<<<< Updated upstream
         margin: bottom 20px !important
+=======
+        margin-bottom:0!important
+>>>>>>> Stashed changes
     }
     .mb-lg-1{
         margin-bottom:.25rem!important
