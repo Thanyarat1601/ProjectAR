@@ -580,6 +580,13 @@ strong {
   object-fit: cover;
 
 }
+.custom-block-imageModal{
+  display: block;
+  object-fit: cover;
+  margin-top: -19px;
+  width: 150px; 
+  height: 150px;
+}
 
 
 .custom-block .rounded-pill {

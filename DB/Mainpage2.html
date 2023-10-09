@@ -186,7 +186,7 @@ https://templatemo.com/tm-590-topic-listing
                                     
 
                                                   <button type="button" class="btn btn-outline-secondary"  data-toggle="modal" data-target="#exampleModalCenter" ng-if="x.qrcodeofar">
-                                                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-qr-code-scan" viewBox="0 0 16 16">
                                                         <path d="M0 .5A.5.5 0 0 1 .5 0h3a.5.5 0 0 1 0 1H1v2.5a.5.5 0 0 1-1 0v-3Zm12 0a.5.5 0 0 1 .5-.5h3a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-1 0V1h-2.5a.5.5 0 0 1-.5-.5ZM.5 12a.5.5 0 0 1 .5.5V15h2.5a.5.5 0 0 1 0 1h-3a.5.5 0 0 1-.5-.5v-3a.5.5 0 0 1 .5-.5Zm15 0a.5.5 0 0 1 .5.5v3a.5.5 0 0 1-.5.5h-3a.5.5 0 0 1 0-1H15v-2.5a.5.5 0 0 1 .5-.5ZM4 4h1v1H4V4Z"></path>
                                                         <path d="M7 2H2v5h5V2ZM3 3h3v3H3V3Zm2 8H4v1h1v-1Z"></path>
                                                         <path d="M7 9H2v5h5V9Zm-4 1h3v3H3v-3Zm8-6h1v1h-1V4Z"></path>
@@ -337,23 +337,26 @@ https://templatemo.com/tm-590-topic-listing
                     </div>
                 </div>
 
-                                    <!-- Modal -->
+                                    <!-- Modal QRcodeAr -->
                                     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document" ng-repeat="x in rtree | filter: { qrcodeofar: '' }">
-                                            <div class="modal-content" >
-                                                 <div class="modal-header" ng-if="x.qrcodeofar">
-                                                        <h5 class="modal-title" id="exampleModalLongTitle">Modal</h5>
-                                                            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                            <span aria-hidden="true">&times;</span>
-                                                            </button> -->
+                                            <div class="modal-content"ng-if="x.qrcodeofar" >
+                                                        <!-- เนื้อหาข้างบน -->
+                                                 <div style=" border-radius: 20px; padding: 30px 30px 0px;" >
+                                                       <p class="modal-titleclass" id="exampleModalLongTitle">Scan Here
+                                                        <!-- <i class="bi bi-phone text-info m-3"></i> -->
+                                                        <img src="../DB/images/icon 567.png"style="width: 40px; height: 40px;"/>
+                                                       </p>
                                                  </div>
-                                                     <div class="modal-body">
-                                                        <img ng-src="data:image/png;base64,{{x.qrcodeofar}}" class="custom-block-image img-fluid" ng-if="x.qrcodeofar" style="width: 120px; height: 100px;">
-                                                    </div>
-                                                 <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        
+                                                         <!-- เนื้อหาข้างใน -->
+                                                 <div class="modal-body text-center"  >
+                                                    <img ng-src="data:image/png;base64,{{x.qrcodeofar}}"class="custom-block-imageModal img-fluid mx-auto d-block" ng-if="x.qrcodeofar">
                                                 </div>
+                                                    <!-- เนื้อหาท้ายสุด -->
+                                                 <div class="modal-footer">
+                                                        <button type="button" class="btn btn-light" data-dismiss="modal">Close</button>   
+                                                </div>
+
                                             </div>
                                         </div>
                                     </div>
