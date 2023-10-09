@@ -21,7 +21,6 @@ https://templatemo.com/tm-590-topic-listing
   --border-color:                 #7fffd4;
   --link-hover-color:             #13547a;
 
-<<<<<<< Updated upstream
   --body-font-family:             'Angsana New', sans-serif;
   --title-font-family:            'Angsana New', sans-serif;
 
@@ -35,21 +34,6 @@ https://templatemo.com/tm-590-topic-listing
   /* --menu-font-size:               18px; */
   --btn-font-size:                30px;
   --copyright-font-size:          24px;
-=======
-  --body-font-family:             'Open Sans', sans-serif;
-  --title-font-family:            'Montserrat', sans-serif;
-
-  --h1-font-size:                 58px;
-  --h2-font-size:                 46px;
-  --h3-font-size:                 32px;
-  --h4-font-size:                 28px;
-  --h5-font-size:                 24px;
-  --h6-font-size:                 22px;
-  --p-font-size:                  20px;
-  --menu-font-size:               14px;
-  --btn-font-size:                18px;
-  --copyright-font-size:          16px;
->>>>>>> Stashed changes
 
   --border-radius-large:          100px;
   --border-radius-medium:         20px;
@@ -57,13 +41,8 @@ https://templatemo.com/tm-590-topic-listing
 
   --font-weight-normal:           400;
   --font-weight-medium:           500;
-<<<<<<< Updated upstream
   --font-weight-semibold:         700;
   --font-weight-bold:             900;
-=======
-  --font-weight-semibold:         600;
-  --font-weight-bold:             700;
->>>>>>> Stashed changes
 }
 
 body {
@@ -117,11 +96,7 @@ h5 {
 }
 
 h6 {
-<<<<<<< Updated upstream
   color: #2b0487;
-=======
-  color: var(--primary-color);
->>>>>>> Stashed changes
   font-size: var(--h6-font-size);
 }
 
@@ -189,10 +164,7 @@ strong {
 .tab-content {
   background-color: var(--white-color);
   border-radius: var(--border-radius-medium);
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 }
 
 .nav-tabs {
@@ -238,10 +210,7 @@ strong {
 /*---------------------------------------
   CUSTOM BUTTON               
 -----------------------------------------*/
-<<<<<<< Updated upstream
 
-=======
->>>>>>> Stashed changes
 .custom-btn {
   background: var(--custom-btn-bg-color);
   border: 2px solid transparent;
@@ -252,10 +221,7 @@ strong {
   line-height: normal;
   transition: all 0.3s;
   padding: 10px 20px;
-<<<<<<< Updated upstream
  
-=======
->>>>>>> Stashed changes
 }
 
 .custom-btn:hover {
@@ -285,11 +251,7 @@ strong {
   SITE HEADER              
 -----------------------------------------*/
 .site-header {
-<<<<<<< Updated upstream
   background-image: linear-gradient(15deg, #0436ab 0%, #089ae3 100%);
-=======
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
->>>>>>> Stashed changes
   padding-top: 150px;
   padding-bottom: 80px;
 }
@@ -325,11 +287,7 @@ strong {
 }
 
 .sticky-wrapper.is-sticky .navbar {
-<<<<<<< Updated upstream
   background-color: rgba(255, 255, 255, 0.9);
-=======
-  background-color: var(--secondary-color);
->>>>>>> Stashed changes
 }
 
 .navbar {
@@ -357,11 +315,7 @@ strong {
 
 .navbar-nav .nav-link {
   display: inline-block;
-<<<<<<< Updated upstream
   color: var(--p-color);
-=======
-  color: var(--white-color);
->>>>>>> Stashed changes
   font-family: var(--title-font-family); 
   font-size: var(--menu-font-size);
   font-weight: var(--font-weight-medium);
@@ -374,11 +328,7 @@ strong {
 
 .navbar-nav .nav-link.active, 
 .navbar-nav .nav-link:hover {
-<<<<<<< Updated upstream
   color: #000000;
-=======
-  color: var(--primary-color);
->>>>>>> Stashed changes
 }
 
 .navbar .dropdown-menu {
@@ -539,11 +489,7 @@ strong {
   HERO        
 -----------------------------------------*/
 .hero-section {
-<<<<<<< Updated upstream
   background-image: linear-gradient(340deg, #003f9d 25%, #3c8ff4 75%);
-=======
-  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
->>>>>>> Stashed changes
   position: relative;
   overflow: hidden;
   padding-top: 150px;
@@ -553,11 +499,7 @@ strong {
 .hero-section .input-group {
   background-color: var(--white-color);
   border-radius: var(--border-radius-large);
-<<<<<<< Updated upstream
   padding: 5.5px 10.5px;
-=======
-  padding: 10px 15px;
->>>>>>> Stashed changes
 }
 
 .hero-section .input-group-text {
@@ -596,12 +538,9 @@ strong {
   margin-bottom: -100px;
 }
 
-<<<<<<< Updated upstream
  
 
 
-=======
->>>>>>> Stashed changes
 .custom-block {
   border-radius: var(--border-radius-medium);
   position: relative;
@@ -609,13 +548,9 @@ strong {
   padding: 30px;
   transition: all 0.3s ease;
   height: 100%;
-<<<<<<< Updated upstream
 
   
 
-=======
-  margin-bottom: 20px;
->>>>>>> Stashed changes
   
   
 }
@@ -629,14 +564,11 @@ strong {
   width: 100%;
 }
 
-<<<<<<< Updated upstream
 .qrcode {
   width: 50px; 
   height: 50px;
 }
 
-=======
->>>>>>> Stashed changes
 .custom-block-image {
   display: block;
   width: 100%;
@@ -644,7 +576,6 @@ strong {
   object-fit: cover;
   margin-top: 35px;
 }
-<<<<<<< Updated upstream
 .custom-block-image2 {
   object-fit: cover;
 
@@ -657,8 +588,6 @@ strong {
   height: 150px;
 }
 
-=======
->>>>>>> Stashed changes
 
 .custom-block .rounded-pill {
   border-radius: 5px !important;
@@ -1004,11 +933,7 @@ blockquote {
 }
 
 .custom-form button[type="submit"] {
-<<<<<<< Updated upstream
   background: #008df1;
-=======
-  background: var(--custom-btn-bg-color);
->>>>>>> Stashed changes
   border: none;
   border-radius: var(--border-radius-large);
   color: var(--white-color);
@@ -1021,11 +946,7 @@ blockquote {
 
 .custom-form button[type="submit"]:hover,
 .custom-form button[type="submit"]:focus {
-<<<<<<< Updated upstream
   background: #1950c6;
-=======
-  background: var(--custom-btn-bg-hover-color);
->>>>>>> Stashed changes
   border-color: transparent;
 }
 
@@ -1034,11 +955,7 @@ blockquote {
   SITE FOOTER              
 -----------------------------------------*/
 .site-footer {
-<<<<<<< Updated upstream
   border-bottom: 10px solid var(--bs-blue);
-=======
-  border-bottom: 10px solid var(--secondary-color);
->>>>>>> Stashed changes
   position: relative;
 }
 
@@ -1051,11 +968,7 @@ blockquote {
   height: 0;
   border-style: solid;
   border-width: 0 0 200px 200px;
-<<<<<<< Updated upstream
   border-color: transparent transparent var(--bs-blue) transparent;
-=======
-  border-color: transparent transparent var(--secondary-color) transparent;
->>>>>>> Stashed changes
   pointer-events: none;
 }
 
@@ -1185,13 +1098,6 @@ blockquote {
     padding-top: 50px;
     padding-bottom: 50px;
   }
-<<<<<<< Updated upstream
-=======
-  
-  .navbar {
-    background-color: var(--secondary-color);
-  }
->>>>>>> Stashed changes
 
   .navbar-nav .dropdown-menu {
     position: relative;
