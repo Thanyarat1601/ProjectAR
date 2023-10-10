@@ -1,17 +1,15 @@
 angular.module('myApp', [])
 .controller('ViewWebController', ['$scope', '$http', function($scope, $http) {
     $scope.rtree = {};
- 
-
-
-    $scope.showFullImage = false;
-    $scope.openModal = function() {
-      $scope.showFullImage = true;
-    };
-    $scope.closeModal = function() {
-      $scope.showFullImage = false;
-    };
-    
+   
+            // ในคอนโทรลเลอร์ของคุณ
+        $scope.openModal = function(item) {
+          $scope.selectedItem = item; // กำหนดข้อมูลที่ต้องการแสดงในโมดอล
+          $('#exampleModalCenter').modal('show'); // เปิดโมดอล
+        };
+        $scope.closeModal = function() {
+          $('#exampleModalCenter').modal('hide'); // ใช้ jQuery เพื่อปิด modal
+        };
 
     $scope.select = function() {
         var tem = null;

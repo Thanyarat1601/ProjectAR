@@ -55,8 +55,7 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
     $scope.rtree1 = {};
     $scope.show = {}; 
     // อัปเดตส่วนที่รับค่า ENUM จากฟอร์ม
-    $scope.rtree1.treetyyy = $scope.selectedTreetyyy; // สมมติว่าค่า ENUM อยู่ในตัวแปร selectedTreetyyy
- 
+    
  var fd = new FormData();
 
         $scope.select = function(){  
