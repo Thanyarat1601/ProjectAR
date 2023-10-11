@@ -58,28 +58,22 @@ app.controller('ViewWebController',['$scope','$http', function($scope,$http,) {
     
  var fd = new FormData();
 
-        $scope.select = function(){  
-        var tem = null;
-        if(angular.isUndefined($scope.search)) {
-        tem = 1;
-    }else{
-        tem = $scope.search; 
-    }
-    console.log("Search term:", tem);
-        $http({method : 'post' ,
-               url : 'select.php',
-               data : {search:tem},
-          
-    }).then( function  mySuccess(response){
-               $scope.rtree = response.data;
-            },  
+    $scope.select = function() {
+      var tem = null;
+      var searchTerm = $scope.search || '';
+      if (angular.isUndefined($scope.search)) {
+          tem = 1;
+      } else {
+          tem = $scope.search;
+      }
 
-            function myError(response){
+      $http.get('selectmain.php', {params: {search: searchTerm}}).then(function(response) {
+        $scope.rtree = response.data;
+      }, function(error) {
+        console.error(error);
+      });
+    };
 
-  
-            });         
-        }; 
-        
      // อัปเดตส่วนที่ส่งข้อมูล
      $scope.Update = function(){              //สร้างฟังก์ชันเพื่อส่งค่าไปใช้ในฟอร์ม   //http ทำการสั่งงาน then ตอบสนองการทำงาน
         let newdata1 = new FormData();//2 

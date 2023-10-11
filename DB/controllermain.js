@@ -20,17 +20,6 @@ angular.module('myApp', [])
             tem = $scope.search;
         }
 
-    //     $http({
-    //         method: 'post',
-    //         url: 'selectmain.php',
-    //         data: {search: tem},
-    //     }).then(function mySuccess(response) {
-    //         $scope.rtree = response.data;
-    //     }, function myError(response) {
-    //         // Handle error response
-    //     });
-    // };
-      
         $http.get('selectmain.php', {params: {search: searchTerm}}).then(function(response) {
           $scope.rtree = response.data;
         }, function(error) {
